@@ -24,13 +24,18 @@
 	}
 
 	.post-item{
-		float: none;
+		width: 31%;
 		padding: 0;
 		> h2, .excerpt{padding: 0;}	
 		// width: percentage(1/4)-2;
-		// @include rwd($tablet) {
-		// 	width: percentage(1/2)-4;
-		// }
+		@include rwd($tablet) {
+			width: percentage(1/2)-4;
+			margin-bottom: $gap;
+		}
+		@include rwd(640px) {
+			width: 100%;
+			margin: 0 $gap $gap 0; 
+		}
 		// @include rwd($mobile-small) {
 		// 	width: 100%;
 		// 	margin: 0 $gap $gap 0; 
@@ -98,7 +103,7 @@
 }
 
 #recommend-speaker{
-	background-color: $mw-White;
+	background-color: $mw-Gray;
 	> .section-title:after{
 		background-color: $mw-Yellow;
 	}
@@ -137,18 +142,19 @@
 }
 
 #home #news{
-	background-color: $mw-Gray;
+	background-color: $mw-White;
 	.post-item{
-		h2{padding: $gap/2;}
+		background-color: $white;
+		h2{padding: 10px $gap/2;}
 		.excerpt{
-			width: 92%;
+			// width: 92%;
 			padding: 0 $gap/2;
 		}
 	}
 }
 
 #sponsor{
-	background-color: $mw-White;
+	background-color: $white;
 	> .section-title:after{
 		background-color: $mw-Gray;
 	}

@@ -79,6 +79,10 @@ p,span,div,a,td,th{
 	line-height: 1.4;
 }
 
+p{
+	margin-bottom: 10px;
+}
+
 hr{
 	margin: $gap 0;
 	border-color: $mw-Gray; 

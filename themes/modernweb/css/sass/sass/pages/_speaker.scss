@@ -26,6 +26,7 @@
 		padding: $gap/2;
 		background-color: $mw-White;
 		opacity: 0;
+		text-align: left;
 		@include rwd($tablet) {
 			position: relative;
 			opacity: 1;

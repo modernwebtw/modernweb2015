@@ -2,7 +2,11 @@
  *	News page style
  * ==================== */
 
-.post-wrapper{overflow: hidden;}
+ #news{
+ 	padding-bottom: $gap*2;
+ }
+
+// .post-wrapper{overflow: hidden;}
 .post-item{
 	display: inline-block;
 	position: relative;
@@ -20,7 +24,7 @@
 	@include rwd($tablet) {
 		width: percentage(1/2)-2;
 	}
-	@include rwd($mobile-small) {
+	@include rwd(580px) {
 		width: 100%;
 		margin: 0 $gap $gap 0; 
 	}

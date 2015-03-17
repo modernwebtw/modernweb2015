@@ -2,6 +2,11 @@
  *	Sponsor page style
  * ==================== */
 
+#sponsors .page-title h1{
+	background-image: url('img/robots/robot-ali.png');
+	background-position: 38% 20px;
+}
+
 #sponsor{
 	> ul{
 		padding: 0;

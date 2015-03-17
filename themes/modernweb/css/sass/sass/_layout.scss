@@ -28,11 +28,37 @@
 	position: fixed;
 	right:-7px;
 	top:40%;
-	z-index: 999;
+	z-index: 9999;
 	&:hover{
 		right: -4px;
 	}
 
+}
+
+.fb-like.fb_iframe_widget{
+	float: right;
+	padding: 20px;
+}
+
+.side-tag{
+	display: block;
+	background-color: $mw-Blue;
+	width: 35px;
+	color: $white;
+	padding: 10px;
+	position: fixed;
+	right: 0px;
+	top: 60%;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	text-align: center;
+	box-shadow: 0 2px 0 darken($mw-Blue, 10%);
+	z-index: 9999;
+	&:hover{
+		background-color: darken($mw-Blue, 5%);
+		color: $mw-LightBlue;
+		box-shadow: 0 2px 0 darken($mw-Blue, 50%);
+	}
 }
 
 .coming-soon{text-align: center;}
