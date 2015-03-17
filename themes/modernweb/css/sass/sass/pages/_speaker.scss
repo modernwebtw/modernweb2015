@@ -1,0 +1,42 @@
+/* ====================
+ *	Sponsor page style
+ * ==================== */
+
+#speakers .page-title h1{
+	background-image: url('img/robots/robot-yellow.png');
+	background-position: 41% 20px;
+}
+
+.post-item.speaker{
+	padding: 0;	
+	position: relative;
+	.speaker-name{
+		padding: $gap/2;
+		text-align: center;
+		h2{margin-top: 0;}
+		h5{
+			font-size: $base-font-size*1;
+		}
+
+	}
+	.intro{
+		position: absolute;
+		top:-100px;
+		bottom: 0;
+		padding: $gap/2;
+		background-color: $mw-White;
+		opacity: 0;
+		text-align: left;
+		@include rwd($tablet) {
+			position: relative;
+			opacity: 1;
+			top:0;
+			padding-top: 0;
+		}
+		&:hover{
+			top:0;
+			opacity: 1;
+			@include transition-animation(.5);
+		}
+	}
+}

@@ -1,0 +1,58 @@
+/* ====================
+ *	Info page style
+ * ==================== */
+
+#info .page-title h1{
+	background-image: url('img/robots/robot-blue.png');
+	background-position: 33% 20px;
+}
+
+$border-style: 1px solid lighten($mw-Gray,10%);
+
+#info{
+	text-align: center;
+	padding: 0 0 $gap*2 0;
+	h6{
+		margin: 0 0 $gap 0;
+		font-size: $base-font-size*1.4;
+	}
+
+	table{
+		width: 100%;
+		max-width: 770px;
+		margin: 0 auto;
+		border-left: $border-style;
+		border-top: $border-style;
+		th, td{
+			padding: $gap/2 $gap;
+			border-right: $border-style;
+			border-bottom: $border-style;
+		}
+
+		th{
+			width: 15%;
+			background-color: $mw-DarkBlue;
+			color: $mw-White;
+			font-weight: bold;
+			text-align: center;
+		}
+		td{
+			width: 60%;
+			background-color: $mw-White;
+			text-align: left;
+			h6{
+				margin: $gap/2 0;
+			}
+		}
+
+		tr:nth-child(even) td{
+			background-color: $mw-Gray;
+		}
+	}
+
+	.map-box{
+		width: 100%;
+		margin: $gap 0;
+	}
+}
+
