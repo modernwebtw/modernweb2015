@@ -636,21 +636,15 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 /* ====================
  *	Index page style
  * ==================== */
-/* line 6, sass/sass/pages/_index.scss */
-#home > section {
-  padding: 30px;
-  text-align: center;
-  clear: both;
-}
-/* line 11, sass/sass/pages/_index.scss */
-#home .section-title {
+/* line 5, sass/sass/pages/_index.scss */
+.section-title {
   display: inline-block;
   font-size: 30.8px;
   text-align: center;
   margin: 30px auto 60px;
 }
-/* line 16, sass/sass/pages/_index.scss */
-#home .section-title:after {
+/* line 10, sass/sass/pages/_index.scss */
+.section-title:after {
   content: '';
   display: block;
   width: 100%;
@@ -658,31 +652,38 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   background-color: #bc7c72;
   margin-top: 15px;
 }
-/* line 26, sass/sass/pages/_index.scss */
+
+/* line 21, sass/sass/pages/_index.scss */
+#home > section {
+  padding: 30px;
+  text-align: center;
+  clear: both;
+}
+/* line 27, sass/sass/pages/_index.scss */
 #home .post-item {
   width: 31%;
   padding: 0;
 }
-/* line 29, sass/sass/pages/_index.scss */
+/* line 30, sass/sass/pages/_index.scss */
 #home .post-item > h2, #home .post-item .excerpt {
   padding: 0;
 }
 @media screen and (max-width: 992px) {
-  /* line 26, sass/sass/pages/_index.scss */
+  /* line 27, sass/sass/pages/_index.scss */
   #home .post-item {
     width: 46%;
     margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 640px) {
-  /* line 26, sass/sass/pages/_index.scss */
+  /* line 27, sass/sass/pages/_index.scss */
   #home .post-item {
     width: 100%;
     margin: 0 30px 30px 0;
   }
 }
 
-/* line 46, sass/sass/pages/_index.scss */
+/* line 47, sass/sass/pages/_index.scss */
 #main-banner {
   background: #30bcea url(img/balloon.png) no-repeat center center;
   background-size: 80% auto;
@@ -691,59 +692,77 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   padding-bottom: 60px;
 }
 @media screen and (max-width: 768px) {
-  /* line 46, sass/sass/pages/_index.scss */
+  /* line 47, sass/sass/pages/_index.scss */
   #main-banner {
     background-size: 180% auto;
     background-position: center 50px;
   }
 }
-/* line 56, sass/sass/pages/_index.scss */
+/* line 57, sass/sass/pages/_index.scss */
+#main-banner .alert-img {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: url(img/alert-animation.gif) no-repeat center center;
+  background-size: 100% 100%;
+  width: 120px;
+  height: 120px;
+}
+@media screen and (max-width: 480px) {
+  /* line 57, sass/sass/pages/_index.scss */
+  #main-banner .alert-img {
+    display: none;
+  }
+}
+/* line 70, sass/sass/pages/_index.scss */
 #main-banner .robots {
+  position: relative;
   width: 562px;
   height: 333px;
   background: url(img/index-robots.png) no-repeat center center;
   margin: 60px auto 0 auto;
 }
 @media screen and (max-width: 480px) {
-  /* line 56, sass/sass/pages/_index.scss */
+  /* line 70, sass/sass/pages/_index.scss */
   #main-banner .robots {
     width: 100%;
     height: 333px;
     margin-top: 50px;
   }
 }
-/* line 67, sass/sass/pages/_index.scss */
+/* line 82, sass/sass/pages/_index.scss */
 #main-banner .title {
   margin: 30px 0 10px;
   font-size: 25.2px;
   text-align: underline;
 }
-/* line 71, sass/sass/pages/_index.scss */
+/* line 86, sass/sass/pages/_index.scss */
 #main-banner .title:hover {
   -webkit-animation: fontColorChange .5s infinite;
   /* Chrome, Safari, Opera */
   animation: fontColorChange .5s infinite;
 }
-/* line 76, sass/sass/pages/_index.scss */
+/* line 91, sass/sass/pages/_index.scss */
 #main-banner .date {
   font-size: 22.4px;
   color: #e7eaed;
   margin-bottom: 10px;
 }
-/* line 81, sass/sass/pages/_index.scss */
+/* line 96, sass/sass/pages/_index.scss */
 #main-banner .slogan {
   font-weight: bold;
   margin: 0 0 10px 0;
   font-size: 22.4px;
 }
-/* line 86, sass/sass/pages/_index.scss */
+/* line 101, sass/sass/pages/_index.scss */
 #main-banner .desc {
   margin: 0 auto 30px auto;
   font-size: 18.2px;
   line-height: 32.2px;
   max-width: 800px;
 }
-/* line 93, sass/sass/pages/_index.scss */
+/* line 108, sass/sass/pages/_index.scss */
 #main-banner .button {
   width: 300px;
   background-color: #313b3f;
@@ -751,45 +770,45 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   box-shadow: 0 2px 0 #1b2022;
   margin-bottom: 30px;
 }
-/* line 99, sass/sass/pages/_index.scss */
+/* line 114, sass/sass/pages/_index.scss */
 #main-banner .button:hover {
   color: #30bcea;
 }
 
-/* line 105, sass/sass/pages/_index.scss */
+/* line 120, sass/sass/pages/_index.scss */
 #recommend-speaker {
   background-color: #d2d2d2;
 }
-/* line 107, sass/sass/pages/_index.scss */
+/* line 122, sass/sass/pages/_index.scss */
 #recommend-speaker > .section-title:after {
   background-color: #c7b04f;
 }
-/* line 110, sass/sass/pages/_index.scss */
+/* line 125, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker {
   text-align: center;
   box-shadow: none;
   padding: 0;
 }
-/* line 114, sass/sass/pages/_index.scss */
+/* line 129, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker .speaker-img {
   display: block;
 }
-/* line 116, sass/sass/pages/_index.scss */
+/* line 131, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker .speaker-img img {
   width: 100%;
 }
-/* line 121, sass/sass/pages/_index.scss */
+/* line 136, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker .speaker-intro {
   display: block;
   float: left;
   width: 100%;
   background-color: #FFFFFF;
 }
-/* line 129, sass/sass/pages/_index.scss */
+/* line 144, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker .speaker-intro .speaker-title h1 {
   margin: 15px 0;
 }
-/* line 132, sass/sass/pages/_index.scss */
+/* line 147, sass/sass/pages/_index.scss */
 #recommend-speaker .speaker .speaker-intro .speaker-title span {
   display: inline-block;
   margin: 0 0 30px 0;
@@ -797,28 +816,28 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   font-size: 16.8px;
 }
 
-/* line 144, sass/sass/pages/_index.scss */
+/* line 159, sass/sass/pages/_index.scss */
 #home #news {
   background-color: #e7eaed;
 }
-/* line 146, sass/sass/pages/_index.scss */
+/* line 161, sass/sass/pages/_index.scss */
 #home #news .post-item {
   background-color: #FFFFFF;
 }
-/* line 148, sass/sass/pages/_index.scss */
+/* line 163, sass/sass/pages/_index.scss */
 #home #news .post-item h2 {
   padding: 10px 15px;
 }
-/* line 149, sass/sass/pages/_index.scss */
+/* line 164, sass/sass/pages/_index.scss */
 #home #news .post-item .excerpt {
   padding: 0 15px;
 }
 
-/* line 156, sass/sass/pages/_index.scss */
+/* line 171, sass/sass/pages/_index.scss */
 #sponsor {
   background-color: #FFFFFF;
 }
-/* line 158, sass/sass/pages/_index.scss */
+/* line 173, sass/sass/pages/_index.scss */
 #sponsor > .section-title:after {
   background-color: #d2d2d2;
 }
@@ -1081,25 +1100,40 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   background-position: 41% 20px;
 }
 
-/* line 10, sass/sass/pages/_speaker.scss */
+/* line 11, sass/sass/pages/_speaker.scss */
+#speakers section {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+/* line 15, sass/sass/pages/_speaker.scss */
+#speakers section > .section-title:after {
+  background-color: #30bcea;
+}
+/* line 19, sass/sass/pages/_speaker.scss */
+#speakers #keynote-speakers {
+  margin-bottom: 30px;
+}
+
+/* line 25, sass/sass/pages/_speaker.scss */
 .post-item.speaker {
   padding: 0;
   position: relative;
 }
-/* line 13, sass/sass/pages/_speaker.scss */
+/* line 28, sass/sass/pages/_speaker.scss */
 .post-item.speaker .speaker-name {
   padding: 15px;
   text-align: center;
 }
-/* line 16, sass/sass/pages/_speaker.scss */
+/* line 31, sass/sass/pages/_speaker.scss */
 .post-item.speaker .speaker-name h2 {
   margin-top: 0;
 }
-/* line 17, sass/sass/pages/_speaker.scss */
+/* line 32, sass/sass/pages/_speaker.scss */
 .post-item.speaker .speaker-name h5 {
-  font-size: 14px;
+  font-size: 12.04px;
 }
-/* line 22, sass/sass/pages/_speaker.scss */
+/* line 37, sass/sass/pages/_speaker.scss */
 .post-item.speaker .intro {
   position: absolute;
   top: -100px;
@@ -1110,7 +1144,7 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   text-align: left;
 }
 @media screen and (max-width: 992px) {
-  /* line 22, sass/sass/pages/_speaker.scss */
+  /* line 37, sass/sass/pages/_speaker.scss */
   .post-item.speaker .intro {
     position: relative;
     opacity: 1;
@@ -1118,7 +1152,7 @@ body.open-menu .body-wrapper, body.open-menu #footer {
     padding-top: 0;
   }
 }
-/* line 36, sass/sass/pages/_speaker.scss */
+/* line 51, sass/sass/pages/_speaker.scss */
 .post-item.speaker .intro:hover {
   top: 0;
   opacity: 1;
