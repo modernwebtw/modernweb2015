@@ -7,6 +7,21 @@
 	background-position: 41% 20px;
 }
 
+#speakers{
+	section{
+		display: block;
+		overflow: hidden;
+		text-align: center;
+		> .section-title:after{
+			background-color: $mw-LightBlue;
+		}
+	}
+	#keynote-speakers{
+		margin-bottom: $gap;
+	}
+	#speakers{}
+}
+
 .post-item.speaker{
 	padding: 0;	
 	position: relative;
@@ -15,7 +30,7 @@
 		text-align: center;
 		h2{margin-top: 0;}
 		h5{
-			font-size: $base-font-size*1;
+			font-size: $base-font-size*0.86;
 		}
 
 	}
