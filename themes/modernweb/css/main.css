@@ -1186,3 +1186,15 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 	footer: 
 
 */
+
+
+/* ========================= *
+ *  *  *  hotfix for partner
+ * ========================= */
+
+#sponsor > ul li.single-item {
+    margin-right: 0;
+    margin-left: 18px;
+  }
+
+
