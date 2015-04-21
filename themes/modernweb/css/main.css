@@ -661,7 +661,6 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 }
 /* line 27, sass/sass/pages/_index.scss */
 #home .post-item {
-  width: 31%;
   padding: 0;
 }
 /* line 30, sass/sass/pages/_index.scss */
@@ -1186,6 +1185,3 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 	footer: 
 
 */
-
-
-
