@@ -115,6 +115,34 @@ $border-style: 1px solid lighten($mw-Gray,30%);
 	}
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    text-decoration: none;
+    color: $mw-DarkBlue;
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: .7;
+    &:before{
+    	content: '';
+    	display: block;
+    	width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 15px 20px 15px;
+		border-color: transparent transparent $mw-DarkBlue transparent;
+		margin-bottom: 5px;
+    }
+    &:hover{
+    	opacity: 1;
+    	color: $mw-DarkBlue;
+    }
+}
+
 /* ====================
  *	header section
  * ==================== */
