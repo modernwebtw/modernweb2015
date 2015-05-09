@@ -1120,15 +1120,47 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   clear: both;
 }
 /* line 12, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item {
+  background-color: #e7eaed;
+  padding: 30px;
+  margin: 0 auto 30px;
+  max-width: 860px;
+}
+/* line 17, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item .sponsor-img {
+  width: 100%;
+  display: inline-block;
+  max-width: 200px;
+}
+/* line 21, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item .sponsor-img img {
+  width: 100%;
+}
+/* line 23, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item .intro {
+  width: 100%;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+/* line 27, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item .intro .sponsor-name {
+  margin-bottom: 30px;
+  text-align: center;
+}
+/* line 30, sass/sass/pages/_sponsor.scss */
+#sponsor .sponsor-item .intro .sponsor-name h2 {
+  color: #30bcea;
+}
+/* line 36, sass/sass/pages/_sponsor.scss */
 #sponsor > ul {
   padding: 0;
   text-align: center;
 }
-/* line 15, sass/sass/pages/_sponsor.scss */
+/* line 39, sass/sass/pages/_sponsor.scss */
 #sponsor > ul h4 {
   margin: 30px 0;
 }
-/* line 16, sass/sass/pages/_sponsor.scss */
+/* line 40, sass/sass/pages/_sponsor.scss */
 #sponsor > ul li {
   display: inline-block;
   list-style: none;
@@ -1136,80 +1168,27 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   max-width: 200px;
   margin: 0 15px 15px 0;
 }
-/* line 23, sass/sass/pages/_sponsor.scss */
+/* line 47, sass/sass/pages/_sponsor.scss */
 #sponsor > ul li img {
   width: 100%;
 }
-/* line 27, sass/sass/pages/_sponsor.scss */
+/* line 51, sass/sass/pages/_sponsor.scss */
 #sponsor .section-title:after {
   background-color: #e7eaed;
 }
 
-/* line 33, sass/sass/pages/_sponsor.scss */
+/* line 57, sass/sass/pages/_sponsor.scss */
 #sponsors {
   padding-bottom: 60px;
 }
-/* line 35, sass/sass/pages/_sponsor.scss */
+/* line 59, sass/sass/pages/_sponsor.scss */
 #sponsors .sponsor-group {
   clear: both;
 }
-/* line 37, sass/sass/pages/_sponsor.scss */
+/* line 61, sass/sass/pages/_sponsor.scss */
 #sponsors .sponsor-group h4 {
   text-align: center;
   margin: 30px 0;
-}
-/* line 42, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item {
-  text-align: center;
-  padding-top: 30px;
-}
-/* line 45, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .level {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #FFFFFF;
-  position: absolute;
-  width: 100px;
-  left: 50%;
-  top: -5px;
-  margin-left: -50px;
-  border-bottom: 3px solid #d2d2d2;
-}
-/* line 55, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .level.gold-level {
-  background-color: #c7b04f;
-  border-color: #86742a;
-}
-/* line 59, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .level.copper-level {
-  background-color: #5689b3;
-  border-color: #233a4d;
-}
-/* line 65, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .intro {
-  text-align: left;
-}
-/* line 68, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .speaker-name h2 {
-  margin-top: 0;
-}
-/* line 69, sass/sass/pages/_sponsor.scss */
-#sponsors .post-item .button {
-  position: static;
-  margin-left: 0;
-}
-/* line 75, sass/sass/pages/_sponsor.scss */
-#sponsors #private-sponsor .post-item {
-  height: auto;
-  min-height: 30px;
-}
-/* line 78, sass/sass/pages/_sponsor.scss */
-#sponsors #private-sponsor .post-item h2, #sponsors #private-sponsor .post-item h5 {
-  margin: 0;
-}
-/* line 79, sass/sass/pages/_sponsor.scss */
-#sponsors #private-sponsor .post-item img, #sponsors #private-sponsor .post-item .intro {
-  display: none;
 }
 
 /* ====================
