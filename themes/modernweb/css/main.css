@@ -1098,9 +1098,13 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 #program table td .desc {
   display: none;
 }
+/* line 52, sass/sass/pages/_program.scss */
+#program table td .desc img {
+  width: 100%;
+}
 
 /*== Fancybox ==*/
-/* line 60, sass/sass/pages/_program.scss */
+/* line 63, sass/sass/pages/_program.scss */
 .fancybox-skin {
   background-color: #e7eaed;
   border-radius: 0;
@@ -1265,12 +1269,13 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 .post-item.speaker .intro {
   position: absolute;
   top: -100px;
-  bottom: 0;
   padding: 15px;
   background-color: #e7eaed;
   opacity: 0;
   text-align: left;
   width: 100%;
+  z-index: 30;
+  min-height: 100%;
 }
 @media screen and (max-width: 992px) {
   /* line 38, sass/sass/pages/_speaker.scss */
@@ -1282,7 +1287,7 @@ body.open-menu .body-wrapper, body.open-menu #footer {
     height: 350px;
   }
 }
-/* line 54, sass/sass/pages/_speaker.scss */
+/* line 56, sass/sass/pages/_speaker.scss */
 .post-item.speaker .intro:hover {
   top: 0;
   opacity: 1;

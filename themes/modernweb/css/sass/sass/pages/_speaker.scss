@@ -38,12 +38,14 @@
 	.intro{
 		position: absolute;
 		top:-100px;
-		bottom: 0;
+		// bottom: 0;
 		padding: $gap/2;
 		background-color: $mw-White;
 		opacity: 0;
 		text-align: left;
 		width: 100%;
+		z-index: 30;
+		min-height: 100%;
 		@include rwd($tablet) {
 			position: relative;
 			opacity: 1;
