@@ -8,12 +8,14 @@
 }
 
 #sponsor{
+	text-align: center;
 	clear:both;
 	.sponsor-item{
 		background-color: $mw-White;
 		padding: $gap;
 		margin: 0 auto $gap;
 		max-width: 860px; 
+		text-align: center;
 		.sponsor-img{
 			width: 100%;
 			display: inline-block;

@@ -244,7 +244,6 @@ hr {
 
 /* line 67, sass/sass/_layout.scss */
 .page-content {
-  text-align: center;
   padding: 0 0 60px 0;
 }
 /* line 70, sass/sass/_layout.scss */
@@ -1121,50 +1120,52 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 
 /* line 10, sass/sass/pages/_sponsor.scss */
 #sponsor {
+  text-align: center;
   clear: both;
 }
-/* line 12, sass/sass/pages/_sponsor.scss */
+/* line 13, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item {
   background-color: #e7eaed;
   padding: 30px;
   margin: 0 auto 30px;
   max-width: 860px;
+  text-align: center;
 }
-/* line 17, sass/sass/pages/_sponsor.scss */
+/* line 19, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item .sponsor-img {
   width: 100%;
   display: inline-block;
   max-width: 200px;
 }
-/* line 21, sass/sass/pages/_sponsor.scss */
+/* line 23, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item .sponsor-img img {
   width: 100%;
 }
-/* line 23, sass/sass/pages/_sponsor.scss */
+/* line 25, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item .intro {
   width: 100%;
   margin: 0 auto 30px;
   text-align: left;
 }
-/* line 27, sass/sass/pages/_sponsor.scss */
+/* line 29, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item .intro .sponsor-name {
   margin-bottom: 30px;
   text-align: center;
 }
-/* line 30, sass/sass/pages/_sponsor.scss */
+/* line 32, sass/sass/pages/_sponsor.scss */
 #sponsor .sponsor-item .intro .sponsor-name h2 {
   color: #30bcea;
 }
-/* line 36, sass/sass/pages/_sponsor.scss */
+/* line 38, sass/sass/pages/_sponsor.scss */
 #sponsor > ul {
   padding: 0;
   text-align: center;
 }
-/* line 39, sass/sass/pages/_sponsor.scss */
+/* line 41, sass/sass/pages/_sponsor.scss */
 #sponsor > ul h4 {
   margin: 30px 0;
 }
-/* line 40, sass/sass/pages/_sponsor.scss */
+/* line 42, sass/sass/pages/_sponsor.scss */
 #sponsor > ul li {
   display: inline-block;
   list-style: none;
@@ -1172,24 +1173,24 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   max-width: 200px;
   margin: 0 15px 15px 0;
 }
-/* line 47, sass/sass/pages/_sponsor.scss */
+/* line 49, sass/sass/pages/_sponsor.scss */
 #sponsor > ul li img {
   width: 100%;
 }
-/* line 51, sass/sass/pages/_sponsor.scss */
+/* line 53, sass/sass/pages/_sponsor.scss */
 #sponsor .section-title:after {
   background-color: #e7eaed;
 }
 
-/* line 57, sass/sass/pages/_sponsor.scss */
+/* line 59, sass/sass/pages/_sponsor.scss */
 #sponsors {
   padding-bottom: 60px;
 }
-/* line 59, sass/sass/pages/_sponsor.scss */
+/* line 61, sass/sass/pages/_sponsor.scss */
 #sponsors .sponsor-group {
   clear: both;
 }
-/* line 61, sass/sass/pages/_sponsor.scss */
+/* line 63, sass/sass/pages/_sponsor.scss */
 #sponsors .sponsor-group h4 {
   text-align: center;
   margin: 30px 0;
