@@ -18,6 +18,11 @@
 		box-shadow: 0 2px 0 darken($mw-LightBlue, 20%);
 		transition: none;
 	}
+	&.download{
+		margin: $gap auto 0; 
+		display: block;
+		width:220px;
+	}
 }
 
 .fb-btn{

@@ -46,6 +46,13 @@
 			}
 			.title{
 				color: $mw-LightBlue;
+				.btn-set{
+					display: block;
+					padding: 5px 0;
+					a{
+						margin: 0 5px;
+					}
+				}
 			}
 			.desc{
 				display: none;
