@@ -822,26 +822,29 @@ body.open-menu .body-wrapper, body.open-menu #footer {
 /* line 82, sass/sass/pages/_index.scss */
 #main-banner .title {
   margin: 30px 0 10px;
-  font-size: 25.2px;
-  text-align: underline;
+  font-size: 42px;
+  text-shadow: 1px 1px 1px #999;
+  color: #fff;
 }
 /* line 86, sass/sass/pages/_index.scss */
+/*
 #main-banner .title:hover {
   -webkit-animation: fontColorChange .5s infinite;
-  /* Chrome, Safari, Opera */
   animation: fontColorChange .5s infinite;
 }
+*/
 /* line 91, sass/sass/pages/_index.scss */
 #main-banner .date {
-  font-size: 22.4px;
-  color: #e7eaed;
+  font-size: 20px;
+  color: #fefefe;
   margin-bottom: 10px;
 }
 /* line 96, sass/sass/pages/_index.scss */
 #main-banner .slogan {
   font-weight: bold;
   margin: 0 0 10px 0;
-  font-size: 22.4px;
+  font-size: 18px;
+  color: #444;
 }
 /* line 101, sass/sass/pages/_index.scss */
 #main-banner .desc {
@@ -946,7 +949,7 @@ body.open-menu .body-wrapper, body.open-menu #footer {
   min-height: 250px;
   margin: 0 2% 2% 0;
   padding: 15px;
-  float: left;
+  /* float: left; */
   text-align: left;
   background-color: #e7eaed;
   box-shadow: 0 2px 0 #adb7c1;
