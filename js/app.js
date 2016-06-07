@@ -1,5 +1,5 @@
 (function() {
-    var Cloud, Entity, Scene, Ship, Star,
+    var Cloud, Entity, Scene, Ship, Star, Earth,
         bind = function(fn, me) {
             return function() {
                 return fn.apply(me, arguments);
@@ -133,6 +133,61 @@
 
     })();
 
+    //Earth
+
+    Earth = (function(superClass) {
+        extend(Earth, superClass);
+
+        function Earth() {
+            return Earth.__super__.constructor.apply(this, arguments);
+        }
+
+        Earth.prototype.speedX = 0;
+
+        Earth.prototype.speedY = 0;
+
+        // Earth.prototype.update = function() {
+        //     var cloudPoss, i, j;
+        //     this.fly();
+        //     Earth.__super__.update.apply(this, arguments);
+        //     cloudPoss = Math.random();
+        //     if (cloudPoss > .3) {
+        //         for (i = j = 0; j <= 3; i = ++j) {
+        //             this.createCloud();
+        //         }
+        //     }
+        //     if (cloudPoss > .7) {
+        //         this.createCloud();
+        //     }
+        //     if (cloudPoss > .9) {
+        //         return this.createCloud();
+        //     }
+        // };
+
+        // Earth.prototype.fly = function() {
+        //     if (this.x < this.scene.target.x - 10) {
+        //         this.vx = this.speedX;
+        //     } else if (this.x > this.scene.target.x + 10) {
+        //         this.vx = -this.speedX;
+        //     } else if (this.x >= this.scene.target.x - 10 || this.x <= this.scene.target.x + 10) {
+        //         this.vx = 0;
+        //     }
+        //     if (this.y < this.scene.target.y - 5) {
+        //         return this.vy = this.speedY;
+        //     } else if (this.y > this.scene.target.y + 5) {
+        //         return this.vy = -this.speedY;
+        //     } else if (this.y <= this.scene.target.y + 5 || this.y >= this.scene.target.y - 5) {
+        //         return this.vy = 0;
+        //     }
+        // };
+
+
+        return Earth;
+
+    })(Entity);
+
+    // Ship
+
     Ship = (function(superClass) {
         extend(Ship, superClass);
 
@@ -223,6 +278,8 @@
 
     })(Entity);
 
+    // Cloud
+
     Cloud = (function(superClass) {
         extend(Cloud, superClass);
 
@@ -256,6 +313,8 @@
         return Cloud;
 
     })(Entity);
+
+    // Star
 
     Star = (function(superClass) {
         extend(Star, superClass);
@@ -363,6 +422,7 @@
             star = new Star(scene, x, y, radius, radius, 'star', yellow);
         }
         ship = new Ship(scene, 150, 100, 220, 80, 'shippy');
+        earth = new Earth(scene, 950, 200, 145, 145, 'earthy');
         return setTimeout(function() {
             return scene.target.y = 90;
         }, 1000);

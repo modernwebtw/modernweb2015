@@ -266,6 +266,13 @@ body {
     font-weight: 700;
 }
 
+.earthy {
+    display: block;
+    position: absolute;
+    background: url(../img/ee.png) no-repeat 0 0;
+    z-index: 4;
+}
+
 .shippy {
     display: block;
     position: absolute;
