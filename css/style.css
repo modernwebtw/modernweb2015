@@ -270,14 +270,14 @@ body {
     display: block;
     position: absolute;
     background: url(../img/ee.png) no-repeat 0 0;
-    z-index: 4;
+    z-index: 3;
 }
 
 .shippy {
     display: block;
     position: absolute;
     background: url(../img/rr.png) no-repeat 0 0;
-    z-index: 3;
+    z-index: 4;
 }
 
 .cloud {
