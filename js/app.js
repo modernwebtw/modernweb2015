@@ -1,42 +1,3 @@
-// countdown 
-if (!!$('#countdown')) {
-    // set the date we're counting down to
-    var target_date = new Date("June 17, 2016").getTime();
-
-    // variables for time units
-    var days, hours, minutes, seconds;
-
-    // get tag element
-    var countdown = document.getElementById("countdown");
-
-    // update the tag with id "countdown" every 1 second
-    setInterval(function() {
-
-        // find the amount of "seconds" between now and target
-        var current_date = new Date().getTime();
-        var seconds_left = (target_date - current_date) / 1000;
-
-        // do some time calculations
-        days = parseInt(seconds_left / 86400);
-        seconds_left = seconds_left % 86400;
-
-        hours = parseInt(seconds_left / 3600);
-        seconds_left = seconds_left % 3600;
-
-        minutes = parseInt(seconds_left / 60);
-        seconds = parseInt(seconds_left % 60);
-
-        // format countdown string + set tag value
-        // countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        countdown.innerHTML = days + " days to event";
-
-    }, 1000);
-}
-
-
-
-// end of countdown
-
 // navbar fixed 
 
 jQuery(document).ready(function($) {
@@ -96,43 +57,43 @@ $(function() {
         //     }
         // });
 
-        var SessionTableOpening = [
-            760, //8:50
-            761, //9:00
-            751, //10:00
-        ];
+        // var SessionTableOpening = [
+        //     760, //8:50
+        //     761, //9:00
+        //     751, //10:00
+        // ];
 
-        var SessionTableDay = [
-            [758, 763, 764, 765, 767, 768], //11:00
-            [776], //11:40
-            [786, 787, 788, 789, 774, 769], //11:50
-            [777], //12:30
-            [790, 791, 792, 793, 775, 770], //13:30
-            [778], //14:10
-            [794, 795, 796, 797, 783, 771], //14:20
-            [779], //15:00
-            [798, 802, 803, 799, 784, 772], //15:30
-            [780], //16:10
-            [800, 805, 806, 801, 785, 773], //16:20
-            [781], //17:00
-            [804, '', '', 782, '', ''] // 17:10
-        ];
+        // var SessionTableDay = [
+        //     [758, 763, 764, 765, 767, 768], //11:00
+        //     [776], //11:40
+        //     [786, 787, 788, 789, 774, 769], //11:50
+        //     [777], //12:30
+        //     [790, 791, 792, 793, 775, 770], //13:30
+        //     [778], //14:10
+        //     [794, 795, 796, 797, 783, 771], //14:20
+        //     [779], //15:00
+        //     [798, 802, 803, 799, 784, 772], //15:30
+        //     [780], //16:10
+        //     [800, 805, 806, 801, 785, 773], //16:20
+        //     [781], //17:00
+        //     [804, '', '', 782, '', ''] // 17:10
+        // ];
 
-        var cdexpo = new Vue({
+        var modernweb = new Vue({
             el: 'body',
             data: {
                 sponsorList: [],
                 speakerList: [],
                 articleList: [],
-                SessionTable: result,
-                SessionTableDay: SessionTableDay,
-                SessionTableOpening: SessionTableOpening
+                // SessionTable: result,
+                // SessionTableDay: SessionTableDay,
+                // SessionTableOpening: SessionTableOpening
             }
         });
 
         $.when(confapi.getSponsor(), confapi.getSpeaker()).then(function(Sponsor, Speaker) {
-            cdexpo.$set('sponsorList', Sponsor);
-            cdexpo.$set('speakerList', Speaker);
+            modernweb.$set('sponsorList', Sponsor);
+            modernweb.$set('speakerList', Speaker);
 
             if (!!location.hash) {
                 var tempHash = location.hash;
@@ -159,9 +120,9 @@ $(function() {
             return false;
         });
 
-        $.getJSON("http://www.ithome.com.tw/services/data/list-cloud-news.jsonp?callback=?").then(function(article) {
-            cdexpo.$set('articleList', article);
-        })
+        // $.getJSON("http://www.ithome.com.tw/services/data/list-cloud-news.jsonp?callback=?").then(function(article) {
+        //     modernweb.$set('articleList', article);
+        // })
     });
 });
 
@@ -169,7 +130,7 @@ var confapi = (function() {
     // config
     var Domain = 'http://confapi.ithome.com.tw';
 
-    var NID = '699';
+    var NID = '981';
 
     var LOG = false;
 
