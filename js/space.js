@@ -422,7 +422,7 @@
             star = new Star(scene, x, y, radius, radius, 'star', yellow);
         }
         ship = new Ship(scene, 150, 100, 305, 180, 'shippy');
-        earth = new Earth(scene, 800, 50, 300, 300, 'earthy');
+        // earth = new Earth(scene, 800, 50, 300, 300, 'earthy');
         return setTimeout(function() {
             return scene.target.y = 90;
         }, 1000);
