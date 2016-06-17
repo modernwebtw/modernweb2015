@@ -15,7 +15,7 @@
     <meta property="og:image" content="" />
     <title>Modern Web 2016 ─ 技術在我們手上，世界就在我們手上</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/space.css">
     <link href="css/style.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -109,9 +109,16 @@
         <!-- hidden-xs -->
         <div id='wrapper'>
             <!-- </header> -->
-            <div class='clearfix' id='banner'>
-                <div class='wrap clearfix'>
-                    <h1>2016 <span>ModernWeb</span> With <span>iThome!</span></h1>
+            <div class="clearfix" id="banner">
+                <div class="wrap clearfix" style="z-index: 9999; position: absolute;">
+                    <h1>Modern Web 2016</h1>
+                    <h1>技術在我們手上，世界就在我們手上</h1>
+                    <h1>
+                        <i class="fa fa-calendar"></i>
+                        2016年 8月 24-25日
+                        <i class="fa fa-map-marker"></i>
+                        台北文創
+                    </h1>
                 </div>
                 <img src="img/earth-bg.png" style="position: absolute;right: 0px;bottom: 0px;" class="earth">
             </div>
@@ -184,7 +191,7 @@
                 <div class="container">
                     <div class="row">
                         <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                            <div class="keyspeaker-group">
+                            <div class="keyspeaker-group" v-if="$index % 2 == 0">
                                 <div class="col-md-4 col-xs-4 keyspeaker--infogroup">
                                     <div class=" pic-group">
                                         <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
@@ -206,6 +213,29 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="keyspeaker-group" v-if="$index % 2 == 1">
+                                <div class="col-md-8 col-xs-8 keyspeaker--textgroup">
+                                    <h2>{{ speaker.profile }}</h2>
+                                    <div class="key-text-box">
+                                        <p>{{ speaker.full_profile }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xs-4 col-md-offset-8 col-xs-offset-8 keyspeaker--infogroup">
+                                    <div class=" pic-group">
+                                        <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
+                                        <img :src="speaker.avatar" class="img-circle img-responsive speaker-head"></div>
+                                    <div class="spe-info">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3>{{ speaker.speaker }}</h3>
+                                                <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </template>
                     </div>
                 </div>
@@ -292,22 +322,22 @@
                                     scrollwheel: false,
                                     center: new google.maps.LatLng(25.044554, 121.561825),
                                     styles: [{
-                                       "stylers": [{
-                                           "hue":"#199db4"
+                                      "stylers": [{
+                                          "hue":"#199db4"
                                         }]
                                     }, {
-                                       "featureType":"road",
-                                       "elementType":"labels",
-                                       "stylers": [{
-                                           "visibility":"off"
+                                      "featureType":"road",
+                                      "elementType":"labels",
+                                      "stylers": [{
+                                          "visibility":"off"
                                         }]
                                     }, {
-                                       "featureType":"road",
-                                       "elementType":"geometry",
-                                       "stylers": [{
-                                           "lightness": 100
+                                      "featureType":"road",
+                                      "elementType":"geometry",
+                                      "stylers": [{
+                                          "lightness": 100
                                         }, {
-                                           "visibility":"simplified"
+                                          "visibility":"simplified"
                                         }]
                                     }]
                                 };
