@@ -161,7 +161,7 @@ h2 {
     margin-bottom: 0px;
 }
 
-.navbar-brand {
+#nav .navbar-brand {
     font-size: 30px;
     line-height: 44px;
 }
@@ -462,6 +462,19 @@ h2 {
     color: #ffffff;
 }
 
+.info h4 {
+    border: 2px solid #ffffff;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.info-three {
+    border-right: 1px solid #ffffff;
+}
+
 .keyspeaker-group {
     position: relative;
     display: flex;
@@ -520,6 +533,26 @@ h2 {
 .keyspeaker--textgroup h4 {
     font-weight: bold;
     line-height: 1.6;
+}
+
+.mobile-key-header {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.keyspeaker--textgroup-mobile h3 {
+    padding-left: 1%;
+    margin-left: 3%;
+    border-left: 5px solid #eb5655;
+}
+
+.keyspeaker--textgroup-mobile p {
+    color: #ffffff;
+}
+
+.mobile-key-group {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 
@@ -745,6 +778,13 @@ h2 {
 
 .footer-box {
     padding: 0px;
+}
+
+#footer .fa {
+    font-size: 7vw;
+    padding-left: 37%;
+    padding-top: 10px;
+    color: #ffffff;
 }
 
 #footer .col-xs-4 {
@@ -1084,6 +1124,29 @@ hr {
 /*----sponsors end----*/
 
 /* all -160px (menu width) */
+@media (max-width: 767px) {
+    .info-three {
+        border-right: none;
+        border-bottom: 1px solid #ffffff;
+    }
+    
+    .speakers-name {
+        background-color: #ffffff;
+        border-radius: 6px;
+        border-color: #58c1ef;
+        position: relative;
+        width: 90%;
+        min-width: 150px;
+        min-height: 80px;
+        left: 5%;
+    }
+    
+    .speakers-bg-cicle {
+        min-width: 200px;
+        min-height: 200px;
+        padding-bottom: 4%;
+    }
+}
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -1093,11 +1156,11 @@ hr {
     .container {
         width: 832px;
     }
-
+    
     #ppt .container {
         width: 90%;
     }
-
+    
     .logo-top {
         z-index: 10;
         position: absolute;
@@ -1109,7 +1172,7 @@ hr {
     .container {
         width: 1200px;
     }
-
+    
     .logo-top {
         z-index: 10;
         position: absolute;
