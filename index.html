@@ -243,14 +243,16 @@
                     </div>
                     <template v-for="speaker in speakerList">
                         <template v-if="speaker.role != '關鍵講師'">
-                            <div class="col-md-4 col-xs-6 speakers-group">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
                                 <div class="speakers-bg-cicle">
                                     <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
-                                <div class="speakers-name">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <h3>{{ speaker.speaker }}</h3>
-                                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                <div class="text-center">
+                                    <div class="speakers-name">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h3>{{ speaker.speaker }}</h3>
+                                                <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -524,18 +524,21 @@ h2 {
 #speakers {
     background-color: #58c1ef;
     padding: 6% 2%;
+    float: center;
 }
 
 .speakers-group {
     position: relative;
-    margin-top: 5rem;
+    margin-top: 5em;
 }
 
 .speakers-bg-cicle {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     border-radius: 50%;
-    width: 38vmin;
-    height: 38vmin;
+    /*width: 30vmin;*/
+    min-width: 260px;
+    /*height: 30vmin;*/
+    min-height: 260px;
     position: relative;
 }
 
@@ -545,14 +548,18 @@ h2 {
     left: 21%;
     top: 18%;
     border: 15px solid #3e3e3e;
+    box-shadow: 0 0 0 25px #fff;
 }
 
 .speakers-name {
     background-color: #ffffff;
     border-radius: 6px;
+    border-color: #58c1ef;
     position: absolute;
-    width: 38vmin;
-    bottom: -12%;
+    width: 90%;
+    min-width: 220px;
+    min-height: 100px;
+    bottom: -2%;
 }
 
 
