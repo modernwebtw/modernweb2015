@@ -229,6 +229,7 @@
                                             <div class="col-md-12">
                                                 <h3>{{ speaker.speaker }}</h3>
                                                 <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -237,148 +238,176 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="speakers">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center title-large-w">
-                        <h2>講師陣容</h2>
-                    </div>
-                    <template v-for="speaker in speakerList">
-                        <template v-if="speaker.role != '關鍵講師'">
-                            <div class="col-md-4 col-xs-6 speakers-group">
-                                <div class="speakers-bg-cicle">
-                                    <img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray"></div>
-                                <div class="speakers-name">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <h3>{{ speaker.speaker }}</h3>
-                                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
-                    </template>
-                </div>
-            </div>
-        </div>
-        <div id="signup">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center title-large-r">
-                        <h2>立即購票</h2>
-                    </div>
-                </div>
-                <div class="row sign-table-head hidden-xs hidden-sm">
-                    <div class="col-md-5">票種</div>
-                    <div class="col-md-3">活動日期</div>
-                    <div class="col-md-2">費用</div>
-                    <div class="col-md-2">報名</div>
-                </div>
-                <div class="row sign-table-inside">
-                    <div class="col-md-5">線上優惠票</div>
-                    <div class="col-md-3">6/1 ~ 7/4</div>
-                    <div class="col-md-2">5,990元</div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-default btn-block">立即購票</button>
-                    </div>
-                </div>
-                <div class="row sign-table-inside">
-                    <div class="col-md-5">線上優惠票</div>
-                    <div class="col-md-3">6/1 ~ 7/4</div>
-                    <div class="col-md-2">5,990元</div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-default btn-block">立即購票</button>
-                    </div>
-                </div>
-                <div class="row sign-table-inside">
-                    <div class="col-md-5">線上優惠票</div>
-                    <div class="col-md-3">6/1 ~ 7/4</div>
-                    <div class="col-md-2">5,990元</div>
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-default btn-block">立即購票</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="traffic">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-8" id="map" style="height: 250px;">
-                            <div id="gmap" class="visible-lg"></div>
-                            <img src="img/staticmap.png" class="hidden-lg">
-                            <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-                            <script>
-                            google.maps.event.addDomListener(window, 'load', init);
-
-                            function init() {
-                                var mapOptions = {
-                                    zoom: 17,
-                                    scrollwheel: false,
-                                    center: new google.maps.LatLng(25.044554, 121.561825),
-                                    styles: [{
-                                      "stylers": [{
-                                          "hue":"#199db4"
-                                        }]
-                                    }, {
-                                      "featureType":"road",
-                                      "elementType":"labels",
-                                      "stylers": [{
-                                          "visibility":"off"
-                                        }]
-                                    }, {
-                                      "featureType":"road",
-                                      "elementType":"geometry",
-                                      "stylers": [{
-                                          "lightness": 100
-                                        }, {
-                                          "visibility":"simplified"
-                                        }]
-                                    }]
-                                };
-
-                                var mapElement = document.getElementById('map');
-                                var map = new google.maps.Map(mapElement, mapOptions);
-                                var marker = new google.maps.Marker({
-                                    position: new google.maps.LatLng(25.044554, 121.561825),
-                                    map: map,
-                                    title: ''
-                                });
-                            }
-                            </script>
-                        </div>
-                        <div class="col-md-4" style="margin-top:8%;">
-                            <h3>交通資訊</h3>
-                            <p>台北文創 6F(台北市信義區菸廠路88號 6F)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="footer" class="container-fluid">
-            <div class="col-md-12 footer-box">
-                <div class="col-xs-3 col-md-2 no-p"><img src="img/footerpic.jpg" class="img-responsive fpic"></div>
-                <div class="col-xs-9 col-md-3 box-first">
-                    <h3 class="ftext"><span style="color:#f7d036;font-size:2.5vmin;">6 月 17 日 ( 五 )</span>
-                        <br>臺北文創大樓</h3>
-                    <p class="hidden-lg hidden-md">客服專線：02-25622880#3622 開小姐
-                        <br>（週一至週五，上午10:30~12:00，下午1:30~5:30）
-                        <br>客服信箱：service@mail.ithome.com.tw</p>
-                </div>
-                <div class="col-md-7 hidden-xs hidden-sm">
+            <div id="speakers">
+                <div class="container">
                     <div class="row">
-                        <div class="footer-contec-info col-md-12">
-                            <h3>聯絡 Modern Web 服務小組</h3>
-                            <p>客服專線：02-25622880#3622 開小姐（週一至週五，上午10:30~12:00，下午1:30~5:30）
-                                <br>客服信箱：service@mail.ithome.com.tw</p>
+                        <div class="col-md-12 text-center title-large-w">
+                            <h2>講師陣容</h2>
+                        </div>
+                        <template v-for="speaker in speakerList">
+                            <template v-if="speaker.role != '關鍵講師'">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
+                                    <div class="speakers-bg-cicle">
+                                        <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
+                                    <div class="text-center">
+                                        <div class="speakers-name">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <h3>{{ speaker.speaker }}</h3>
+                                                    <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div id="signup">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center title-large-r">
+                            <h2>立即購票</h2>
+                        </div>
+                    </div>
+                    <div class="row sign-table-head hidden-xs hidden-sm">
+                        <div class="col-md-5">票種</div>
+                        <div class="col-md-3">活動日期</div>
+                        <div class="col-md-2">費用</div>
+                        <div class="col-md-2">報名</div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">早鳥優惠票</div>
+                        <div class="col-md-3">6/20~7/23</div>
+                        <div class="col-md-2">5,990元</div>
+                        <div class="col-md-2">
+                            <a href="https://ec.ithome.com.tw/modernweb2016/class?p=20160031" class="btn btn-default btn-block" role="button">立即購票</a>
+                        </div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">學生獎勵計劃</div>
+                        <div class="col-md-3">6/20~7/8(五) 中午12:00</div>
+                        <div class="col-md-2">免費(30名)</div>
+                        <div class="col-md-2">
+                            <a href="http://ithometw.kktix.cc/events/mw2016-student-program" class="btn btn-default btn-block" role="button">立即申請</a>
+                        </div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">iThome CIO 優惠碼優待票</div>
+                        <div class="col-md-3">6/20~8/23</div>
+                        <div class="col-md-2">1,990元</div>
+                        <div class="col-md-2">
+                            <a href="https://ec.ithome.com.tw/modernweb2016/class?p=20160033" class="btn btn-default btn-block" role="button">立即購票</a>
+                        </div>
+                        <div class="col-md-10 col-md-offset-2 note text-left">
+                            附註：* CIO 優惠碼優待票是 iThome 與 CIO 們進行封閉性產業交流時，回饋給參與者的致謝禮。若您也是希望與 iThome 有更多交流互惠的CIO，或者您遺失了我們發送給您的優惠碼，都歡迎留言至客服信箱，讓我們與您聯繫: <a href="mailto:service@mail.ithome.com.tw" class="mail">service@mail.ithome.com.tw</a>
+                        </div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">線上優惠票</div>
+                        <div class="col-md-3">7/24~8/23</div>
+                        <div class="col-md-2">6,990元</div>
+                        <div class="col-md-2">
+                            <a href="https://ec.ithome.com.tw/modernweb2016/class?p=20160032" class="btn btn-default btn-block btn-disabled" role="button">尚未開賣</a>
+                        </div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">團體票（5人以上)</div>
+                        <div class="col-md-3">7/24~8/23</div>
+                        <div class="col-md-2">6,490元</div>
+                        <div class="col-md-2">
+                            <a href="#" class="btn btn-info btn-block" disabled="disabled" role="button">尚未開賣</a>
+                        </div>
+                    </div>
+                    <div class="row sign-table-inside">
+                        <div class="col-md-5">8/24、8/25</div>
+                        <div class="col-md-3">8/24、8/25</div>
+                        <div class="col-md-2">12,000元</div>
+                        <div class="col-md-2">
+                            <a href="#" class="btn btn-info btn-block" disabled="disabled" role="button">尚未開賣</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--  <div id="sponsor">
+            <div id="traffic">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8" id="map" style="height: 250px;">
+                                <div id="gmap" class="visible-lg"></div>
+                                <img src="img/staticmap.png" class="hidden-lg">
+                                <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+                                <script>
+                                google.maps.event.addDomListener(window, 'load', init);
+
+                                function init() {
+                                    var mapOptions = {
+                                        zoom: 17,
+                                        scrollwheel: false,
+                                        center: new google.maps.LatLng(25.044554, 121.561825),
+                                        styles: [{
+                                            "stylers": [{
+                                                "hue": "#199db4"
+                                            }]
+                                        }, {
+                                            "featureType": "road",
+                                            "elementType": "labels",
+                                            "stylers": [{
+                                                "visibility": "off"
+                                            }]
+                                        }, {
+                                            "featureType": "road",
+                                            "elementType": "geometry",
+                                            "stylers": [{
+                                                "lightness": 100
+                                            }, {
+                                                "visibility": "simplified"
+                                            }]
+                                        }]
+                                    };
+
+                                    var mapElement = document.getElementById('map');
+                                    var map = new google.maps.Map(mapElement, mapOptions);
+                                    var marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(25.044554, 121.561825),
+                                        map: map,
+                                        title: ''
+                                    });
+                                }
+                                </script>
+                            </div>
+                            <div class="col-md-4" style="margin-top:8%;">
+                                <h3>交通資訊</h3>
+                                <p>台北文創 6F(台北市信義區菸廠路88號 6F)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="container-fluid">
+                <div class="col-md-12 footer-box">
+                    <div class="col-xs-3 col-md-2 no-p"><img src="img/footerpic.jpg" class="img-responsive fpic"></div>
+                    <div class="col-xs-9 col-md-3 box-first">
+                        <h3 class="ftext"><span style="color:#f7d036;font-size:2.5vmin;">6 月 17 日 ( 五 )</span>
+                        <br>臺北文創大樓</h3>
+                        <p class="hidden-lg hidden-md">客服專線：02-25622880#3622 開小姐
+                            <br>（週一至週五，上午10:30~12:00，下午1:30~5:30）
+                            <br>客服信箱：service@mail.ithome.com.tw</p>
+                    </div>
+                    <div class="col-md-7 hidden-xs hidden-sm">
+                        <div class="row">
+                            <div class="footer-contec-info col-md-12">
+                                <h3>聯絡 Modern Web 服務小組</h3>
+                                <p>客服專線：02-25622880#3622 開小姐（週一至週五，上午10:30~12:00，下午1:30~5:30）
+                                    <br>客服信箱：service@mail.ithome.com.tw</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  <div id="sponsor">
             <div class="fullscreen-wrap2">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
@@ -460,7 +489,6 @@
     //     a.src = g;
     //     m.parentNode.insertBefore(a, m)
     // })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
     // ga('create', 'UA-48349256-6', 'auto');
     // ga('send', 'pageview');
     </script>
