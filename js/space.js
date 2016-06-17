@@ -381,31 +381,31 @@
                 };
             }
         });
-        $(window).on('scroll', function() {
-            var entity, j, len, opac, ref, results, scrollBy, scrollT;
-            scrollT = $(this).scrollTop();
-            dScroll = scrollT - scroll_amt;
-            scroll_amt = scrollT;
-            scrollBy = (scrollT * 1.5) + parseInt(titleTop);
-            opac = 1.2 - (scrollBy / (title.parent().parent().outerHeight() - 50));
-            title.css({
-                'margin-top': scrollBy,
-                'opacity': opac
-            });
-            if (scenes[0]) {
-                ref = scenes[0].entities;
-                results = [];
-                for (j = 0, len = ref.length; j < len; j++) {
-                    entity = ref[j];
-                    if (entity.classname === 'star') {
-                        results.push(entity.y -= dScroll * (.5 * entity.w));
-                    } else {
-                        results.push(void 0);
-                    }
-                }
-                return results;
-            }
-        });
+        // $(window).on('scroll', function() {
+        //     var entity, j, len, opac, ref, results, scrollBy, scrollT;
+        //     scrollT = $(this).scrollTop();
+        //     dScroll = scrollT - scroll_amt;
+        //     scroll_amt = scrollT;
+        //     scrollBy = (scrollT * 1.5) + parseInt(titleTop);
+        //     opac = 1.2 - (scrollBy / (title.parent().parent().outerHeight() - 50));
+        //     title.css({
+        //         'margin-top': scrollBy,
+        //         'opacity': opac
+        //     });
+        //     if (scenes[0]) {
+        //         ref = scenes[0].entities;
+        //         results = [];
+        //         for (j = 0, len = ref.length; j < len; j++) {
+        //             entity = ref[j];
+        //             if (entity.classname === 'star') {
+        //                 results.push(entity.y -= dScroll * (.5 * entity.w));
+        //             } else {
+        //                 results.push(void 0);
+        //             }
+        //         }
+        //         return results;
+        //     }
+        // });
         cont = document.getElementById('banner');
         scene = new Scene(cont);
         scenes.push(scene);
