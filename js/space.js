@@ -205,16 +205,16 @@
             Ship.__super__.update.apply(this, arguments);
             cloudPoss = Math.random();
             if (cloudPoss > .3) {
-                for (i = j = 0; j <= 3; i = ++j) {
+                for (i = j = 0; j <= 1; i = ++j) {
                     this.createCloud();
                 }
             }
-            if (cloudPoss > .7) {
-                this.createCloud();
-            }
-            if (cloudPoss > .9) {
-                return this.createCloud();
-            }
+            // if (cloudPoss > .7) {
+            //     this.createCloud();
+            // }
+            // if (cloudPoss > .9) {
+            //     return this.createCloud();
+            // }
         };
 
         Ship.prototype.fly = function() {
@@ -414,7 +414,7 @@
             x: 400,
             y: 180
         };
-        for (i = j = 1; j <= 200; i = ++j) {
+        for (i = j = 1; j <= 100; i = ++j) {
             x = Math.random() * scene.w;
             y = Math.random() * scene.h;
             radius = 4 * Math.random();
