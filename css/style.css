@@ -161,6 +161,11 @@ h2 {
     margin-bottom: 0px;
 }
 
+.navbar-brand {
+    font-size: 30px;
+    line-height: 44px;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         min-height: 90px;
@@ -496,7 +501,7 @@ h2 {
 
 .key-text-box {
     background-color: #eb5655;
-    padding: 2% 3%;
+    padding: 2% 4%;
 }
 
 .keyspeaker--textgroup h2 {
@@ -508,6 +513,8 @@ h2 {
 .keyspeaker--textgroup p,
 .keyspeaker--textgroup h4 {
     color: #ffffff;
+    font-size: 20px;
+    line-height: 36px;
 }
 
 .keyspeaker--textgroup h4 {
@@ -1086,11 +1093,11 @@ hr {
     .container {
         width: 832px;
     }
-    
+
     #ppt .container {
         width: 90%;
     }
-    
+
     .logo-top {
         z-index: 10;
         position: absolute;
@@ -1102,7 +1109,7 @@ hr {
     .container {
         width: 1200px;
     }
-    
+
     .logo-top {
         z-index: 10;
         position: absolute;
