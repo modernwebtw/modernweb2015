@@ -1,97 +1,14 @@
-// countdown 
-if (!!$('#countdown')) {
-    // set the date we're counting down to
-    var target_date = new Date("June 17, 2016").getTime();
-
-    // variables for time units
-    var days, hours, minutes, seconds;
-
-    // get tag element
-    var countdown = document.getElementById("countdown");
-
-    // update the tag with id "countdown" every 1 second
-    setInterval(function() {
-
-        // find the amount of "seconds" between now and target
-        var current_date = new Date().getTime();
-        var seconds_left = (target_date - current_date) / 1000;
-
-        // do some time calculations
-        days = parseInt(seconds_left / 86400);
-        seconds_left = seconds_left % 86400;
-
-        hours = parseInt(seconds_left / 3600);
-        seconds_left = seconds_left % 3600;
-
-        minutes = parseInt(seconds_left / 60);
-        seconds = parseInt(seconds_left % 60);
-
-        // format countdown string + set tag value
-        // countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        countdown.innerHTML = days + " days to event";
-
-    }, 1000);
-}
-
-
-
-// end of countdown
-
-// navbar fixed 
-
-jQuery(document).ready(function($) {
-
-    // Fixa navbar ao ultrapassa-lo
-    var navbar = $('#nav'),
-        distance = navbar.offset().top,
-        $window = $(window);
-
-    $window.scroll(function() {
-        if ($window.scrollTop() >= distance) {
-            navbar.css('position', 'fixed');
-            // navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
-            // $("body").css("padding-top", "200px");
-        } else {
-            navbar.css('position', 'relative');
-            // navbar.removeClass('navbar-fixed-top');
-            // $("body").css("padding-top", "0px");
-        }
-    });
-
-});
-
 $(function() {
-    Vue.filter('rank', function(data, rank) {
-        return $.grep(data, function(obj) {
-            return (obj.rank == rank) ? obj : null;
-        });
-    });
 
-    Vue.filter('tag', function(data, tag) {
-        return $.grep(data, function(obj) {
-            var checkTag = null;
-            $.each(obj.tags, function(i, v) {
-                if (v == tag) {
-                    checkTag = obj;
-                }
-            });
-            return checkTag;
-        });
-    });
-
-    Vue.filter('filter', function(obj, field, value) {
-        return $.grep(Object.keys(obj), function(key) {
-            var checkData = null;
-            if (obj[key][field] == value) {
-                checkData = obj;
-            }
-            return checkData;
-        });
+    $('.typeClass').click(function() {
+        var link = $(this).data('href');
+        parent.location.href = parent.location.origin + '/' + link;
+        return false;
     });
 
     confapi.getSessionAndSpeaker().then(function(result) {
         // $.each(result, function(i, v) {
-        //     if (v.start_time == '17:10') {
+        //     if (v['start_time'] == '17:10') {
         //         console.log(i, v.track);
         //     }
         // });
@@ -104,64 +21,98 @@ $(function() {
 
         var SessionTableDay = [
             [758, 763, 764, 765, 767, 768], //11:00
-            [776], //11:40
             [786, 787, 788, 789, 774, 769], //11:50
-            [777], //12:30
             [790, 791, 792, 793, 775, 770], //13:30
-            [778], //14:10
             [794, 795, 796, 797, 783, 771], //14:20
-            [779], //15:00
             [798, 802, 803, 799, 784, 772], //15:30
-            [780], //16:10
             [800, 805, 806, 801, 785, 773], //16:20
-            [781], //17:00
             [804, '', '', 782, '', ''] // 17:10
+        ];
+
+        var FormValueDay = [
+            ['A1', 'B1', 'C1', 'D1', 'E1', 'F1'],
+            ['A2', 'B2', 'C2', 'D2', 'E2', 'F2'],
+            ['A3', 'B3', 'C3', 'D3', 'E3', 'F3'],
+            ['A4', 'B4', 'C4', 'D4', 'E4', 'F4'],
+            ['A5', 'B5', 'C5', 'D5', 'E5', 'F5'],
+            ['A6', 'B6', 'C6', 'D6', 'E6', 'F6'],
+            ['A7', '', '', 'D7', '', '']
         ];
 
         var cdexpo = new Vue({
             el: 'body',
             data: {
-                sponsorList: [],
-                speakerList: [],
-                articleList: [],
                 SessionTable: result,
                 SessionTableDay: SessionTableDay,
-                SessionTableOpening: SessionTableOpening
+                SessionTableOpening: SessionTableOpening,
+                FormValueDay: FormValueDay
             }
         });
 
-        $.when(confapi.getSponsor(), confapi.getSpeaker()).then(function(Sponsor, Speaker) {
-            cdexpo.$set('sponsorList', Sponsor);
-            cdexpo.$set('speakerList', Speaker);
+        Vue.nextTick(function() {
+            $('.day_1_layout')
+                .find('tr:has(td:contains("17:10-17:40"))')
+                .find('.selcou')
+                .addClass('disabled');
 
-            if (!!location.hash) {
-                var tempHash = location.hash;
-                // location.hash = '';
-                Vue.nextTick(function() {
-                    var nrOfImages = $(".speker-pic > img").length;
-                    if (!!nrOfImages) {
-                        $(".speker-pic > img").load(function() {
-                            if (--nrOfImages == 0) {
-                                // Function goes here
-                                goScroll(tempHash);
-                            }
-                        });
-                    } else {
-                        goScroll(tempHash);
+            $('.day_1_layout')
+                .find('td:contains("敬請期待")')
+                .addClass('disabled');
+            $('.day_1_layout')
+                .find('td:contains("體驗課程")')
+                .addClass('disabled');
+
+            // Verify
+            var selcouVerify = function() {
+                $('tr:has(td.selcou)').map(function(i, tr) {
+                    var TR = $(this);
+                    var Count_Selcou = TR.find('.selcou').length;
+                    var Count_Disabled = TR.find('.disabled').length;
+                    var Count_Active = TR.find('.active').length;
+
+                    if ((Count_Selcou - Count_Disabled) > 0) {
+                        $(this).find('td').eq(0).find('.error').remove();
+                        if (Count_Active < 1) {
+                            $(this).find('td').eq(0).append('<div class="error" style="color: red">請選擇議程</div>');
+                        }
                     }
                 });
-            }
-        });
 
-        $('.linkPage').click(function() {
-            var target = $(this).find('a').attr('href');
-            goScroll(target);
-            return false;
-        });
+                var day = $('.day_1_layout:visible').find('.error').length;
 
-        $.getJSON("http://www.ithome.com.tw/services/data/list-cloud-news.jsonp?callback=?").then(function(article) {
-            cdexpo.$set('articleList', article);
-        })
+                $('#submit').removeClass('disabled').prop('disabled', false);
+                if ((day) > 0) {
+                    $('#submit').addClass('disabled').prop('disabled', true);
+                }
+            };
+
+            $('.selcou').click(function() {
+                var $this = $(this);
+
+                var isDisabled = $this.hasClass('disabled');
+
+                if (isDisabled) {
+                    return false;
+                }
+
+                var isSelected = $this.hasClass('active');
+
+                if (isSelected) {
+                    $this.removeClass('active');
+                    $('[value="' + $this.data('value') + '"]').prop('checked', false);
+                } else {
+                    // var old = $this.parent('tr').find('.active');
+                    // old.removeClass('active');
+                    // $('[value="' + old.data('value') + '"]').prop('checked', false);
+                    $this.addClass('active');
+                    $('[value="' + $this.data('value') + '"]').prop('checked', true);
+                }
+
+                selcouVerify();
+            });
+
+            selcouVerify();
+        });
     });
 });
 
@@ -276,8 +227,6 @@ var confapi = (function() {
 
                     rowData['logo'] = Domain + rowData['logo'];
 
-                    rowData['hash_path'] = 'sponsors.html#s' + rowData['official_site_title'];
-
                     return rowData;
                 });
             });
@@ -324,15 +273,3 @@ var confapi = (function() {
         }
     }
 }());
-
-function goScroll(target) {
-    var target_top = $(target).offset().top;
-    var header_height = $('#nav').height() + $('#navXs').height();
-    var sTop = target_top - header_height;
-
-    $("html, body").stop().animate({
-        scrollTop: sTop
-    }, 1000, function() {
-        location.hash = target;
-    });
-}
