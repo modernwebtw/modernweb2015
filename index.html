@@ -247,52 +247,23 @@
                 </template>
             </div>
             <div class="row hidden-md hidden-lg">
-                <div class="col-md-12 mobile-key-group">
-                    <div class="mobile-key-header">
-                        <div class=" pic-group ">
-                            <img src="img/speaker-test.jpg " class="img-circle img-responsive " style="margin:0 auto;"></div>
-                        <h2>Douglas Crockford</h2>
-                        <h5>PayPal</h5></div>
-                    <div class="mobile-key-body keyspeaker--textgroup-mobile">
-                        <h3>JSON、JSLint 的開創者</h3>
-                        <div class="key-text-box ">
-                            <p>Douglas Crockford 出生在美國明尼蘇達的Frostbite Falls，不過由於氣候實在太～～冷了，於是在他6個月大時離開了那裡。當他有天發現有電腦這個東西時，便毅然决然離開看似前程似錦的電視產業。他曾投入學習系統、小型商業系統、辦公室自動化、遊戲、互動式音樂、多媒體、行動定位娛樂、社交系統以及程式語言。他是Tilton語言－－一個不是刻意為之，卻演變成最醜的程式語言－－的發明者。他最為人所熟知的，是發掘出JavaScript的優良部份，這是個重要但意外的發現。他同時也發掘了JSON，這世上最被喜愛的資料交換格式。目前他正致力於讓Web成為一個更安全、可靠的軟體傳遞平臺，而他非常適合這樣的工作。Douglas Crockford任職於PayPal。
-                            </p>
+                <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
+                    <div class="col-md-12 mobile-key-group">
+                        <div class="mobile-key-header">
+                            <div class=" pic-group speakers-bg-cicle">
+                                <img :src="speaker.avatar" class="img-circle img-responsive"></div>
+                            <h2>{{ speaker.speaker }}</h2>
+                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                            <div class="mobile-key-body keyspeaker--textgroup-mobile">
+                                <h3>{{ speaker.profile }}</h3>
+                                <div class="key-text-box ">
+                                    <p>{{ speaker.full_profile }}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row hidden-md hidden-lg">
-                <div class="col-md-12 mobile-key-group">
-                    <div class="mobile-key-header">
-                        <div class=" pic-group ">
-                            <img src="img/speaker-test.jpg " class="img-circle img-responsive " style="margin:0 auto;"></div>
-                        <h2>Douglas Crockford</h2>
-                        <h5>PayPal</h5></div>
-                    <div class="mobile-key-body keyspeaker--textgroup-mobile">
-                        <h3>JSON、JSLint 的開創者</h3>
-                        <div class="key-text-box ">
-                            <p>Douglas Crockford 出生在美國明尼蘇達的Frostbite Falls，不過由於氣候實在太～～冷了，於是在他6個月大時離開了那裡。當他有天發現有電腦這個東西時，便毅然决然離開看似前程似錦的電視產業。他曾投入學習系統、小型商業系統、辦公室自動化、遊戲、互動式音樂、多媒體、行動定位娛樂、社交系統以及程式語言。他是Tilton語言－－一個不是刻意為之，卻演變成最醜的程式語言－－的發明者。他最為人所熟知的，是發掘出JavaScript的優良部份，這是個重要但意外的發現。他同時也發掘了JSON，這世上最被喜愛的資料交換格式。目前他正致力於讓Web成為一個更安全、可靠的軟體傳遞平臺，而他非常適合這樣的工作。Douglas Crockford任職於PayPal。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row hidden-md hidden-lg">
-                <div class="col-md-12 mobile-key-group">
-                    <div class="mobile-key-header">
-                        <div class=" pic-group ">
-                            <img src="img/speaker-test.jpg " class="img-circle img-responsive " style="margin:0 auto;"></div>
-                        <h2>Douglas Crockford</h2>
-                        <h5>PayPal</h5></div>
-                    <div class="mobile-key-body keyspeaker--textgroup-mobile">
-                        <h3>JSON、JSLint 的開創者</h3>
-                        <div class="key-text-box ">
-                            <p>Douglas Crockford 出生在美國明尼蘇達的Frostbite Falls，不過由於氣候實在太～～冷了，於是在他6個月大時離開了那裡。當他有天發現有電腦這個東西時，便毅然决然離開看似前程似錦的電視產業。他曾投入學習系統、小型商業系統、辦公室自動化、遊戲、互動式音樂、多媒體、行動定位娛樂、社交系統以及程式語言。他是Tilton語言－－一個不是刻意為之，卻演變成最醜的程式語言－－的發明者。他最為人所熟知的，是發掘出JavaScript的優良部份，這是個重要但意外的發現。他同時也發掘了JSON，這世上最被喜愛的資料交換格式。目前他正致力於讓Web成為一個更安全、可靠的軟體傳遞平臺，而他非常適合這樣的工作。Douglas Crockford任職於PayPal。
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </div>
@@ -305,7 +276,7 @@
                 <template v-for="speaker in speakerList">
                     <template v-if="speaker.role != '關鍵講師'">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
-                            <div class="speakers-bg-cicle">
+                            <div class="speakers-bg-cicle ">
                                 <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
                             <div class="text-center">
                                 <div class="speakers-name">
