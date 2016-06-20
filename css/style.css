@@ -455,14 +455,15 @@ h2 {
     position: relative;
 }
 
-.info,
+#info,
 #traffic {
     background-color: #1da8bd;
-    padding: 2rem 3rem;
     color: #ffffff;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-.info h4 {
+#info h4 {
     border: 2px solid #ffffff;
     padding: 10px;
     color: #ffffff;
@@ -471,14 +472,15 @@ h2 {
     font-weight: 800;
 }
 
-.info-three {
+
+/*.info-three {
     border-right: 1px solid #ffffff;
-}
+}*/
 
 .keyspeaker-group {
     position: relative;
     display: flex;
-    margin-top: 3rem;
+    margin-top: 40px;
 }
 
 .keyspeaker--textgroup {
@@ -844,7 +846,7 @@ h2 {
     border-right: 56px solid #51b4df;
     border-top: 9.7rem solid transparent;
     border-bottom: 0px solid transparent;
-    left: -5%;
+    left: -56px;
     top: 0%;
     z-index: 1;
 }
@@ -1125,12 +1127,20 @@ hr {
 /*----sponsors end----*/
 
 /* all -160px (menu width) */
-@media (max-width: 767px) {
-    .info-three {
-        border-right: none;
-        border-bottom: 1px solid #ffffff;
+@media (max-width: 320px) {
+    .title-large-w h2,
+    .title-large-r h2 {
+        font-size: 25px;
     }
     
+    .title-large-w h2::before,
+    .title-large-w h2::after,
+    .title-large-r h2::before,
+    .title-large-r h2::after {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
     .speakers-name {
         background-color: #ffffff;
         border-radius: 6px;
@@ -1146,6 +1156,35 @@ hr {
         min-width: 200px;
         min-height: 200px;
         padding-bottom: 4%;
+    }
+    
+    .title-large-w h2,
+    .title-large-r h2 {
+        font-size: 35px;
+    }
+}
+@media (max-width: 1024px) {
+    .keyspeaker--textgroup p {
+        font-size: 16px;
+    }
+    
+    .footer-contec-info p {
+        font-size: 14px;
+    }
+    
+    .footer-contec-info h3 {
+        font-size: 20px;
+    }
+    
+    .footer-contec-info::before {
+        content: "";
+        position: absolute;
+        border-right: 59px solid #51b4df;
+        border-top: 9.7rem solid transparent;
+        border-bottom: 0px solid transparent;
+        left: -56px;
+        top: 0%;
+        z-index: 1;
     }
 }
 @media (min-width: 768px) {
