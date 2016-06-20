@@ -149,7 +149,7 @@ h2 {
     background-color: #1e1e1e;
     min-height: 71px;
     width: 100%;
-    z-index: 9;
+    z-index: 1200;
 }
 
 .btn-bar {
