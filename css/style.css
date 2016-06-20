@@ -159,6 +159,7 @@ h2 {
 .navbar {
     display: inline-flex;
     margin-bottom: 0px;
+    border: none;
 }
 
 #nav .navbar-brand {
@@ -185,7 +186,7 @@ h2 {
 .nav>li>a:hover {
     text-decoration: none;
     background-color: #121111;
-    border-bottom: 4px solid #f2ad32;
+    border-bottom: 5px solid #f2ad32;
     color: #ffffff;
 }
 
@@ -222,7 +223,7 @@ h2 {
     background-color: #fcb623;
     color: #242424;
     font-weight: bold;
-    border-bottom: 4px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
 }
 
 
