@@ -25,9 +25,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
-<body id="indexPage">
+<body id="app" v-cloak>
     <!-- <div id='wrapper'>
         <div class='clearfix' id='banner'>
             <div class='wrap clearfix'>
@@ -178,16 +183,16 @@
 <p>Modern Web 2016秉持這樣的信念，持續扮演推手的角色，邀請來自世界各地的大師、中國Web界的專家、台灣的高手們，希望為台灣Web發展碰撞出更多想法。</p>
 <p>在Web狂飆進擊的時代，舊的秩序正在不斷瓦解，然而技術在我們手上，世界就在我們手上。因為有眾人的熱血投身參與，新的時代將從我們的手中建立。</p>
  -->
-                            <h3 style="text-align:center;padding:3%;font-size:40px;">Modern Web 2016特色</h3>
-                            
-                            
-                           
+                            <h3 style="text-align:center;padding:3%;font-size:40px;">Modern Web 2016特色{{ ttttt }}</h3>
+
+
+
                         </div>
                         <div class="col-md-4  info-three"><h4 class="text-center">世界級大師揭示Web發展動態</h4>
                             <p>JSON、JSLint的開創者，經典之作《JavaScript：優良部份》作者Douglas Crockford，以及來自Google及Nginx等公司的高手，揭示Web發展的啟發性想法</p></div>
                             <div class="col-md-4 info-three"><h4 class="text-center">中國Web/電子商務專家齊聚</h4>
                             <p>來自中國阿里巴巴、騰訊、京東、當當網、搜狗、58趕集、廣發證券...等公司的專家，完全解密他們在Web產業的實踐經驗</p></div>
-                            <div class="col-md-4 "> <h4 class="text-center">台灣業界高手不藏私分享</h4>
+                            <div class="col-md-4"> <h4 class="text-center">台灣業界高手不藏私分享</h4>
                             <p>台灣Web界的高手們，帶來過去這一年來他們在網站開發、維運、應用上的心得及技巧，絕對不藏私，完全熱血分享</p></div>
                     </div></div>
                 </div>
@@ -251,12 +256,13 @@
                     <div class="col-md-12 mobile-key-group">
                         <div class="mobile-key-header">
                             <div class=" pic-group speakers-bg-cicle">
-                                <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
+                                <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;">
+                            </div>
                             <h2>{{ speaker.speaker }}</h2>
                             <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
                             <div class="mobile-key-body keyspeaker--textgroup-mobile">
                                 <h3>{{ speaker.profile }}</h3>
-                                <div class="key-text-box ">
+                                <div class="key-text-box">
                                     <p>{{ speaker.full_profile }}
                                     </p>
                                 </div>
@@ -273,23 +279,22 @@
                 <div class="col-md-12 text-center title-large-w">
                     <h2>講師陣容</h2>
                 </div>
-                <template v-for="speaker in speakerList">
-                    <template v-if="speaker.role != '關鍵講師'">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
-                            <div class="speakers-bg-cicle ">
-                                <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
-                            <div class="text-center">
-                                <div class="speakers-name">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <h3>{{ speaker.speaker }}</h3>
-                                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                        </div>
+                <template v-for="speaker in speakerList | filterBy '講師' in 'role'">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
+                        <div class="speakers-bg-cicle">
+                            <img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray">
+                        </div>
+                        <div class="text-center">
+                            <div class="speakers-name">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h3>{{ speaker.speaker }}</h3>
+                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </template>
+                    </div>
                 </template>
             </div>
         </div>
@@ -377,22 +382,22 @@
                                 scrollwheel: false,
                                 center: new google.maps.LatLng(25.044554, 121.561825),
                                 styles: [{
-                                    "stylers": [{
-                                        "hue": "#199db4"
+                                   "stylers": [{
+                                       "hue":"#199db4"
                                     }]
                                 }, {
-                                    "featureType": "road",
-                                    "elementType": "labels",
-                                    "stylers": [{
-                                        "visibility": "off"
+                                   "featureType":"road",
+                                   "elementType":"labels",
+                                   "stylers": [{
+                                       "visibility":"off"
                                     }]
                                 }, {
-                                    "featureType": "road",
-                                    "elementType": "geometry",
-                                    "stylers": [{
-                                        "lightness": 100
+                                   "featureType":"road",
+                                   "elementType":"geometry",
+                                   "stylers": [{
+                                       "lightness": 100
                                     }, {
-                                        "visibility": "simplified"
+                                       "visibility":"simplified"
                                     }]
                                 }]
                             };
@@ -417,13 +422,13 @@
     </div>
     <div id="footer" class="container-fluid">
         <div class="col-md-12 footer-box">
-            <div class="col-xs-4 col-md-2 no-p ">
+            <div class="col-xs-4 col-md-2 no-p">
                 <i class="fa fa-calendar" aria-hidden="true"></i></div>
             <div class="col-xs-8 col-md-3 box-first">
                 <h3 class="ftext"><span style="color:#f7d036;font-size:2.5vmin;">8 月 24-25 日 (三、四)</span>
                         <br>臺北文創大樓</h3>
             </div>
-            <div class="col-xs-12 hidden-lg hidden-md " style="color:#ffffff;font-size: 2.8vmin;">
+            <div class="col-xs-12 hidden-lg hidden-md" style="color:#ffffff;font-size: 2.8vmin;">
                 <p>客服專線：02-25622880#3622 開小姐
                     <br>（週一至週五，上午10:30~12:00，下午1:30~5:30）
                     <br>客服信箱：service@mail.ithome.com.tw</p>
@@ -507,7 +512,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/vue.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/space.js"></script>
+    <!-- <script src="js/space.js"></script> -->
+    <script src="js/confapi.js"></script>
     <script src="js/app.js"></script>
     <script>
     (function(i, s, o, g, r, a, m) {
