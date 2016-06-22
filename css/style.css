@@ -657,7 +657,22 @@ h2 {
 #sponsor {
     padding: 2% 0%;
     position: relative;
-    background-color: #ffffff;
+    background-color: #f7f6ef;
+
+}
+
+#sponsor  h3.first {
+    margin-top: 30px;
+}
+
+#sponsor  h3 {
+    margin: 80px 0 20px;
+    color: #444;
+}
+
+#sponsor .logo-items img {
+    width: 200px;
+    margin-right: 60px;
 }
 
 .spon-logo-img {
