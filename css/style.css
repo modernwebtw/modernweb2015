@@ -140,6 +140,18 @@ h2 {
     margin-top: 13%
 }
 
+.title-large-m h2::before {
+    content: "";
+    left: -150%;
+    margin-top: 13%
+}
+
+.title-large-m h2::after {
+    content: "";
+    right: -150%;
+    margin-top: 13%
+}
+
 
 /*nav*/
 
@@ -658,14 +670,13 @@ h2 {
     padding: 2% 0%;
     position: relative;
     background-color: #f7f6ef;
-
 }
 
-#sponsor  h3.first {
+#sponsor h3.first {
     margin-top: 30px;
 }
 
-#sponsor  h3 {
+#sponsor h3 {
     margin: 80px 0 20px;
     color: #444;
 }
