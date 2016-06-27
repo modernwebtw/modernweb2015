@@ -118,6 +118,7 @@ h2 {
     color: #eb5655;
     font-size: 40px;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .title-large-r h2::before,
@@ -569,6 +570,33 @@ h2 {
 .mobile-key-group {
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+.key-text-box-speaker {
+    background-color: #eb5655;
+    padding: 1% 2%;
+    max-height: 416px;
+}
+
+.key-text-box-speaker p {
+    font-size: 15px;
+    color: #fff;
+    line-height: 25px;
+}
+
+.session-box {
+    max-height: 416px;
+    padding: 0.3% 2%;
+    background-color: #ffffff;
+}
+
+.session-box h4 {
+    color: #eb5655;
+}
+
+.session-box p {
+    color: #777;
+    font-size: 15px;
 }
 
 
