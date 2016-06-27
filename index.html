@@ -267,6 +267,33 @@
             </div>
         </div>
     </div>
+    <div id="china-speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center title-large-c">
+                    <h2>特色議程：中國Web技術日</h2>
+                    <p class="china-speakers">
+                        Modern Web 2016　特別企劃，邀請中國Web/電子商務專家在 8/25 以雙軌方式進行，包含前端、後端、架構等多面向的精彩議程，揭露許多實戰的寶貴經驗。</p>
+                </div>
+                <template v-for="speaker in speakerList | tag '中國'">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
+                        <div class="speakers-bg-cicle ">
+                            <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
+                        <div class="text-center">
+                            <div class="speakers-name">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h3>{{ speaker.speaker }}</h3>
+                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
     <div id="speakers">
         <div class="container">
             <div class="row">
@@ -416,22 +443,21 @@
         </div>
     </div>
     <div id="sponsor">
-            <div class="fullscreen-wrap2">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <!-- <div class="text-center"><img src="img/icon/sponsor01.png"></div> -->
-                        <div class="text-center">
-                            <h3 class="first">主辦單位</h3>
-                            <div style="display: inline-block;"><img src="img/logos/ithome.png" class="img-responsive"></div>
-                            <h3>協辦單位</h3>
-                            <div class="logo-items">
-                                <img src="img/logos/geekbang_logo.png">
-                                <img src="img/logos/infoq_logo.png" width="180">
-                            </div>
-
+        <div class="fullscreen-wrap2">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <!-- <div class="text-center"><img src="img/icon/sponsor01.png"></div> -->
+                    <div class="text-center">
+                        <h3 class="first">主辦單位</h3>
+                        <div style="display: inline-block;"><img src="img/logos/ithome.png" class="img-responsive"></div>
+                        <h3>協辦單位</h3>
+                        <div class="logo-items">
+                            <img src="img/logos/geekbang_logo.png">
+                            <img src="img/logos/infoq_logo.png" width="180">
                         </div>
                     </div>
-                    <!--
+                </div>
+                <!--
                     <div class="col-md-12 text-center" id="title">
                         <h2 class="title-red">贊助廠商</h2>
                     </div>
@@ -485,13 +511,11 @@
                         </div>
                     </div>
                     -->
-                </div>
             </div>
-        </div> 
-    </div> <!-- sponsor --->
-
-
-
+        </div>
+    </div>
+    </div>
+    <!-- sponsor --->
     <div id="footer" class="container-fluid">
         <div class="col-md-12 footer-box">
             <div class="col-xs-4 col-md-2 no-p ">
@@ -522,15 +546,22 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/space.js"></script>
     <script src="js/app.js"></script>
-   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-48349256-7', 'auto');
-  ga('send', 'pageview');
-  </script>
+    ga('create', 'UA-48349256-7', 'auto');
+    ga('send', 'pageview');
+    </script>
 </body>
 
 </html>

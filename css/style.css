@@ -80,6 +80,9 @@ h2 {
     position: relative;
 }
 
+
+/*title-large-w*/
+
 .title-large-w h2 {
     border: 2px solid #ffffff;
     position: relative;
@@ -109,6 +112,42 @@ h2 {
     right: -90%;
     margin-top: 13%
 }
+
+
+/*title-large-c*/
+
+.title-large-c h2 {
+    border: 2px solid #444444;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #444444;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.title-large-c h2::before,
+.title-large-c h2::after {
+    background-color: #444;
+    height: 2px;
+    width: 10rem;
+    position: absolute;
+}
+
+.title-large-c h2::before {
+    content: "";
+    left: -30%;
+    margin-top: 3%
+}
+
+.title-large-c h2::after {
+    content: "";
+    right: -30%;
+    margin-top: 3%
+}
+
+
+/*title-large-r*/
 
 .title-large-r h2 {
     border: 2px solid #eb5655;
@@ -620,6 +659,59 @@ h2 {
 
 
 /*----speakers end----*/
+
+
+/*----china-speakers----*/
+
+#china-speakers {
+    background-color: #f8b9b9;
+    padding: 6% 2%;
+    float: center;
+}
+
+.speakers-group {
+    position: relative;
+    margin-top: 5em;
+}
+
+.speakers-bg-cicle {
+    /*background-color: #ffffff;*/
+    border-radius: 50%;
+    /*width: 30vmin;*/
+    min-width: 260px;
+    /*height: 30vmin;*/
+    min-height: 260px;
+    position: relative;
+}
+
+.speaker-head-gray {
+    width: 60%;
+    position: relative;
+    left: 21%;
+    top: 18%;
+    border: 15px solid #3e3e3e;
+    box-shadow: 0 0 0 25px #fff;
+}
+
+.speakers-name {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border-color: #58c1ef;
+    position: absolute;
+    width: 90%;
+    min-width: 220px;
+    min-height: 100px;
+    bottom: -2%;
+}
+
+p.china-speakers {
+    font-size: 20px;
+    color: #444444;
+    text-align: left;
+}
+
+
+/*----china-speakers end----*/
 
 
 /*----signup----*/
@@ -1156,12 +1248,15 @@ hr {
 /* all -160px (menu width) */
 @media (max-width: 320px) {
     .title-large-w h2,
+    .title-large-c h2,
     .title-large-r h2 {
         font-size: 25px;
     }
     
     .title-large-w h2::before,
     .title-large-w h2::after,
+    .title-large-c h2::before,
+    .title-large-c h2::after,
     .title-large-r h2::before,
     .title-large-r h2::after {
         display: none;
@@ -1186,6 +1281,7 @@ hr {
     }
     
     .title-large-w h2,
+    .title-large-c h2,
     .title-large-r h2 {
         font-size: 35px;
     }
