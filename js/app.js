@@ -91,6 +91,14 @@ $(function() {
             }
         });
 
+        $.when(confapi.getSponsor(), confapi.getSpeakerWithSession()).then(function(Sponsor, SpeakerWithSession) {
+            modernweb.$set('sponsorList', Sponsor);
+            modernweb.$set('speakerList', SpeakerWithSession);
+
+
+        });
+
+
         $.when(confapi.getSponsor(), confapi.getSpeaker()).then(function(Sponsor, Speaker) {
             modernweb.$set('sponsorList', Sponsor);
             modernweb.$set('speakerList', Speaker);
@@ -281,6 +289,31 @@ var confapi = (function() {
                 };
 
                 return SessionData;
+            });
+        },
+        getSpeakerWithSession: function() {
+            return $.when(this.getSession(), this.getSpeaker()).then(function(Session, Speaker) {
+                var SessionData = {};
+
+                $.each(Session, function(i, v) {
+                    if (!!v.speaker.length) {
+                        $.each(v.speaker, function(index, value) {
+                            SessionData[value.target_id] = SessionData[value.target_id] || [];
+                            SessionData[value.target_id].push({
+                                title: v.title,
+                                summary: v.summary
+                            });
+                        });
+                    }
+                });
+
+                var SpeakerData = $.map(Speaker, function(rowData) {
+                    rowData['session'] = SessionData[rowData.target_id];
+
+                    return rowData;
+                });
+
+                return SpeakerData;
             });
         }
     }

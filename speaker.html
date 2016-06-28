@@ -206,9 +206,9 @@
                             <div class="key-text-box-speaker col-md-5 pre-scrollable">
                                 <p>{{ speaker.full_profile }}</p>
                             </div>
-                            <div class="session-box col-md-7">
-                                <h4>● 精彩講題<br>which_session</h4>
-                                <p>{{ speaker.profile }}</p>
+                            <div class="session-box col-md-7" v-for="session in speaker.session">
+                                <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                <p>{{ session.summary }}</p>
                             </div>
                         </div>
                     </div>
@@ -227,9 +227,9 @@
                                     <p>{{ speaker.full_profile }}
                                     </p>
                                 </div>
-                                <div class="session-box col-md-6 text-left">
-                                    <h4>● 精彩講題<br>which_session</h4>
-                                    <p>{{ speaker.profile }}</p>
+                                <div class="session-box col-md-6 text-left" v-for="session in speaker.session">
+                                    <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                    <p>{{ session.summary }}</p>
                                 </div>
                             </div>
                         </div>
@@ -247,53 +247,57 @@
                         </div>
                     </div>
                     <div class="row hidden-xs hidden-sm">
-                        <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                            <div class="keyspeaker-group">
-                                <div class="col-md-3 col-xs-3 keyspeaker--infogroup">
-                                    <div class=" pic-group">
-                                        <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
-                                        <img :src="speaker.avatar" class="img-circle img-responsive speaker-head"></div>
-                                    <div class="spe-info">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3>{{ speaker.speaker }}</h3>
-                                                <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                        <template v-for="speaker in speakerList">
+                            <template v-if="speaker.role != '關鍵講師'">
+                                <div class="keyspeaker-group">
+                                    <div class="col-md-3 col-xs-3 keyspeaker--infogroup">
+                                        <div class=" pic-group">
+                                            <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
+                                            <img :src="speaker.avatar" class="img-circle img-responsive speaker-head"></div>
+                                        <div class="spe-info">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h3>{{ speaker.speaker }}</h3>
+                                                    <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-xs-8 keyspeaker--textgroup">
+                                        <div class="key-text-box-speaker col-md-5 pre-scrollable">
+                                            <p>{{ speaker.full_profile }}</p>
+                                        </div>
+                                        <div class="session-box col-md-7" v-for="session in speaker.session">
+                                            <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                            <p>{{ session.summary }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="row hidden-md hidden-lg">
+                        <template v-for="speaker in speakerList">
+                            <template v-if="speaker.role != '關鍵講師'">
+                                <div class="col-md-12 mobile-key-group">
+                                    <div class="mobile-key-header">
+                                        <div class=" pic-group speakers-bg-cicle">
+                                            <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
+                                        <h2>{{ speaker.speaker }}</h2>
+                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                        <div class="mobile-key-body keyspeaker--textgroup-mobile">
+                                            <div class="key-text-box ">
+                                                <p>{{ speaker.full_profile }}
+                                                </p>
+                                            </div>
+                                            <div class="session-box col-md-6 text-left" v-for="session in speaker.session">
+                                                <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                                <p>{{ session.summary }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-9 col-xs-8 keyspeaker--textgroup">
-                                    <div class="key-text-box-speaker col-md-5 pre-scrollable">
-                                        <p>{{ speaker.full_profile }}</p>
-                                    </div>
-                                    <div class="session-box col-md-7">
-                                        <h4>● 精彩講題<br>which_session</h4>
-                                        <p>{{ speaker.profile }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="row hidden-md hidden-lg">
-                        <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                            <div class="col-md-12 mobile-key-group">
-                                <div class="mobile-key-header">
-                                    <div class=" pic-group speakers-bg-cicle">
-                                        <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
-                                    <h2>{{ speaker.speaker }}</h2>
-                                    <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                    <div class="mobile-key-body keyspeaker--textgroup-mobile">
-                                        <div class="key-text-box ">
-                                            <p>{{ speaker.full_profile }}
-                                            </p>
-                                        </div>
-                                        <div class="session-box col-md-6 text-left">
-                                            <h4>● 精彩講題<br>which_session</h4>
-                                            <p>{{ speaker.profile }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </template>
                         </template>
                     </div>
                 </div>
