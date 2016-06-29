@@ -107,9 +107,9 @@ $(function() {
                 var tempHash = location.hash;
                 // location.hash = '';
                 Vue.nextTick(function() {
-                    var nrOfImages = $(".speker-pic > img").length;
+                    var nrOfImages = $(".speker-pic img, .speakers-production img").length;
                     if (!!nrOfImages) {
-                        $(".speker-pic > img").load(function() {
+                        $(".speker-pic > img, .speakers-production img").load(function() {
                             if (--nrOfImages == 0) {
                                 // Function goes here
                                 goScroll(tempHash);
