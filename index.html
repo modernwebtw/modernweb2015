@@ -203,9 +203,14 @@
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
                     <div class="keyspeaker-group" v-if="$index % 2 == 0">
                         <div class="col-md-4 col-xs-4 keyspeaker--infogroup">
-                            <div class=" pic-group">
-                                <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
-                                <img :src="speaker.avatar" class="img-circle img-responsive speaker-head"></div>
+                            <a :href="speaker.hash_path" target="_blank">
+                                <div class=" pic-group">
+                                    <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
+                                    <div class="speker-pic">
+                                        <img :src="speaker.avatar" class="img-circle img-responsive speaker-head">
+                                    </div>
+                                </div>
+                            </a>
                             <div class="spe-info">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -231,9 +236,14 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-xs-4 col-md-offset-8 col-xs-offset-8 keyspeaker--infogroup">
-                            <div class=" pic-group">
-                                <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
-                                <img :src="speaker.avatar" class="img-circle img-responsive speaker-head"></div>
+                            <a :href="speaker.hash_path" target="_blank">
+                                <div class=" pic-group">
+                                    <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
+                                    <div class="speker-pic">
+                                        <img :src="speaker.avatar" class="img-circle img-responsive speaker-head">
+                                    </div>
+                                </div>
+                            </a>
                             <div class="spe-info">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -250,8 +260,13 @@
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
                     <div class="col-md-12 mobile-key-group">
                         <div class="mobile-key-header">
-                            <div class=" pic-group speakers-bg-cicle">
-                                <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
+                            <a :href="speaker.hash_path" target="_blank">
+                                <div class=" pic-group speakers-bg-cicle">
+                                    <div class="speker-pic">
+                                        <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;">
+                                    </div>
+                                </div>
+                            </a>
                             <h2>{{ speaker.speaker }}</h2>
                             <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
                             <div class="mobile-key-body keyspeaker--textgroup-mobile">
@@ -277,8 +292,13 @@
                 </div>
                 <template v-for="speaker in speakerList | tag '中國'">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
-                        <div class="speakers-bg-cicle ">
-                            <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
+                        <a :href="speaker.hash_path" target="_blank">
+                            <div class="speakers-bg-cicle ">
+                                <div class="speker-pic">
+                                    <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray">
+                                </div>
+                            </div>
+                        </a>
                         <div class="text-center">
                             <div class="speakers-name">
                                 <div class="row">
@@ -303,8 +323,12 @@
                 <template v-for="speaker in speakerList">
                     <template v-if="speaker.role != '關鍵講師'">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
-                            <div class="speakers-bg-cicle ">
-                                <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
+                            <a :href="speaker.hash_path" target="_blank">
+                                <div class="speakers-bg-cicle ">
+                                    <div class="speker-pic">
+                                        <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray"></div>
+                                </div>
+                            </a>
                             <div class="text-center">
                                 <div class="speakers-name">
                                     <div class="row">

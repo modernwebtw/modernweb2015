@@ -230,6 +230,8 @@ var confapi = (function() {
 
                     rowData['which_session'] = removeArray(rowData['which_session']);
 
+                    rowData['hash_path'] = 'speaker.html#s' + rowData['target_id'];
+
                     return rowData;
                 });
             });
@@ -321,7 +323,7 @@ var confapi = (function() {
 
 function goScroll(target) {
     var target_top = $(target).offset().top;
-    var header_height = $('#nav').height() + $('#navXs').height();
+    var header_height = $('#nav').height() + $('#navXs').height() + 71;
     var sTop = target_top - header_height;
 
     $("html, body").stop().animate({

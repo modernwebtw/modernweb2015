@@ -189,7 +189,7 @@
             <div class="speakers-page hidden-xs hidden-sm">
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
                     <div class="row">
-                        <div class="speakers-production">
+                        <div class="speakers-production" :id="'s' + speaker.target_id">
                             <div class="col-md-4 ">
                                 <div class="speakers-group-large">
                                     <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large speaker-head-gold-large" style="margin:0 auto;"></div>
@@ -220,7 +220,7 @@
             <div class="row hidden-md hidden-lg">
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
                     <div class="col-md-12 mobile-key-group">
-                        <div class="mobile-key-header">
+                        <div class="mobile-key-header" :id="'s' + speaker.target_id">
                             <div class=" pic-group speakers-bg-cicle">
                                 <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
                             <h2>{{ speaker.speaker }}</h2>
@@ -255,7 +255,7 @@
                         <template v-for="speaker in speakerList">
                             <template v-if="speaker.role != '關鍵講師'">
                                 <div class="row">
-                                    <div class="speakers-production">
+                                    <div class="speakers-production" :id="'s' + speaker.target_id">
                                         <div class="col-md-4 ">
                                             <div class="speakers-group-large">
                                                 <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large" style="margin:0 auto;"></div>
@@ -288,7 +288,7 @@
                         <template v-for="speaker in speakerList">
                             <template v-if="speaker.role != '關鍵講師'">
                                 <div class="col-md-12 mobile-key-group">
-                                    <div class="mobile-key-header">
+                                    <div class="mobile-key-header" :id="'s' + speaker.target_id">
                                         <div class=" pic-group speakers-bg-cicle">
                                             <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
                                         <h2>{{ speaker.speaker }}</h2>
