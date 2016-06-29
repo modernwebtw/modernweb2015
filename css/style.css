@@ -669,7 +669,7 @@ h2 {
 .speakers-production {
     background-color: #eeeeee;
     height: 300px;
-    border-left: 20px solid #888;
+    border-left: 20px solid #777;
     margin-top: 8%;
 }
 
@@ -682,6 +682,7 @@ h2 {
     font-weight: bold;
     session-group background-color: #efefef;
     max-height: 300px;
+    overflow: hidden;
 }
 
 .speaker-head-gray-large {
@@ -718,7 +719,7 @@ h2 {
     color: #ffffff;
     position: relative;
     border-right: 6px solid #fcb623;
-    padding: 20px 15px;
+    padding: 1% 6%;
     border-radius: 0 0 0 40px;
 }
 

@@ -64,7 +64,8 @@
                             <li><a href="forum06.html">Data Services</a></li>
                         </ul>
                     </li> -->
-                        <li><a href="#key-spe">講師陣容</a></li>
+                        <li><a href="speaker.html">講師與議程</a></li>
+                        <li><a href="#key-spe">焦點講師</a></li>
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                         <li><a href="#traffic">交通資訊</a></li>
                         <li><a href="#signup">立即報名</a></li>
@@ -150,7 +151,8 @@
                             <li><a href="forum06.html">Data Services</a></li>
                         </ul>
                     </li> -->
-                        <li><a href="#key-spe">講師陣容</a></li>
+                        <li><a href="speaker.html">講師與議程</a></li>
+                        <li><a href="#key-spe">焦點講師</a></li>                        
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                         <li><a href="#traffic">交通資訊</a></li>
                         <li id="sign-navi"><a href="#signup">立即報名</a></li>
@@ -208,8 +210,8 @@
                             <div class="col-md-8 pre-scrollable speakers-production-text">{{ speaker.full_profile }}</div>
                         </div>
                         <template v-for="session in speaker.session">
-                            <div class="col-md-11 col-md-offset-1 session-group">
-                                <h4><i class="fa fa-book" aria-hidden="true"></i>{{ session.title }}</h4>
+                            <div class="col-md-12 session-group">
+                                <h4><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h4>
                                 <p>{{ session.summary }}</p>
                                 <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
                             </div>
@@ -273,9 +275,9 @@
                                         </div>
                                         <div class="col-md-8 pre-scrollable speakers-production-text">{{ speaker.full_profile }}</div>
                                     </div>
-                                    <div class="col-md-11 col-md-offset-1 session-group">
+                                    <div class="col-md-12 session-group">
                                         <template v-for="session in speaker.session">
-                                            <h4><i class="fa fa-book" aria-hidden="true"></i>{{ session.title }}</h4>
+                                            <h4><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h4>
                                             <p>{{ session.summary }}</p>
                                             <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
                                         </template>
@@ -414,7 +416,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/vue.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/space.js"></script>
+    <!-- <script src="js/space.js"></script> -->
     <script src="js/app.js"></script>
     <script>
     (function(i, s, o, g, r, a, m) {
