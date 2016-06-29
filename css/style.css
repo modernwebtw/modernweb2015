@@ -560,6 +560,10 @@ h2 {
     border: 15px solid #eb5655;
 }
 
+.speaker-head:hover {
+    border: 15px solid #fcb623;
+}
+
 .spe-info {
     background-color: #ffffff;
     text-align: center;
@@ -645,6 +649,10 @@ h2 {
     top: 18%;
     border: 15px solid #3e3e3e;
     box-shadow: 0 0 0 48px #fff;
+}
+
+.speaker-head-gray:hover {
+    border: 15px solid #58c1ef;
 }
 
 .speakers-name {
