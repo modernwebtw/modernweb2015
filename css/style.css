@@ -689,7 +689,7 @@ h2 {
     font-weight: bold;
     session-group background-color: #efefef;
     max-height: 300px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .speaker-head-gray-large {
