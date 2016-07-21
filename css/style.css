@@ -272,10 +272,17 @@ h2 {
 }
 
 #sign-navi a {
+    display: block;
     background-color: #fcb623;
     color: #242424;
     font-weight: bold;
-    border-bottom: 5px solid #ffffff;
+    margin: 10px 0;
+    padding: 15px 10px;
+    border-bottom: 5px solid #1e1e1e;
+}
+
+#sign-navi a:hover {
+    background-color: #eb5655;
 }
 
 
@@ -647,7 +654,7 @@ h2 {
     position: relative;
     left: 21%;
     top: 18%;
-    border: 15px solid #3e3e3e;
+    border: 15px solid #f8b9b9;
     box-shadow: 0 0 0 48px #fff;
 }
 
@@ -679,10 +686,10 @@ h2 {
     color: #555;
     font-size: 16px;
     line-height: 1.8;
-    font-weight: bold;
+    /*font-weight: bold;*/
     session-group background-color: #efefef;
     max-height: 300px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .speaker-head-gray-large {
@@ -690,7 +697,7 @@ h2 {
     position: absolute;
     left: 22%;
     bottom: 28%;
-    border: 15px solid #555;
+    border: 15px solid #f8b9b9;
     box-shadow: 0 0 0 35px #fff;
 }
 
@@ -764,7 +771,7 @@ h2 {
     position: relative;
     left: 21%;
     top: 18%;
-    border: 15px solid #3e3e3e;
+    border: 15px solid #f8b9b9;
     box-shadow: 0 0 0 25px #fff;
 }
 
