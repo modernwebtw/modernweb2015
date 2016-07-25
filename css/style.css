@@ -229,7 +229,7 @@ h2 {
     position: relative;
     display: block;
     padding-top: 21px;
-    padding-bottom: 25px;
+    padding-bottom: 29px;
     font-weight: bold;
     font-size: 15px;
 }
@@ -282,7 +282,8 @@ h2 {
 }
 
 #sign-navi a:hover {
-    background-color: #eb5655;
+    background-color: #f18021;
+    color: #fff;
 }
 
 
@@ -981,7 +982,9 @@ p.china-speakers {
 }
 
 .footer-box {
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #footer .fa {
@@ -1036,7 +1039,7 @@ p.china-speakers {
     background-color: #51b4df;
     position: relative;
     z-index: 8;
-    height: 9.7rem;
+    height: 10rem;
     margin-top: 3%;
     color: #ffffff;
 }
@@ -1045,7 +1048,7 @@ p.china-speakers {
     content: "";
     position: absolute;
     border-right: 56px solid #51b4df;
-    border-top: 9.7rem solid transparent;
+    border-top: 10rem solid transparent;
     border-bottom: 0px solid transparent;
     left: -56px;
     top: 0%;
