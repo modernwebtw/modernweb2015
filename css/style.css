@@ -857,8 +857,8 @@ p.china-speakers {
 }
 
 #sponsor .logo-items img {
-    width: 200px;
-    margin-right: 60px;
+    max-height: 130px;
+    padding: 5px 10px;
 }
 
 .spon-logo-img {
