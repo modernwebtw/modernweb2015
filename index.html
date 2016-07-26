@@ -64,7 +64,7 @@
                             <li><a href="forum06.html">Data Services</a></li>
                         </ul>
                     </li> -->
-                        <li><a href="speaker.html">講師與議程</a></li>
+                        <li><a href="speaker.html">講師與講題</a></li>
                         <li><a href="agenda.html">大會議程表</a></li>
                         <li><a href="#key-spe">焦點講師</a></li>
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
@@ -152,7 +152,7 @@
                             <li><a href="forum06.html">Data Services</a></li>
                         </ul>
                     </li> -->
-                        <li><a href="speaker.html">講師與議程</a></li>
+                        <li><a href="speaker.html">講師與講題</a></li>
                         <li><a href="agenda.html">大會議程表</a></li>
                         <li><a href="#key-spe">焦點講師</a></li>                        
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
@@ -285,38 +285,6 @@
             </div>
         </div>
     </div>
-    <div id="china-speakers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center title-large-c">
-                    <h2>特色議程：中國Web技術日</h2>
-                    <p class="china-speakers">
-                        Modern Web 2016　特別企劃，邀請中國Web/電子商務專家在 8/25 以雙軌方式進行，包含前端、後端、架構等多面向的精彩議程，揭露許多實戰的寶貴經驗。</p>
-                </div>
-                <template v-for="speaker in speakerList | tag '中國'">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
-                        <a :href="speaker.hash_path" target="_blank">
-                            <div class="speakers-bg-cicle ">
-                                <div class="speker-pic">
-                                    <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray">
-                                </div>
-                            </div>
-                        </a>
-                        <div class="text-center">
-                            <div class="speakers-name">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                        <h3>{{ speaker.speaker }}</h3>
-                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
     <div id="dojo">
         <div class="container">
             <div class="row dojo-area">
@@ -350,6 +318,38 @@
                         <br>CSS 是網頁中的一種靜態裝飾表達式，直到現在 CSS3 充滿了許多表達性，讓網頁有了豐富性的呈現，但是 CSS 少了可程式化，再用性，易讀性等問題， SASS 基於 CSS 並補足 CSS 原生不足的語言因此誕生，本次實做將針對未曾嘗試過 SASS 開發的網頁開發者所帶來的新體驗，藉由不同的比較，從範例中讓開發者瞭解 SASS 的好處優化開發流程，加速 CSS 開發成果。Code Dojo
                         <br>協力單位：EXMA-Square、創科資訊</div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="china-speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center title-large-c">
+                    <h2>特色議程：中國Web技術日</h2>
+                    <p class="china-speakers">
+                        Modern Web 2016　特別企劃，邀請中國Web/電子商務專家在 8/25 以雙軌方式進行，包含前端、後端、架構等多面向的精彩議程，揭露許多實戰的寶貴經驗。</p>
+                </div>
+                <template v-for="speaker in speakerList | tag '中國'">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 speakers-group">
+                        <a :href="speaker.hash_path" target="_blank">
+                            <div class="speakers-bg-cicle ">
+                                <div class="speker-pic">
+                                    <img :src="speaker.avatar " class="img-circle img-responsive speaker-head-gray">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="text-center">
+                            <div class="speakers-name">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h3>{{ speaker.speaker }}</h3>
+                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
             </div>
         </div>
     </div>
@@ -514,16 +514,28 @@
                     <!-- <div class="text-center"><img src="img/icon/sponsor01.png"></div> -->
                     <div class="text-center">
                         <h3 class="first">主辦單位</h3>
-                        <div style="display: inline-block;"><img src="img/logos/ithome.png" class="img-responsive"></div>
+                        <div style="display: inline-block;">
+                            <a href="http://www.ithome.com.tw" target="_blank">
+                                <img src="img/logos/ithome.png" class="img-responsive">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12 text-center">
                     <h3>協辦單位</h3>
                     <div class="logo-items">
-                        <img src="img/logos/exma_logo.jpg">
-                        <img src="img/logos/geekbang_logo.jpg">
-                        <img src="img/logos/infoq_logo.jpg">
-                        <img src="img/logos/trunk_logo.jpg">
+                        <a href="http://exma-square.co/" target="_blank">
+                            <img src="img/logos/exma_logo.jpg">
+                        </a>
+                        <a href="http://www.geekbang.org/" target="_blank">
+                            <img src="img/logos/geekbang_logo.jpg">
+                        </a>
+                        <a href="http://www.infoq.com/cn/" target="_blank">
+                            <img src="img/logos/infoq_logo.jpg">
+                        </a>
+                        <a href="http://trunk-studio.com/" target="_blank">
+                            <img src="img/logos/trunk_logo.jpg">
+                        </a>
                     </div>
                 </div>
             </div>
