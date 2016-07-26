@@ -70,14 +70,14 @@ $(function() {
         ];
 
         var SessionTableDay1 = [
-            [1076, 1066, 1060], //11:50
-            [1188], //12:30
-            [1054, 1179, 1047], //13:30
-            [1190], //14:10
-            [1062, 1067, 1069], //14:20
-            [1191], //15:00
-            [1046, 1052, 1199], //15:30
-            [1192], //16:10
+            [1076, 1066, 1060], //11:50-12:30
+            [1188], //12:30-13:30
+            [1054, 1179, 1047], //13:30-14:10
+            [1189], //14:10-14:20
+            [1062, 1067, 1069], //14:20-15:00
+            [1190], //15:00-15:30
+            [1046, 1052, 1199], //15:30-16:10
+            [1191], //16:10-16:20
             [1063, 1198, 1053], //16:20            
         ];
 
@@ -100,7 +100,7 @@ $(function() {
                 speakerList: [],
                 articleList: [],
                 SessionTable: result,
-                SessionTableDay: SessionTableDay1,
+                SessionTableDay1: SessionTableDay1,
                 SessionTableOpening1: SessionTableOpening1,
                 SessionTableOpening2: SessionTableOpening2
             }
