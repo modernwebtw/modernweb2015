@@ -533,6 +533,12 @@ h2 {
     font-weight: 800;
 }
 
+#dojo {
+    background-color: #1da8bd;
+    padding: 10px 15px;
+    color: #fff;
+}
+
 .dojo-area {
     background-color: #138192;
     border-radius: 6px;
