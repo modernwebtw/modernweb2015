@@ -64,9 +64,9 @@ $(function() {
         ];
 
         var SessionTableOpening2 = [
-            1044, //9:30
-            1044, //9:40
-            1073, //10:30
+            1192, //9:30
+            1045, //9:40
+            1065, //10:30
         ];
 
         var SessionTableDay1 = [
@@ -82,15 +82,15 @@ $(function() {
         ];
 
         var SessionTableDay2 = [
-            [1076, 1066, 1060], //11:50
-            [776], //12:30
-            [1076, 1066, 1060], //13:30
-            [777], //14:10
-            [1076, 1066, 1060], //14:20
-            [778], //15:00
-            [1076, 1066, 1060], //15:30
-            [779], //16:10
-            [1076, 1066, 1060], //16:20            
+            [1049, 1051, 1058], //11:50-12:30
+            [1194], //12:30-13:30
+            [1059, 1050, 1055], //13:30-14:10
+            [1195], //14:10-14:20
+            [1048, 1056, 1061], //14:20-15:00
+            [1196], //15:00-15:30
+            [1064, 1200, 1068], //15:30-16:10
+            [1197], //16:10-16:20
+            [1074, 1057, 1201], //16:20                
         ];
 
         var modernweb = new Vue({
@@ -101,6 +101,7 @@ $(function() {
                 articleList: [],
                 SessionTable: result,
                 SessionTableDay1: SessionTableDay1,
+                SessionTableDay2: SessionTableDay2,
                 SessionTableOpening1: SessionTableOpening1,
                 SessionTableOpening2: SessionTableOpening2
             }
