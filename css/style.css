@@ -533,10 +533,28 @@ h2 {
     font-weight: 800;
 }
 
+.dojo-area {
+    background-color: #138192;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
 
-/*.info-three {
-    border-right: 1px solid #ffffff;
-}*/
+.dojo-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    border-top: 1px dashed #bbddf7;
+    padding: 8px 12px;
+}
+
+.dojo-text h5 {
+    background-color: #0b6a79;
+    padding: 5px 8px;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+}
 
 .keyspeaker-group {
     position: relative;
