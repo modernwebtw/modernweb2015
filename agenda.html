@@ -27,15 +27,7 @@
         <![endif]-->
 </head>
 
-<body id="indexPage">
-    <!-- <div id='wrapper'>
-        <div class='clearfix' id='banner'>
-            <div class='wrap clearfix'>
-                <h1>2016 <span>ModernWeb</span> With <span>iThome!</span></h1>
-            </div>
-            <img src="img/ee.png" style="margin: 2% 3%; padding: 2% 3%;" class="earth">
-        </div>
-    </div> -->
+<body id="agenda">
     <div id="header">
         <!-- visible-xs -->
         <nav class="navbar navbar-fixed-top navbar-inverse hidden-lg hidden-md">
@@ -189,28 +181,34 @@
                 <div class="col-md-12">
                     <table width="100%" border="2" bordercolor="#c1c1c1" cellspacing="0" cellpadding="0" class="table">
                         <tr class="break-group">
-                            <td width="15%" bgcolor="#489bc0">時間</td>
-                            <td colspan="3" bgcolor="#489bc0">議程</td>
+                            <td width="15%" class="rest-background">時間</td>
+                            <td colspan="3" class="rest-background">議程</td>
                         </tr>
-                        <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
-                                <div class="key-title">Opening Talk</div>
-                                <div class="key-speaker">吳其勳 / iThome總編輯</div>
-                            </td>
-                        </tr>
-                        <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
-                                <div class="key-title">Building and Deploying Scalable Microservices with Go & Kubernetes</div>
-                                <div class="key-speaker"> Ian Lewis , Google</div>
-                            </td>
-                        </tr>
-                        <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
-                                <div class="key-title">Building and Deploying Scalable Microservices with Go & Kubernetes</div>
-                                <div class="key-speaker"> Ian Lewis , Google</div>
+                        <tr v-for="OpeningID in SessionTableOpening1">
+                            <td width="15%" class="key-background" v-if="$index == 0">09:30-9:40</td>
+                            <td width="15%" class="key-background" v-if="$index == 1">09:40-10:30</td>
+                            <td width="15%" class="key-background" v-if="$index == 2">10:30-11:20</td>
+                            <td colspan="3" align="center" valign="middle" class="key-background">
+                                <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
+                                    <tr>
+                                        <td class="key-title linkPage">
+                                            <a v-bind:href="'#s' + OpeningID">
+                                                {{ SessionTable[OpeningID]['title'] }}
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12 text-center">
+                                                <div class="key-speaker" style="display:inline-block;" v-for="speaker in SessionTable[OpeningID]['speaker']">
+                                                    <a v-bind:href="'#s' + OpeningID">
+                                                        {{ speaker.speaker }} / {{ speaker.company }} {{ speaker.department }} {{ speaker.position }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr class="break-group">
@@ -223,7 +221,91 @@
                             <td width="27%" class="track-title">track.2</td>
                             <td width="27%" bgcolor="#a2e2fe" class="track-title">track.3</td>
                         </tr>
-                        <tr>
+                        <tbody v-for="SessionID in SessionTableDay1">
+                            <tr v-if="$index == 1 || $index == 3 || $index == 5 || $index == 7" class="break-group">
+                                <td width="10%" class="time-gray">
+                                    <span v-if="$index == 1">
+                                        12:30-13:30
+                                    </span>
+                                    <span v-if="$index == 3">
+                                        14:10-14:30
+                                    </span>
+                                    <span v-if="$index == 5">
+                                        15:10-15:30
+                                    </span>
+                                    <span v-if="$index == 7">
+                                        16:10-16:30
+                                    </span>
+                                </td>
+                                <td colspan="6" class="text-gray text-default">
+                                    {{ $index == 1 ? 'Lunch Break' : 'Break' }}
+                                </td>
+                            </tr>
+                            <tr v-if="$index == 0 || $index == 2 || $index == 4 || $index == 6 || $index == 8">
+                                <td width="10%" class="time-gray">
+                                    <span v-if="$index == 0">
+                                        11:50-12:30
+                                    </span>
+                                    <span v-if="$index == 2">
+                                        13:30-14:10
+                                    </span>
+                                    <span v-if="$index == 4">
+                                        14:30-15:10
+                                    </span>
+                                    <span v-if="$index == 6">
+                                        15:30-16:10
+                                    </span>
+                                    <span v-if="$index == 8">
+                                        16:30-17:10
+                                    </span>
+                                    <!-- <span v-if="$index == 10">
+                                        17:00-17:10
+                                    </span>
+                                <span v-if="$index == 12">
+                                        17:10-17:40
+                                    </span> -->
+                                </td>
+                                <td width="15%" class="track">
+                                    <div class="track-title-og">
+                                        <a v-bind:href="'#s' + SessionTable[SessionID[0]]['session_id']">
+                                        {{ SessionTable[SessionID[0]]['title'] }}
+                                    </a>
+                                    </div>
+                                </td>
+                                <td width="15%">
+                                    <div class="track-title">
+                                        <a v-bind:href="'#s' + SessionTable[SessionID[1]]['session_id']">
+                                        {{ SessionTable[SessionID[1]]['title'] }}
+                                    </a>
+                                    </div>
+                                </td>
+                                <td width="15%" class="track">
+                                    <div class="track-title-og">
+                                        <a v-bind:href="'#s' + SessionTable[SessionID[2]]['session_id']">
+                                        {{ SessionTable[SessionID[2]]['title'] }}
+                                    </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr v-if="$index==0 || $index==2 || $index==4 || $index==6 || $index==8">
+                                {{ SessionTable[SessionID[0]][ 'speaker'][0] }}
+                                <td width="15%" class="track">
+                                    <div class="track-title-og" v-for="speaker in SessionTable[SessionID[0]][ 'speaker']">
+                                        {{ speaker.speaker }} / {{ speaker.company }} {{ speaker.department }} {{ speaker.position }}
+                                    </div>
+                                </td>
+                                <td width="15%">
+                                    <div class="track-title" v-for="speaker in SessionTable[SessionID[1]][ 'speaker']">
+                                        {{ speaker.speaker }} / {{ speaker.company }} {{ speaker.department }} {{ speaker.position }}
+                                    </div>
+                                </td>
+                                <td width="15%" class="track">
+                                    <div class="track-title-og" v-for="speaker in SessionTable[SessionID[2]][ 'speaker']">
+                                        {{ speaker.speaker }} / {{ speaker.company }} {{ speaker.department }} {{ speaker.position }}
+                                    </div>
+                                </td>
+                        </tbody>
+                        <!-- <tr>
                             <td width="15%">09:00-10:30</td>
                             <td bgcolor="#a2e2fe" class="track">
                                 <div class="track-title-og ">從圖資學出發，探索網頁與搜尋引擎的本質，一起好好寫好HTML吧！</div>
@@ -313,7 +395,7 @@
                                 <div class="track-title-og ">從圖資學出發，探索網頁與搜尋引擎的本質，一起好好寫好HTML吧！</div>
                                 <div class="">劉偉樑 / #########</div>
                             </td>
-                        </tr>
+                        </tr> -->
                     </table>
                 </div>
             </div>
@@ -325,26 +407,26 @@
                 <div class="col-md-12">
                     <table width="100%" border="2" bordercolor="#c1c1c1" cellspacing="0" cellpadding="0" class="table">
                         <tr class="break-group">
-                            <td width="15%" bgcolor="#489bc0">時間</td>
-                            <td colspan="3" bgcolor="#489bc0">議程</td>
+                            <td width="15%" class="rest-background">時間</td>
+                            <td colspan="3" class="rest-background">議程</td>
                         </tr>
                         <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
+                            <td width="15%" class="key-background">09:00-10:30</td>
+                            <td colspan="3" class="key-background">
                                 <div class="key-title">Opening Talk</div>
                                 <div class="key-speaker">吳其勳 / iThome總編輯</div>
                             </td>
                         </tr>
                         <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
+                            <td width="15%" class="key-background">09:00-10:30</td>
+                            <td colspan="3" class="key-background">
                                 <div class="key-title">Building and Deploying Scalable Microservices with Go & Kubernetes</div>
                                 <div class="key-speaker"> Ian Lewis , Google</div>
                             </td>
                         </tr>
                         <tr class="key-group">
-                            <td width="15%" bgcolor="#f97d39">09:00-10:30</td>
-                            <td colspan="3" bgcolor="#f97d39">
+                            <td width="15%" class="key-background">09:00-10:30</td>
+                            <td colspan="3" class="key-background">
                                 <div class="key-title">Building and Deploying Scalable Microservices with Go & Kubernetes</div>
                                 <div class="key-speaker"> Ian Lewis , Google</div>
                             </td>
@@ -464,71 +546,76 @@
                     <div class="text-center">
                         <h3 class="first">主辦單位</h3>
                         <div style="display: inline-block;"><img src="img/logos/ithome.png" class="img-responsive"></div>
-                        <h3>協辦單位</h3>
-                        <div class="logo-items">
-                            <img src="img/logos/geekbang_logo.png">
-                            <img src="img/logos/infoq_logo.png" width="180">
-                        </div>
                     </div>
                 </div>
-                <!--
+                <div class="col-md-12 text-center">
+                    <h3>協辦單位</h3>
+                    <div class="logo-items">
+                        <img src="img/logos/exma_logo.jpg">
+                        <img src="img/logos/geekbang_logo.jpg">
+                        <img src="img/logos/infoq_logo.jpg">
+                        <img src="img/logos/trunk_logo.jpg">
+                    </div>
+                </div>
+            </div>
+            <!--
                     <div class="col-md-12 text-center" id="title">
                         <h2 class="title-red">贊助廠商</h2>
-                </div>
-                <div class="col-md-12">
-                    <div class="text-center"><img src="img/icon/sponsor_dia.png"></div>
-                    <div class="text-center">
-                        <template v-for="sponsor in sponsorList | rank '鑽石級'">
-                            <a v-bind:href="sponsor.hash_path" target="_blank">
-                                <div class="spon-logo-img" style="display: inline-block;">
-                                    <img :src="sponsor.logo" class="img-responsive">
-                                </div>
-                            </a>
-                        </template>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="text-center"><img src="img/icon/sponsor_pla.png"></div>
-                    <div class="text-center">
-                        <template v-for="sponsor in sponsorList | rank '白金級'">
-                            <a v-bind:href="sponsor.hash_path" target="_blank">
-                                <div class="spon-logo-img" style="display: inline-block;">
-                                    <img :src="sponsor.logo" class="img-responsive">
-                                </div>
-                            </a>
-                        </template>
+
+                    <div class="col-md-12">
+                        <div class="text-center"><img src="img/icon/sponsor_dia.png"></div>
+                        <div class="text-center">
+                            <template v-for="sponsor in sponsorList | rank '鑽石級'">
+                                <a v-bind:href="sponsor.hash_path" target="_blank">
+                                    <div class="spon-logo-img" style="display: inline-block;">
+                                        <img :src="sponsor.logo" class="img-responsive">
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="text-center"><img src="img/icon/sponsor_gold.png"></div>
-                    <div class="text-center">
-                        <template v-for="sponsor in sponsorList | rank '黃金級'">
-                            <a v-bind:href="sponsor.hash_path" target="_blank">
-                                <div class="spon-logo-img" style="display: inline-block;">
-                                    <img :src="sponsor.logo" class="img-responsive">
-                                </div>
-                            </a>
-                        </template>
+                    <div class="col-md-12">
+                        <div class="text-center"><img src="img/icon/sponsor_pla.png"></div>
+                        <div class="text-center">
+                            <template v-for="sponsor in sponsorList | rank '白金級'">
+                                <a v-bind:href="sponsor.hash_path" target="_blank">
+                                    <div class="spon-logo-img" style="display: inline-block;">
+                                        <img :src="sponsor.logo" class="img-responsive">
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="text-center"><img src="img/icon/sponsor_silver.png"></div>
-                    <div class="text-center">
-                        <template v-for="sponsor in sponsorList | rank '銀級'">
-                            <a v-bind:href="sponsor.hash_path" target="_blank">
-                                <div class="spon-logo-img" style="display: inline-block;">
-                                    <img :src="sponsor.logo" class="img-responsive">
-                                </div>
-                            </a>
-                        </template>
+                    <div class="col-md-12">
+                        <div class="text-center"><img src="img/icon/sponsor_gold.png"></div>
+                        <div class="text-center">
+                            <template v-for="sponsor in sponsorList | rank '黃金級'">
+                                <a v-bind:href="sponsor.hash_path" target="_blank">
+                                    <div class="spon-logo-img" style="display: inline-block;">
+                                        <img :src="sponsor.logo" class="img-responsive">
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
                     </div>
-                </div>
-                -->
-            </div>
+                    <div class="col-md-12">
+                        <div class="text-center"><img src="img/icon/sponsor_silver.png"></div>
+                        <div class="text-center">
+                            <template v-for="sponsor in sponsorList | rank '銀級'">
+                                <a v-bind:href="sponsor.hash_path" target="_blank">
+                                    <div class="spon-logo-img" style="display: inline-block;">
+                                        <img :src="sponsor.logo" class="img-responsive">
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
+                    </div>
+                    -->
         </div>
     </div>
     </div>
-    <!-- sponsor --->
+    <!-- sponsor -->
     <div id="footer" class="container-fluid">
         <div class="col-md-12 footer-box">
             <div class="col-xs-4 col-md-2 no-p ">
@@ -553,28 +640,27 @@
             </div>
         </div>
     </div>
-    </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/space.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-48349256-7', 'auto');
-    ga('send', 'pageview');
-    </script>
 </body>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/space.js"></script>
+<script src="js/app.js"></script>
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-48349256-7', 'auto');
+ga('send', 'pageview');
+</script>
 
 </html>

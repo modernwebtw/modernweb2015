@@ -1236,6 +1236,13 @@ hr {
 #agenda table {
     text-align: center;
 }
+.key-background {
+    background-color: #f97d39;
+    color: #fff;
+}
+.rest-background {
+    background-color: #489bc0;
+}
 .key-group,
 .break-group {
     color: #fff;
@@ -1247,6 +1254,7 @@ hr {
 }
 .track {
     color: #555;
+    background-color: #a2e2fe;
 }
 .track-title {
     font-size: 18px;
@@ -1259,6 +1267,10 @@ hr {
     font-weight: bold;
     color: #444;
     padding-bottom: 10px;
+}
+.time-gray {
+    background-color: #4eafda;
+    color: #fff;
 }
 
 /*----agenda end----*/
