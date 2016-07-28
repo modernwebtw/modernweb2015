@@ -1,5 +1,8 @@
 // navbar fixed
-$(function() {
+
+jQuery(document).ready(function($) {
+
+    // Fixa navbar ao ultrapassa-lo
     var navbar = $('#nav'),
         distance = navbar.offset().top,
         $window = $(window);
@@ -14,7 +17,9 @@ $(function() {
         }
     });
 
+});
 
+$(function() {
     Vue.filter('rank', function(data, rank) {
         return $.grep(data, function(obj) {
             return (obj.rank == rank) ? obj : null;
@@ -95,7 +100,7 @@ $(function() {
             }
         });
 
-        $.when(confapi.getSponsor(), confapi.getSpeaker()).then(function(Sponsor, Speaker) {
+        $.when(confapi.getSponsor(), confapi.getSpeakerWithSession()).then(function(Sponsor, Speaker) {
             modernweb.$set('sponsorList', Sponsor);
             modernweb.$set('speakerList', Speaker);
 
@@ -117,7 +122,7 @@ $(function() {
             }
         });
 
-        $('a[href*="#"]:not([href="#"])').click(function() {
+        $('a[href^="#"]:not([href="#"])').click(function() {
             var target = '#' + $(this).attr('href').split('#')[1];
             goScroll(target);
             return false;

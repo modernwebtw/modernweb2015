@@ -260,8 +260,8 @@
                     <div class="speakers-page hidden-xs hidden-sm">
                         <template v-for="speaker in speakerList">
                             <template v-if="speaker.role != '關鍵講師'">
-                                <div class="row">
-                                    <div class="speakers-production" :id="'s' + speaker.target_id">
+                                <div class="row" :id="'s' + speaker.target_id">
+                                    <div class="speakers-production">
                                         <div class="col-md-4 ">
                                             <div class="speakers-group-large">
                                                 <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large" style="margin:0 auto;"></div>
