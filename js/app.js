@@ -1,4 +1,4 @@
-// navbar fixed 
+// navbar fixed
 
 jQuery(document).ready(function($) {
 
@@ -10,12 +10,10 @@ jQuery(document).ready(function($) {
     $window.scroll(function() {
         if ($window.scrollTop() >= distance) {
             navbar.css('position', 'fixed');
-            // navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
-            // $("body").css("padding-top", "200px");
+            $("body").css("padding-top", navbar.height());
         } else {
             navbar.css('position', 'relative');
-            // navbar.removeClass('navbar-fixed-top');
-            // $("body").css("padding-top", "0px");
+            $("body").css("padding-top", "0px");
         }
     });
 
@@ -51,11 +49,6 @@ $(function() {
     });
 
     confapi.getSessionAndSpeaker().then(function(result) {
-        // $.each(result, function(i, v) {
-        //     if (v.start_time == '17:10') {
-        //         console.log(i, v.track);
-        //     }
-        // });
 
         var SessionTableOpening1 = [
             1186, //9:30
@@ -76,9 +69,9 @@ $(function() {
             [1189], //14:10-14:20
             [1062, 1067, 1069], //14:20-15:00
             [1190], //15:00-15:30
-            [1046, 1052, 1199], //15:30-16:10
+            [1046, 1052, 1205], //15:30-16:10
             [1191], //16:10-16:20
-            [1063, 1198, 1053], //16:20            
+            [1063, 1198, 1053], //16:20
         ];
 
         var SessionTableDay2 = [
@@ -90,7 +83,7 @@ $(function() {
             [1196], //15:00-15:30
             [1064, 1200, 1068], //15:30-16:10
             [1197], //16:10-16:20
-            [1074, 1057, 1201], //16:20                
+            [1074, 1057, 1201], //16:20
         ];
 
         var modernweb = new Vue({
@@ -107,21 +100,12 @@ $(function() {
             }
         });
 
-        $.when(confapi.getSponsor(), confapi.getSpeakerWithSession()).then(function(Sponsor, SpeakerWithSession) {
-            modernweb.$set('sponsorList', Sponsor);
-            modernweb.$set('speakerList', SpeakerWithSession);
-
-
-        });
-
-
         $.when(confapi.getSponsor(), confapi.getSpeaker()).then(function(Sponsor, Speaker) {
             modernweb.$set('sponsorList', Sponsor);
             modernweb.$set('speakerList', Speaker);
 
             if (!!location.hash) {
                 var tempHash = location.hash;
-                // location.hash = '';
                 Vue.nextTick(function() {
                     var nrOfImages = $(".speker-pic img, .speakers-production img").length;
                     if (!!nrOfImages) {
@@ -138,15 +122,11 @@ $(function() {
             }
         });
 
-        $('.linkPage').click(function() {
-            var target = $(this).find('a').attr('href');
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            var target = '#' + $(this).attr('href').split('#')[1];
             goScroll(target);
             return false;
         });
-
-        // $.getJSON("http://www.ithome.com.tw/services/data/list-cloud-news.jsonp?callback=?").then(function(article) {
-        //     modernweb.$set('articleList', article);
-        // })
     });
 });
 
@@ -339,7 +319,7 @@ var confapi = (function() {
 
 function goScroll(target) {
     var target_top = $(target).offset().top;
-    var header_height = $('#nav').height() + $('#navXs').height() + 71;
+    var header_height = $('#nav').height() + $('#navXs').height();
     var sTop = target_top - header_height;
 
     $("html, body").stop().animate({

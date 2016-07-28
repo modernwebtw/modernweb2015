@@ -57,7 +57,7 @@
                         </ul>
                     </li> -->
                         <li><a href="speaker.html">講師與講題</a></li>
-                        <li><a href="agenda.html#agenda">大會議程表</a></li>
+                        <li><a href="agenda.html#content">大會議程表</a></li>
                         <li><a href="index.html#key-spe">焦點講師</a></li>
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                         <li><a href="index.html#traffic">交通資訊</a></li>
@@ -145,7 +145,7 @@
                         </ul>
                     </li> -->
                     <li><a href="speaker.html">講師與講題</a></li>
-                    <li><a href="agenda.html">大會議程表</a></li>
+                    <li><a href="agenda.html#content">大會議程表</a></li>
                     <li><a href="index.html#key-spe">焦點講師</a></li>
                     <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                     <li><a href="index.html#traffic">交通資訊</a></li>
@@ -194,7 +194,7 @@
                                 <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
                                     <tr>
                                         <td class="key-title linkPage">
-                                            <a v-bind:href="'speaker.html#s' + OpeningID">
+                                            <a v-bind:href="'speaker.html#s' + SessionTable[OpeningID]['speaker'][0]['target_id']">
                                                 {{ SessionTable[OpeningID]['title'] }}
                                             </a>
                                         </td>
@@ -203,7 +203,7 @@
                                         <td>
                                             <div class="col-md-12 text-center">
                                                 <div class="key-speaker" style="display:inline-block;" v-for="speaker in SessionTable[OpeningID]['speaker']">
-                                                    <a v-bind:href="'speaker.html#s' + OpeningID">
+                                                    <a v-bind:href="'speaker.html#s' + speaker.target_id">
                                                         {{ speaker.speaker }} / {{ speaker.company }} {{ speaker.department }} {{ speaker.position }}
                                                     </a>
                                                 </div>
@@ -231,7 +231,7 @@
                             <tr v-else>
                                 <td width="15%">{{ SessionTable[SessionID[0]]['start_time'] }}-{{ SessionTable[SessionID[0]]['end_time'] }}</td>
                                 <td bgcolor="#a2e2fe" class="track">
-                                    <a v-bind:href="'speaker.html#s' + SessionID">
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[0]]['speaker'][0]['target_id']">
                                         <div class="track-title-og">
                                             {{ SessionTable[SessionID[0]]['title'] }}
                                         </div>
@@ -241,7 +241,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a v-bind:href="'speaker.html#s' + SessionID">
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[1]]['speaker'][0]['target_id']">
                                         <div class="track-title-og">
                                             {{ SessionTable[SessionID[1]]['title'] }}
                                         </div>
@@ -251,7 +251,7 @@
                                     </div>
                                 </td>
                                 <td bgcolor="#a2e2fe" class="track">
-                                    <a v-bind:href="'speaker.html#s' + SessionID">
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[2]]['speaker'][0]['target_id']">
                                         <div class="track-title-og">
                                             {{ SessionTable[SessionID[2]]['title'] }}
                                         </div>
@@ -321,19 +321,31 @@
                             <tr v-else>
                                 <td width="15%">{{ SessionTable[SessionID[0]]['start_time'] }}-{{ SessionTable[SessionID[0]]['end_time'] }}</td>
                                 <td bgcolor="#a2e2fe" class="track">
-                                    <div class="track-title-og ">{{ SessionTable[SessionID[0]]['title'] }}</div>
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[0]]['speaker'][0]['target_id']">
+                                        <div class="track-title-og">
+                                            {{ SessionTable[SessionID[0]]['title'] }}
+                                        </div>
+                                    </a>
                                     <div class="" v-for="speaker in SessionTable[SessionID[0]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="track-title">{{ SessionTable[SessionID[1]]['title'] }}</div>
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[1]]['speaker'][0]['target_id']">
+                                        <div class="track-title-og">
+                                            {{ SessionTable[SessionID[1]]['title'] }}
+                                        </div>
+                                    </a>
                                     <div class="" v-for="speaker in SessionTable[SessionID[1]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
                                 </td>
                                 <td bgcolor="#a2e2fe" class="track">
-                                    <div class="track-title-og ">{{ SessionTable[SessionID[2]]['title'] }}</div>
+                                    <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[2]]['speaker'][0]['target_id']">
+                                        <div class="track-title-og">
+                                            {{ SessionTable[SessionID[2]]['title'] }}
+                                        </div>
+                                    </a>
                                     <div class="" v-for="speaker in SessionTable[SessionID[2]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
