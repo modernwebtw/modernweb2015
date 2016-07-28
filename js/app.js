@@ -1,8 +1,5 @@
 // navbar fixed
-
-jQuery(document).ready(function($) {
-
-    // Fixa navbar ao ultrapassa-lo
+$(function() {
     var navbar = $('#nav'),
         distance = navbar.offset().top,
         $window = $(window);
@@ -17,9 +14,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-});
 
-$(function() {
     Vue.filter('rank', function(data, rank) {
         return $.grep(data, function(obj) {
             return (obj.rank == rank) ? obj : null;
