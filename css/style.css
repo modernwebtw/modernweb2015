@@ -1402,7 +1402,7 @@ hr {
     .title-large-r h2 {
         font-size: 25px;
     }
-    
+
     .title-large-w h2::before,
     .title-large-w h2::after,
     .title-large-c h2::before,
@@ -1423,13 +1423,13 @@ hr {
         min-height: 80px;
         left: 5%;
     }
-    
+
     .speakers-bg-cicle {
         min-width: 200px;
         min-height: 200px;
         padding-bottom: 4%;
     }
-    
+
     .title-large-w h2,
     .title-large-c h2,
     .title-large-r h2 {
@@ -1440,15 +1440,15 @@ hr {
     .keyspeaker--textgroup p {
         font-size: 16px;
     }
-    
+
     .footer-contec-info p {
         font-size: 14px;
     }
-    
+
     .footer-contec-info h3 {
         font-size: 20px;
     }
-    
+
     .footer-contec-info::before {
         content: "";
         position: absolute;
@@ -1469,11 +1469,11 @@ hr {
     .container {
         width: 832px;
     }
-    
+
     #ppt .container {
         width: 90%;
     }
-    
+
     .logo-top {
         z-index: 10;
         position: absolute;
@@ -1485,7 +1485,7 @@ hr {
     .container {
         width: 1200px;
     }
-    
+
     .logo-top {
         z-index: 10;
         position: absolute;
@@ -1508,4 +1508,8 @@ hr {
         top: 0px;
         padding: 0;
     }
+}
+
+[v-cloak] {
+    display: none;
 }

@@ -65,7 +65,7 @@
                         </ul>
                     </li> -->
                         <li><a href="speaker.html">講師與講題</a></li>
-                        <li><a href="agenda.html#agenda">大會議程表</a></li>
+                        <li><a href="agenda.html#content">大會議程表</a></li>
                         <li><a href="index.html#key-spe">焦點講師</a></li>
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                         <li><a href="index.html#traffic">交通資訊</a></li>
@@ -153,7 +153,7 @@
                         </ul>
                     </li> -->
                         <li><a href="speaker.html">講師與講題</a></li>
-                        <li><a href="agenda.html">大會議程表</a></li>
+                        <li><a href="agenda.html#content">大會議程表</a></li>
                         <li><a href="index.html#key-spe">焦點講師</a></li>
                         <!-- <li><a href="http://modernweb.tw/sponsors.html">合作夥伴</a></li> -->
                         <li><a href="index.html#traffic">交通資訊</a></li>
@@ -172,7 +172,7 @@
             </div>
         </div>
     </div>
-    <div class="content" id="content">
+    <div class="content" id="content" v-cloak>
         <div id="top-area">
             <div id="info">
                 <div class="container">
@@ -192,8 +192,8 @@
             </div>
             <div class="speakers-page hidden-xs hidden-sm">
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                    <div class="row">
-                        <div class="speakers-production" :id="'s' + speaker.target_id">
+                    <div class="row" :id="'s' + speaker.target_id">
+                        <div class="speakers-production">
                             <div class="col-md-4 ">
                                 <div class="speakers-group-large">
                                     <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large speaker-head-gold-large" style="margin:0 auto;"></div>
@@ -225,8 +225,8 @@
             </div>
             <div class="row hidden-md hidden-lg">
                 <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                    <div class="col-md-12 mobile-key-group">
-                        <div class="mobile-key-header" :id="'s' + speaker.target_id">
+                    <div class="col-md-12 mobile-key-group" :id="'s' + speaker.target_id">
+                        <div class="mobile-key-header">
                             <div class=" pic-group speakers-bg-cicle">
                                 <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
                             <h2>{{ speaker.speaker }}</h2>
@@ -260,8 +260,8 @@
                     <div class="speakers-page hidden-xs hidden-sm">
                         <template v-for="speaker in speakerList">
                             <template v-if="speaker.role != '關鍵講師'">
-                                <div class="row">
-                                    <div class="speakers-production" :id="'s' + speaker.target_id">
+                                <div class="row" :id="'s' + speaker.target_id">
+                                    <div class="speakers-production">
                                         <div class="col-md-4 ">
                                             <div class="speakers-group-large">
                                                 <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large" style="margin:0 auto;"></div>
