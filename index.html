@@ -207,7 +207,7 @@
                     <div class="keyspeaker-group" v-if="$index % 2 == 0">
                         <div class="col-md-4 col-xs-4 keyspeaker--infogroup">
                             <a :href="speaker.hash_path" target="_blank">
-                                <div class=" pic-group">
+                                <div class="pic-group">
                                     <img src="img/rocket-speakerbg.png" class="img-responsive pic-bg">
                                     <div class="speker-pic">
                                         <img :src="speaker.avatar" class="img-circle img-responsive speaker-head">
@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-8 col-xs-8 keyspeaker--textgroup">
+                        <div class="col-md-8 col-xs-8 keyspeaker--textgroup textright">
                             <h2>{{ speaker.profile }}</h2>
                             <div class="key-text-box">
                                 <p>{{ speaker.full_profile }}</p>
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <div class="keyspeaker-group" v-if="$index % 2 == 1">
-                        <div class="col-md-8 col-xs-8 keyspeaker--textgroup">
+                        <div class="col-md-8 col-xs-8 keyspeaker--textgroup textleft">
                             <h2>{{ speaker.profile }}</h2>
                             <div class="key-text-box">
                                 <p>{{ speaker.full_profile }}</p>
