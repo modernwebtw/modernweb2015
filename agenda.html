@@ -208,6 +208,11 @@
                                                     </a>
                                                 </div>
                                             </div>
+                                            <div v-if="!!SessionTable[OpeningID]['download_link']">
+                                                <a href="{{ SessionTable[OpeningID]['download_link'] }}" target="_blank">
+                                                    <img src="img/pdf.png">
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -239,6 +244,11 @@
                                     <div class="" v-for="speaker in SessionTable[SessionID[0]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
+                                    <div v-if="!!SessionTable[SessionID[0]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[0]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>
                                     <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[1]]['speaker'][0]['target_id']">
@@ -249,6 +259,11 @@
                                     <div class="" v-for="speaker in SessionTable[SessionID[1]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
+                                    <div v-if="!!SessionTable[SessionID[1]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[1]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
+                                    </div>
                                 </td>
                                 <td bgcolor="#a2e2fe" class="track">
                                     <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[2]]['speaker'][0]['target_id']">
@@ -258,6 +273,11 @@
                                     </a>
                                     <div class="" v-for="speaker in SessionTable[SessionID[2]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
+                                    </div>
+                                    <div v-if="!!SessionTable[SessionID[2]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[2]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -298,6 +318,11 @@
                                                     </a>
                                                 </div>
                                             </div>
+                                            <div v-if="!!SessionTable[OpeningID]['download_link']">
+                                                <a href="{{ SessionTable[OpeningID]['download_link'] }}" target="_blank">
+                                                    <img src="img/pdf.png">
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -329,6 +354,11 @@
                                     <div class="" v-for="speaker in SessionTable[SessionID[0]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
+                                    <div v-if="!!SessionTable[SessionID[0]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[0]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>
                                     <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[1]]['speaker'][0]['target_id']">
@@ -339,6 +369,11 @@
                                     <div class="" v-for="speaker in SessionTable[SessionID[1]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
                                     </div>
+                                    <div v-if="!!SessionTable[SessionID[1]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[1]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
+                                    </div>
                                 </td>
                                 <td bgcolor="#a2e2fe" class="track">
                                     <a v-bind:href="'speaker.html#s' + SessionTable[SessionID[2]]['speaker'][0]['target_id']">
@@ -348,6 +383,11 @@
                                     </a>
                                     <div class="" v-for="speaker in SessionTable[SessionID[2]]['speaker']">
                                         {{ speaker.speaker }} / {{ speaker.company }}{{ speaker.department }}{{ speaker.position }}
+                                    </div>
+                                    <div v-if="!!SessionTable[SessionID[2]]['download_link']">
+                                        <a href="{{ SessionTable[SessionID[2]]['download_link'] }}" target="_blank">
+                                            <img src="img/pdf.png">
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
