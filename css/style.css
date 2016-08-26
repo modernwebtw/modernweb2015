@@ -130,7 +130,7 @@ h2 {
 .title-large-c h2::after {
     background-color: #444;
     height: 2px;
-    width: 10rem;
+    /* width: 10rem; */
     position: absolute;
 }
 
