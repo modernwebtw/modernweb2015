@@ -218,7 +218,7 @@
                             <template v-for="session in speaker.session">
                                 <div class="col-md-8 pre-scrollable speakers-production-text">
                                     <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h3>
-                                    <p>{{ session.summary }}</p>
+                                    <p>{{{ session.summary }}}</p>
                                 </div>
                             </template>
                         </div>
@@ -241,7 +241,7 @@
                                 <template v-for="session in speaker.session">
                                     <div class="key-text-box ">
                                         <h4>● 精彩講題<br>{{ session.title }}</h4>
-                                        <p>{{ session.summary }}</p>
+                                        <p>{{{ session.summary }}}</p>
                                     </div>
                                 </template>
                                 <div class="session-box col-md-6 text-left">
@@ -286,7 +286,7 @@
                                         <div class="col-md-8 pre-scrollable speakers-production-text">
                                             <template v-for="session in speaker.session">
                                                 <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h3>
-                                                <p>{{ session.summary }}</p>
+                                                <p>{{{ session.summary }}}</p>
                                                 <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
                                             </template>
                                         </div>
@@ -312,7 +312,7 @@
                                                 <template v-for="session in speaker.session">
                                                     <div class="session-box col-md-6 text-left">
                                                         <h4>● 精彩講題<br>{{ session.title }}</h4>
-                                                        <p>{{ session.summary }}</p>
+                                                        <p>{{{ session.summary }}}</p>
                                                     </div>
                                                 </template>
                                             </div>
