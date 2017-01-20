@@ -1,5 +1,5 @@
 var confapi = (function() {
-    var DOMAIN = 'http://confapi.ithome.com.tw';
+    var DOMAIN = 'https://confapi.ithome.com.tw';
     var NID = '981';
     var LOG = false;
     var CACHE = false;
