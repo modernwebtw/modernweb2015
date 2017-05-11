@@ -233,18 +233,18 @@
                             </div>
                         </div>
                         <div class="col-md-8 col-xs-8 keyspeaker--textgroup textright">
-                            <h2>{{ speaker.profile }}</h2>
+                            <h2>{{{ speaker.profile }}}</h2>
                             <div class="key-text-box">
-                                <p>{{ speaker.full_profile }}</p>
+                                <p>{{{ speaker.full_profile }}}</p>
                                 <!-- <h4>● 精彩講題<br>Kuburnetes: Applying Lessons a Decade of Containers</h4> -->
                             </div>
                         </div>
                     </div>
                     <div class="keyspeaker-group" v-if="$index % 2 == 1">
                         <div class="col-md-8 col-xs-8 keyspeaker--textgroup textleft">
-                            <h2>{{ speaker.profile }}</h2>
+                            <h2>{{{ speaker.profile }}}</h2>
                             <div class="key-text-box">
-                                <p>{{ speaker.full_profile }}</p>
+                                <p>{{{ speaker.full_profile }}}</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-xs-4 col-md-offset-8 col-xs-offset-8 keyspeaker--infogroup">
@@ -325,9 +325,9 @@
                     <div class="col-md-6 dojo-text">
                         <h5><i class="fa fa-flask" aria-hidden="true"></i> SASS Dojo</h5>
                         <br>CSS 是網頁中的一種靜態裝飾表達式，直到現在 CSS3 充滿了許多表達性，讓網頁有了豐富性的呈現，但是 CSS 少了可程式化，再用性，易讀性等問題， SASS 基於 CSS 並補足 CSS 原生不足的語言因此誕生，本次實做將針對未曾嘗試過 SASS 開發的網頁開發者所帶來的新體驗，藉由不同的比較，從範例中讓開發者瞭解 SASS 的好處優化開發流程，加速 CSS 開發成果。Code Dojo
-                        <br><br>協力單位：EXMA-Square、創科資訊</div>
+                        <br>
+                        <br>協力單位：EXMA-Square、創科資訊</div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -394,7 +394,7 @@
             </div>
         </div>
     </div>
-<!--
+    <!--
     <div id="signup">
         <div class="container">
             <div class="row">
