@@ -12,7 +12,8 @@
     <meta property="og:url" content="http://modernweb.tw" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Modern Web 2016 ─ 技術在我們手上，世界就在我們手上" />
-    <meta property="og:description" content="Modern Web 2016將在8/24-25兩日，在台北文創舉行。今年Modern Web 2016邀請到JSON格式與《JavaScript：優良部份》作者 Douglas Crockford和Google、Nginx高手們進行主題演講，揭示Web發展動態。另外有中國Web/電子商務專家齊聚，完全解密他們在Web產業的實踐經驗，還有台灣業界高手不藏私分享。最精彩的Web技術分享與交流，就在Modern Web 2016" />
+    <meta property="og:description" content="Modern Web 2016將在8/24-25兩日，在台北文創舉行。今年Modern Web 2016邀請到JSON格式與《JavaScript：優良部份》作者 Douglas Crockford和Google、Nginx高手們進行主題演講，揭示Web發展動態。另外有中國Web/電子商務專家齊聚，完全解密他們在Web產業的實踐經驗，還有台灣業界高手不藏私分享。最精彩的Web技術分享與交流，就在Modern Web 2016"
+    />
     <meta property="og:image" content="http://modernweb.tw/img/social-pic.jpg" />
     <title>Modern Web 2016 ─ 技術在我們手上，世界就在我們手上</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -120,12 +121,10 @@
                 <div class="wrap clearfix" style="z-index: 9999; position: absolute;margin-top: 5%;">
                     <h1>Modern Web 2016</h1>
                     <h2>技術在我們手上，世界就在我們手上</h1>
-                    <h4>
-                        <i class="fa fa-calendar"></i>
-                        2016年 8月 24-25日
-                        <i class="fa fa-map-marker"></i>
-                        台北文創
-                    </h1>
+                        <h4>
+                            <i class="fa fa-calendar"></i> 2016年 8月 24-25日
+                            <i class="fa fa-map-marker"></i> 台北文創
+                            </h1>
                 </div>
                 <img src="img/earth-bg.png" style="position: absolute;right: 0px;bottom: 0px;" class="earth">
             </div>
@@ -191,225 +190,229 @@
                     </div>
                 </div>
             </div>
-            <div class="key-speaker" id="key-spe" >
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center title-large-r">
-                            <h2>焦點講師</h2>
-                </div>
-            </div>
-            <div class="speakers-page hidden-xs hidden-sm">
-                <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                    <div class="row" :id="'s' + speaker.target_id">
-                        <div class="speakers-production">
-                            <div class="col-md-4 ">
-                                <div class="speakers-group-large">
-                                    <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large speaker-head-gold-large" style="margin:0 auto;"></div>
-                                    <div class="text-center">
-                                        <div class="speakers-name-large">
-                                            <div class="row">
-                                                <div class="col-md-12 text-center">
-                                                    <h3>{{ speaker.speaker }}</h3>
-                                                    <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <template v-for="session in speaker.session">
-                                <div class="col-md-8 pre-scrollable speakers-production-text">
-                                    <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h3>
-                                    <p>{{{ session.summary }}}</p>
-                                </div>
-                            </template>
-                        </div>
-                        <div class="col-md-12 session-group">
-                            {{ speaker.full_profile }}
-                            <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div class="row hidden-md hidden-lg">
-                <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
-                    <div class="col-md-12 mobile-key-group" :id="'s' + speaker.target_id">
-                        <div class="mobile-key-header">
-                            <div class=" pic-group speakers-bg-cicle">
-                                <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
-                            <h2>{{ speaker.speaker }}</h2>
-                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                            <div class="mobile-key-body keyspeaker--textgroup-mobile">
-                                <template v-for="session in speaker.session">
-                                    <div class="key-text-box ">
-                                        <h4>● 精彩講題<br>{{ session.title }}</h4>
-                                        <p>{{{ session.summary }}}</p>
-                                    </div>
-                                </template>
-                                <div class="session-box col-md-6 text-left">
-                                    <p>{{ speaker.full_profile }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-        <hr>
-        <div id="top-area">
             <div class="key-speaker" id="key-spe">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center title-large-r">
-                            <h2>講師陣容</h2>
+                            <h2>焦點講師</h2>
                         </div>
                     </div>
                     <div class="speakers-page hidden-xs hidden-sm">
-                        <template v-for="speaker in speakerList">
-                            <template v-if="speaker.role != '關鍵講師'">
-                                <div class="row" :id="'s' + speaker.target_id">
-                                    <div class="speakers-production">
-                                        <div class="col-md-4 ">
-                                            <div class="speakers-group-large">
-                                                <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large" style="margin:0 auto;"></div>
-                                                <div class="text-center">
-                                                    <div class="speakers-name-large">
-                                                        <div class="row">
-                                                            <div class="col-md-12 text-center">
-                                                                <h3>{{ speaker.speaker }}</h3>
-                                                                <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                                            </div>
+                        <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
+                            <div class="row" :id="'s' + speaker.target_id">
+                                <div class="speakers-production">
+                                    <div class="col-md-4 ">
+                                        <div class="speakers-group-large">
+                                            <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large speaker-head-gold-large"
+                                                    style="margin:0 auto;"></div>
+                                            <div class="text-center">
+                                                <div class="speakers-name-large">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-center">
+                                                            <h3>{{ speaker.speaker }}</h3>
+                                                            <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position
+                                                                }}</h5>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <template v-for="session in speaker.session">
                                         <div class="col-md-8 pre-scrollable speakers-production-text">
-                                            <template v-for="session in speaker.session">
-                                                <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;{{ session.title }}</h3>
-                                                <p>{{{ session.summary }}}</p>
-                                                <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
-                                            </template>
+                                            <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;<span v-html="session.title"></span></h3>
+                                            <p>{{{ session.summary }}}</p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 session-group">
-                                        {{ speaker.full_profile }}
-                                    </div>
+                                    </template>
                                 </div>
-                            </template>
+                                <div class="col-md-12 session-group">
+                                    {{ speaker.full_profile }}
+                                    <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
+                                </div>
+                            </div>
                         </template>
                     </div>
                     <div class="row hidden-md hidden-lg">
-                        <template v-for="speaker in speakerList">
-                            <template v-if="speaker.role != '關鍵講師'">
-                                <div class="col-md-12 mobile-key-group">
-                                    <div class="mobile-key-header" :id="'s' + speaker.target_id">
-                                        <div class=" pic-group speakers-bg-cicle">
-                                            <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
-                                        <h2>{{ speaker.speaker }}</h2>
-                                        <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
-                                        <div class="mobile-key-body keyspeaker--textgroup-mobile">
+                        <template v-for="speaker in speakerList | filterBy '關鍵講師' in 'role'">
+                            <div class="col-md-12 mobile-key-group" :id="'s' + speaker.target_id">
+                                <div class="mobile-key-header">
+                                    <div class=" pic-group speakers-bg-cicle">
+                                        <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
+                                    <h2>{{ speaker.speaker }}</h2>
+                                    <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                    <div class="mobile-key-body keyspeaker--textgroup-mobile">
+                                        <template v-for="session in speaker.session">
                                             <div class="key-text-box ">
-                                                <template v-for="session in speaker.session">
-                                                    <div class="session-box col-md-6 text-left">
-                                                        <h4>● 精彩講題<br>{{ session.title }}</h4>
-                                                        <p>{{{ session.summary }}}</p>
-                                                    </div>
-                                                </template>
+                                                <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                                <p>{{{ session.summary }}}</p>
                                             </div>
+                                        </template>
+                                        <div class="session-box col-md-6 text-left">
                                             <p>{{ speaker.full_profile }}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                            </template>
+                            </div>
                         </template>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="sponsor">
-            <div class="fullscreen-wrap2">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <!-- <div class="text-center"><img src="img/icon/sponsor01.png"></div> -->
-                        <div class="text-center">
-                            <h3 class="first">主辦單位</h3>
-                            <div style="display: inline-block;">
-                                <a href="http://www.ithome.com.tw" target="_blank">
-                                    <img src="img/logos/ithome.png" class="img-responsive">
-                                </a>
+                <hr>
+                <div id="top-area">
+                    <div class="key-speaker" id="key-spe">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center title-large-r">
+                                    <h2>講師陣容</h2>
+                                </div>
+                            </div>
+                            <div class="speakers-page hidden-xs hidden-sm">
+                                <template v-for="speaker in speakerList">
+                                    <template v-if="speaker.role != '關鍵講師'">
+                                        <div class="row" :id="'s' + speaker.target_id">
+                                            <div class="speakers-production">
+                                                <div class="col-md-4 ">
+                                                    <div class="speakers-group-large">
+                                                        <div class="speakers-bg-cicle "><img :src="speaker.avatar" class="img-circle img-responsive speaker-head-gray-large"
+                                                                style="margin:0 auto;"></div>
+                                                        <div class="text-center">
+                                                            <div class="speakers-name-large">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 text-center">
+                                                                        <h3>{{ speaker.speaker }}</h3>
+                                                                        <h5>{{ speaker.company }} {{ speaker.department }} {{
+                                                                            speaker.position }}</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 pre-scrollable speakers-production-text">
+                                                    <template v-for="session in speaker.session">
+                                                        <h3><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;<span v-html="session.title"></span></h3>
+                                                        <p>{{{ session.summary }}}</p>
+                                                        <!-- <div class="text-right"> <span><i class="fa fa-angle-double-down" aria-hidden="true"></i> 更多講題內容</span></div> -->
+                                                    </template>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 session-group">
+                                                {{ speaker.full_profile }}
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                            <div class="row hidden-md hidden-lg">
+                                <template v-for="speaker in speakerList">
+                                    <template v-if="speaker.role != '關鍵講師'">
+                                        <div class="col-md-12 mobile-key-group">
+                                            <div class="mobile-key-header" :id="'s' + speaker.target_id">
+                                                <div class=" pic-group speakers-bg-cicle">
+                                                    <img :src="speaker.avatar" class="img-circle img-responsive" style="margin:0 auto;"></div>
+                                                <h2>{{ speaker.speaker }}</h2>
+                                                <h5>{{ speaker.company }} {{ speaker.department }} {{ speaker.position }}</h5>
+                                                <div class="mobile-key-body keyspeaker--textgroup-mobile">
+                                                    <div class="key-text-box ">
+                                                        <template v-for="session in speaker.session">
+                                                            <div class="session-box col-md-6 text-left">
+                                                                <h4>● 精彩講題<br>{{ session.title }}</h4>
+                                                                <p>{{{ session.summary }}}</p>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                    <p>{{ speaker.full_profile }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 text-center">
-                        <h3>協辦單位</h3>
-                        <div class="logo-items">
-                            <a href="http://exma-square.co/" target="_blank">
-                                <img src="img/logos/exma_logo.jpg">
-                            </a>
-                            <a href="http://www.geekbang.org/" target="_blank">
-                                <img src="img/logos/geekbang_logo.jpg">
-                            </a>
-                            <a href="http://www.infoq.com/cn/" target="_blank">
-                                <img src="img/logos/infoq_logo.jpg">
-                            </a>
-                            <a href="http://trunk-studio.com/" target="_blank">
-                                <img src="img/logos/trunk_logo.jpg">
-                            </a>
+                </div>
+                <div id="sponsor">
+                    <div class="fullscreen-wrap2">
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <!-- <div class="text-center"><img src="img/icon/sponsor01.png"></div> -->
+                                <div class="text-center">
+                                    <h3 class="first">主辦單位</h3>
+                                    <div style="display: inline-block;">
+                                        <a href="http://www.ithome.com.tw" target="_blank">
+                                            <img src="img/logos/ithome.png" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <h3>協辦單位</h3>
+                                <div class="logo-items">
+                                    <a href="http://exma-square.co/" target="_blank">
+                                        <img src="img/logos/exma_logo.jpg">
+                                    </a>
+                                    <a href="http://www.geekbang.org/" target="_blank">
+                                        <img src="img/logos/geekbang_logo.jpg">
+                                    </a>
+                                    <a href="http://www.infoq.com/cn/" target="_blank">
+                                        <img src="img/logos/infoq_logo.jpg">
+                                    </a>
+                                    <a href="http://trunk-studio.com/" target="_blank">
+                                        <img src="img/logos/trunk_logo.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="container-fluid">
+                <div class="col-md-12 footer-box">
+                    <div class="col-xs-4 col-md-2 no-p ">
+                        <i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="col-xs-8 col-md-3 box-first">
+                        <h3 class="ftext"><span style="color:#f7d036;font-size:2.5vmin;">8 月 24-25 日 (三、四)</span>
+                            <br>臺北文創大樓</h3>
+                    </div>
+                    <div class="col-xs-12 hidden-lg hidden-md " style="color:#ffffff;font-size: 2.8vmin;">
+                        <p>客服專線：02-25622880#3622 開小姐
+                            <br>（週一至週五，上午10:30~12:00，下午1:30~5:30）
+                            <br>客服信箱：service@mail.ithome.com.tw</p>
+                    </div>
+                    <div class="col-md-7 hidden-xs hidden-sm">
+                        <div class="row">
+                            <div class="footer-contec-info col-md-12">
+                                <h3>聯絡 Modern Web 服務小組</h3>
+                                <p>客服專線：02-25622880#3622 開小姐（週一至週五，上午10:30~12:00，下午1:30~5:30）
+                                    <br>客服信箱：service@mail.ithome.com.tw</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="footer" class="container-fluid">
-        <div class="col-md-12 footer-box">
-            <div class="col-xs-4 col-md-2 no-p ">
-                <i class="fa fa-calendar" aria-hidden="true"></i></div>
-            <div class="col-xs-8 col-md-3 box-first">
-                <h3 class="ftext"><span style="color:#f7d036;font-size:2.5vmin;">8 月 24-25 日 (三、四)</span>
-                        <br>臺北文創大樓</h3>
-            </div>
-            <div class="col-xs-12 hidden-lg hidden-md " style="color:#ffffff;font-size: 2.8vmin;">
-                <p>客服專線：02-25622880#3622 開小姐
-                    <br>（週一至週五，上午10:30~12:00，下午1:30~5:30）
-                    <br>客服信箱：service@mail.ithome.com.tw</p>
-            </div>
-            <div class="col-md-7 hidden-xs hidden-sm">
-                <div class="row">
-                    <div class="footer-contec-info col-md-12">
-                        <h3>聯絡 Modern Web 服務小組</h3>
-                        <p>客服專線：02-25622880#3622 開小姐（週一至週五，上午10:30~12:00，下午1:30~5:30）
-                            <br>客服信箱：service@mail.ithome.com.tw</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/space.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        <script src="js/jquery.min.js"></script>
+        <script src="js/vue.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/space.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-48349256-7', 'auto');
-    ga('send', 'pageview');
-    </script>
+            ga('create', 'UA-48349256-7', 'auto');
+            ga('send', 'pageview');
+        </script>
 </body>
 
 </html>
