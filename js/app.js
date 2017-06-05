@@ -187,13 +187,14 @@ var confapi = (function () {
 
                     rowData['forum_type'] = removeArray(rowData['forum_type']);
 
-                    rowData['session_start'] = rowData['session_start'];
+                    // fixed time
+                    var sessioin_date = rowData['sessioin_date'];
+                    rowData['start_Date'] = new Date(sessioin_date.value + ' ' + sessioin_date.timezone_db);
+                    rowData['end_Date'] = new Date(sessioin_date.value2 + ' ' + sessioin_date.timezone_db);
 
-                    rowData['session_end'] = rowData['session_end'];
+                    var SD = new Date(rowData['start_Date']);
 
-                    var SD = new Date(+rowData['session_start']);
-
-                    var ED = new Date(+rowData['session_end']);
+                    var ED = new Date(rowData['start_Date']);
 
                     rowData['date'] = (SD.getMonth() + 1) + '/' + SD.getDate();
 
