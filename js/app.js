@@ -1,13 +1,13 @@
 // navbar fixed
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
     // Fixa navbar ao ultrapassa-lo
     var navbar = $('#nav'),
         distance = navbar.offset().top,
         $window = $(window);
 
-    $window.scroll(function() {
+    $window.scroll(function () {
         if ($window.scrollTop() >= distance) {
             navbar.css('position', 'fixed');
             $("body").css("padding-top", navbar.height());
@@ -19,17 +19,17 @@ jQuery(document).ready(function($) {
 
 });
 
-$(function() {
-    Vue.filter('rank', function(data, rank) {
-        return $.grep(data, function(obj) {
+$(function () {
+    Vue.filter('rank', function (data, rank) {
+        return $.grep(data, function (obj) {
             return (obj.rank == rank) ? obj : null;
         });
     });
 
-    Vue.filter('tag', function(data, tag) {
-        return $.grep(data, function(obj) {
+    Vue.filter('tag', function (data, tag) {
+        return $.grep(data, function (obj) {
             var checkTag = null;
-            $.each(obj.tags, function(i, v) {
+            $.each(obj.tags, function (i, v) {
                 if (v == tag) {
                     checkTag = obj;
                 }
@@ -38,8 +38,8 @@ $(function() {
         });
     });
 
-    Vue.filter('filter', function(obj, field, value) {
-        return $.grep(Object.keys(obj), function(key) {
+    Vue.filter('filter', function (obj, field, value) {
+        return $.grep(Object.keys(obj), function (key) {
             var checkData = null;
             if (obj[key][field] == value) {
                 checkData = obj;
@@ -48,7 +48,7 @@ $(function() {
         });
     });
 
-    confapi.getSessionAndSpeaker().then(function(result) {
+    confapi.getSessionAndSpeaker().then(function (result) {
 
         var SessionTableOpening1 = [
             1186, //9:30
@@ -100,16 +100,16 @@ $(function() {
             }
         });
 
-        $.when(confapi.getSponsor(), confapi.getSpeakerWithSession()).then(function(Sponsor, Speaker) {
+        $.when(confapi.getSponsor(), confapi.getSpeakerWithSession()).then(function (Sponsor, Speaker) {
             modernweb.$set('sponsorList', Sponsor);
             modernweb.$set('speakerList', Speaker);
 
             if (!!location.hash) {
                 var tempHash = location.hash;
-                Vue.nextTick(function() {
+                Vue.nextTick(function () {
                     var nrOfImages = $(".speker-pic img, .speakers-production img").length;
                     if (!!nrOfImages) {
-                        $(".speker-pic > img, .speakers-production img").load(function() {
+                        $(".speker-pic > img, .speakers-production img").load(function () {
                             if (--nrOfImages == 0) {
                                 // Function goes here
                                 goScroll(tempHash);
@@ -122,7 +122,7 @@ $(function() {
             }
         });
 
-        $('a[href^="#"]:not([href="#"])').click(function() {
+        $('a[href^="#"]:not([href="#"])').click(function () {
             var target = '#' + $(this).attr('href').split('#')[1];
             goScroll(target);
             return false;
@@ -130,7 +130,7 @@ $(function() {
     });
 });
 
-var confapi = (function() {
+var confapi = (function () {
     // config
     var Domain = 'http://confapi.ithome.com.tw';
 
@@ -141,19 +141,19 @@ var confapi = (function() {
     var CACHE = false;
 
     // private method
-    var error = function() {
+    var error = function () {
         var str = Array.prototype.join.call(arguments, ' ');
         // console.log('%cConfAPI：' + str, "font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif; color: #fff; font-size: 12px; padding: 5px; background: #444; border-radius: 4px; line-height: 40px; text-shadow: 0 1px #000");
     };
 
-    var getJSONP = function(type) {
+    var getJSONP = function (type) {
         var deferred = $.Deferred();
 
         var api = Domain + '/api/' + type + '.jsonp?nid=' + NID + '&callback=?';
 
-        $.getJSON(api).then(function(response) {
+        $.getJSON(api).then(function (response) {
             return deferred.resolve(response);
-        }).fail(function() {
+        }).fail(function () {
             error('「not found', api, '」');
 
             return deferred.reject(api);
@@ -162,15 +162,15 @@ var confapi = (function() {
         return deferred.promise();
     };
 
-    var removeArray = function(arr) {
+    var removeArray = function (arr) {
         return (arr.length === 0) ? '' : arr;
     };
 
     // public method
     return {
-        getSession: function() {
-            return getJSONP('sessionlist').then(function(response) {
-                return $.map(response, function(rowData, index) {
+        getSession: function () {
+            return getJSONP('sessionlist').then(function (response) {
+                return $.map(response, function (rowData, index) {
                     rowData['title'] = removeArray(rowData['title']);
 
                     rowData['classroom'] = removeArray(rowData['classroom']);
@@ -187,9 +187,9 @@ var confapi = (function() {
 
                     rowData['forum_type'] = removeArray(rowData['forum_type']);
 
-                    rowData['session_start'] = rowData['session_start'] + '000';
+                    rowData['session_start'] = rowData['session_start'];
 
-                    rowData['session_end'] = rowData['session_end'] + '000';
+                    rowData['session_end'] = rowData['session_end'];
 
                     var SD = new Date(+rowData['session_start']);
 
@@ -207,9 +207,9 @@ var confapi = (function() {
                 });
             });
         },
-        getSpeaker: function() {
-            return getJSONP('speakerlist').then(function(response) {
-                return $.map(response, function(rowData, index) {
+        getSpeaker: function () {
+            return getJSONP('speakerlist').then(function (response) {
+                return $.map(response, function (rowData, index) {
                     rowData['avatar'] = Domain + rowData['avatar'];
 
                     rowData['speaker'] = rowData['speaker'];
@@ -232,9 +232,9 @@ var confapi = (function() {
                 });
             });
         },
-        getSponsor: function() {
-            return getJSONP('sponsorlist').then(function(response) {
-                return $.map(response, function(rowData, index) {
+        getSponsor: function () {
+            return getJSONP('sponsorlist').then(function (response) {
+                return $.map(response, function (rowData, index) {
                     rowData['title'] = removeArray(rowData['title']);
 
                     rowData['description'] = removeArray(rowData['description']);
@@ -249,8 +249,8 @@ var confapi = (function() {
                 });
             });
         },
-        getSessionAndSpeaker: function() {
-            return $.when(this.getSession(), this.getSpeaker()).then(function(Session, Speaker) {
+        getSessionAndSpeaker: function () {
+            return $.when(this.getSession(), this.getSpeaker()).then(function (Session, Speaker) {
                 var SpeakerData = {};
 
                 for (var i = 0; i < Speaker.length; i++) {
@@ -259,8 +259,8 @@ var confapi = (function() {
                     SpeakerData[target_id] = Speaker[i];
                 };
 
-                Session = $.map(Session, function(rowData) {
-                    rowData['speaker'] = $.map(rowData['speaker'], function(data) {
+                Session = $.map(Session, function (rowData) {
+                    rowData['speaker'] = $.map(rowData['speaker'], function (data) {
                         var target_id = data['target_id'];
                         if (!!SpeakerData[target_id] && data['target_id'] == SpeakerData[target_id]['target_id']) {
                             // add hash
@@ -289,13 +289,13 @@ var confapi = (function() {
                 return SessionData;
             });
         },
-        getSpeakerWithSession: function() {
-            return $.when(this.getSession(), this.getSpeaker()).then(function(Session, Speaker) {
+        getSpeakerWithSession: function () {
+            return $.when(this.getSession(), this.getSpeaker()).then(function (Session, Speaker) {
                 var SessionData = {};
 
-                $.each(Session, function(i, v) {
+                $.each(Session, function (i, v) {
                     if (!!v.speaker.length) {
-                        $.each(v.speaker, function(index, value) {
+                        $.each(v.speaker, function (index, value) {
                             SessionData[value.target_id] = SessionData[value.target_id] || [];
                             SessionData[value.target_id].push({
                                 title: v.title,
@@ -305,7 +305,7 @@ var confapi = (function() {
                     }
                 });
 
-                var SpeakerData = $.map(Speaker, function(rowData) {
+                var SpeakerData = $.map(Speaker, function (rowData) {
                     rowData['session'] = SessionData[rowData.target_id];
 
                     return rowData;
@@ -324,7 +324,7 @@ function goScroll(target) {
 
     $("html, body").stop().animate({
         scrollTop: sTop
-    }, 1000, function() {
+    }, 1000, function () {
         location.hash = target;
     });
 }
