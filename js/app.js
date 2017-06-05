@@ -187,13 +187,9 @@ var confapi = (function () {
 
                     rowData['forum_type'] = removeArray(rowData['forum_type']);
 
-                    rowData['session_start'] = rowData['session_start'];
+                    var SD = new Date(rowData['session_start']);
 
-                    rowData['session_end'] = rowData['session_end'];
-
-                    var SD = new Date(+rowData['session_start']);
-
-                    var ED = new Date(+rowData['session_end']);
+                    var ED = new Date(rowData['session_end']);
 
                     rowData['date'] = (SD.getMonth() + 1) + '/' + SD.getDate();
 
