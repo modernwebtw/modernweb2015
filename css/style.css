@@ -523,6 +523,12 @@ h2 {
 
 }
 
+#top-area .cta.finished
+{
+   color: #ccc;
+}
+
+
 #top-area,
 {
     background-color: #e4e4e4;
