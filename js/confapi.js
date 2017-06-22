@@ -78,6 +78,7 @@ var confapi = confapi || (function () {
                         rowData['avatar'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
                     }
                     rowData['speaker'] = rowData['speaker'];
+                    rowData['position'] = rowData['position'].replace(/&amp;/, '&');
                     rowData['hash_path'] = 'speaker.html#s' + rowData['target_id'];
                     return rowData;
                 });
