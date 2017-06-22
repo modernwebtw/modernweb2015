@@ -92,6 +92,13 @@ var modernweb2017 = new Vue({
                 var gameStart = function () {
                     $('html, body').scrollTop(0);
                     $('body').addClass('game_start');
+                    var $game = $('#game');
+                    var g_w = $game.width();
+                    var g_h = $game.height();
+                    $game.attr({
+                        'width': g_w,
+                        'height': g_h
+                    });
                     Game.init();
                     toggleScroll(false);
                 }
