@@ -67,18 +67,12 @@ var modernweb2017 = new Vue({
                     $('#modal_game_start').modal('show');
                 });
 
-                $('#btn_game_start').click(function () {
-                    $('body').addClass('game_start');
-                    Game.init();
+                $('#btn_game_start, #btn_continue').click(function () {
+                    gameStart();
                 });
 
-                $('#btn_continue').click(function () {
-                    Game.init();
-                });
-
-                $('#btn_back').click(function () {
-                    $('body').removeClass('game_start');
-                    Game.pause();
+                $('#btn_back, #btn_exit').click(function () {
+                    gamePause();
                 });
 
                 $('#btn_share_fb').click(function () {
@@ -94,6 +88,31 @@ var modernweb2017 = new Vue({
                         })
                     }, function (response) {});
                 });
+
+                var gameStart = function () {
+                    $('html, body').scrollTop(0);
+                    $('body').addClass('game_start');
+                    Game.init();
+                    toggleScroll(false);
+                }
+
+                var gamePause = function () {
+                    $('body').removeClass('game_start');
+                    Game.pause();
+                    toggleScroll(true);
+                }
+
+                var toggleScroll = function (boolean) {
+                    if (boolean) {
+                        $(window).off('scroll touchmove mousewheel');
+                    } else {
+                        $(window).on('scroll touchmove mousewheel', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            return false;
+                        })
+                    }
+                }
                 // game
             });
         });

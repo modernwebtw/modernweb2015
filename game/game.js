@@ -1,4 +1,4 @@
-//
+// temp img
 var fire_1_image = new Image();
 fire_1_image.src = 'game/fire_1.png';
 var fire_2_image = new Image();
