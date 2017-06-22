@@ -1,0 +1,62 @@
+.speaker {
+	@include media("<=768px") {
+		margin-left: 10%;
+	}
+	&__img {
+		width: 100%;
+		min-width: 100px;
+		max-width: 70%;
+		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		@include media(">768px") {
+			
+			max-width: 180px;
+		}
+		@include media(">991px") {
+			
+			max-width: 200px;
+		}
+	}
+	&__content {
+		position: relative;
+		margin-left: 8%;
+		margin-top: -10%;
+		width: 80%;
+		text-align: left;
+		@include media(">768px") {
+			margin-top: -24px;
+			margin-left: 30px;
+			width: 100%;
+			max-width: 200px;
+		}
+	}
+	&__name {
+		padding: 6% 5% 5%;
+		color: #fff;
+		line-height: 1;
+		font-weight: 300;
+		letter-spacing: 1px;
+		font-size: 20px;
+		background-color: $main-green;
+		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		@include media(">768px") {
+			
+			padding: 9px 12px 7px;
+			max-width: 200px;
+			font-size: 24px;
+		}
+	}
+	&__desc {
+		margin-top: 8px;
+		padding-left: 5%;
+		padding-right: 5%;
+		color: #fff;
+		font-weight: 300;
+		line-height: 1.4;
+		font-size: 16px;
+		@include media(">768px") {
+			padding-left: 12px;
+			padding-right: 12px;
+			font-size: 18px;
+		}
+	}
+}

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Modern Web 2017</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="game/style.css">
     <link rel="stylesheet" href="game/game.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +24,7 @@
             <div class="logo">
                 <h1><img src="img/logo.svg" alt="Modern Web 2017"></h1>
                 <h2>技術在我們手上，世界就在我們手上</h2>
-                <p>8/ 24.25 | 台北文創</p>
+                <p>8/ 10 . 11 | 台北文創</p>
             </div>
             <div class="base">
                 <div class="space-left">
@@ -273,32 +272,65 @@
             <div class="satellite"><img src="img/satellite.svg" alt=""></div>
             <div class="saturn"><img src="img/saturn.svg" alt=""></div>
             <div class="alien" id="alien">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 56">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 56" class="alien__svg">
                     <path opacity="0.2" fill="#FFFFFF" d="M52.341,42.757V21.221C52.341,9.5,42.841,0,31.121,0S9.9,9.5,9.9,21.221v21.536H52.341z"
                     />
-                    <path fill="#A8FF73" d="M43.558,43.058c0,6.869-5.568,12.436-12.437,12.436l0,0c-6.869,0-12.437-5.566-12.437-12.436v-21.46c0-6.868,5.568-12.437,12.437-12.437l0,0c6.869,0,12.437,5.568,12.437,12.437V43.058z"
-                    />
-                    <path fill="#231815" d="M31.05,33.463c-1.145-0.007-3.994-0.124-5.704-1.059c-1.105-0.603-1.512-1.985-0.911-3.091c0.603-1.105,1.986-1.512,3.09-0.91c0.292,0.158,1.542,0.488,3.555,0.501c2.002,0.014,3.283-0.308,3.56-0.456c1.079-0.647,2.475-0.295,3.12,0.786c0.648,1.079,0.292,2.479-0.788,3.127C35.277,33.378,32.266,33.471,31.05,33.463"
-                    />
-                    <path fill="#FF7373" d="M26.188,32.773c1.69,0.598,3.89,0.683,4.861,0.689c0.993,0.005,3.178-0.054,4.87-0.628c-0.505-1.291-2.481-2.266-4.852-2.279C28.699,30.541,26.71,31.489,26.188,32.773"
-                    />
-                    <circle fill="#FFFFFF" cx="31.121" cy="20.031" r="6.224" />
-                    <circle class="alien__eye" fill="#231815" cx="33.293" cy="20.031" r="4.052" />
-                    <polygon fill="#FF8787" points="48.25,43.442 13.458,43.442 15.722,35.521 45.985,35.521 " />
-                    <path fill="#87B1FF" d="M59.386,48.155c0,4.077-3.818,7.384-8.529,7.384H11.385c-4.71,0-8.53-3.307-8.53-7.384l0,0c0-4.078,3.819-7.385,8.53-7.385h39.472C55.567,40.771,59.386,44.077,59.386,48.155L59.386,48.155z"
-                    />
-                    <path fill="#5D5DB3" d="M62.241,48.157c0,2.4-1.947,4.348-4.35,4.348H4.349C1.947,52.505,0,50.558,0,48.157l0,0c0-2.402,1.947-4.35,4.349-4.35h53.542C60.294,43.808,62.241,45.755,62.241,48.157L62.241,48.157z"
-                    />
-                    <circle fill="#FFFFFF" cx="9.244" cy="48.155" r="1.505" />
-                    <circle fill="#FFFFFF" cx="17.771" cy="48.155" r="1.505" />
-                    <circle fill="#FFFFFF" cx="26.299" cy="48.155" r="1.505" />
-                    <circle fill="#FFFFFF" cx="34.826" cy="48.155" r="1.505" />
-                    <circle fill="#FFFFFF" cx="43.353" cy="48.155" r="1.505" />
-                    <circle fill="#FFFFFF" cx="51.881" cy="48.155" r="1.505" />
+                    <g>
+                        <path fill="#A8FF73" d="M43.558,43.058c0,6.869-5.568,12.436-12.437,12.436l0,0c-6.869,0-12.437-5.566-12.437-12.436v-21.46c0-6.868,5.568-12.437,12.437-12.437l0,0c6.869,0,12.437,5.568,12.437,12.437V43.058z"
+                        />
+                        <path fill="#231815" d="M31.05,33.463c-1.145-0.007-3.994-0.124-5.704-1.059c-1.105-0.603-1.512-1.985-0.911-3.091c0.603-1.105,1.986-1.512,3.09-0.91c0.292,0.158,1.542,0.488,3.555,0.501c2.002,0.014,3.283-0.308,3.56-0.456c1.079-0.647,2.475-0.295,3.12,0.786c0.648,1.079,0.292,2.479-0.788,3.127C35.277,33.378,32.266,33.471,31.05,33.463"
+                        />
+                        <path fill="#FF7373" d="M26.188,32.773c1.69,0.598,3.89,0.683,4.861,0.689c0.993,0.005,3.178-0.054,4.87-0.628c-0.505-1.291-2.481-2.266-4.852-2.279C28.699,30.541,26.71,31.489,26.188,32.773"
+                        />
+                        <polygon fill="#FF8787" points="48.25,43.442 13.458,43.442 15.722,35.521 45.985,35.521 " />
+                        <path fill="#87B1FF" d="M59.386,48.155c0,4.077-3.818,7.384-8.529,7.384H11.385c-4.71,0-8.53-3.307-8.53-7.384l0,0c0-4.078,3.819-7.385,8.53-7.385h39.472C55.567,40.771,59.386,44.077,59.386,48.155L59.386,48.155z"
+                        />
+                        <path fill="#5D5DB3" d="M62.241,48.157c0,2.4-1.947,4.348-4.35,4.348H4.349C1.947,52.505,0,50.558,0,48.157l0,0c0-2.402,1.947-4.35,4.349-4.35h53.542C60.294,43.808,62.241,45.755,62.241,48.157L62.241,48.157z"
+                        />
+                    </g>
+                    <g>
+                        <circle fill="#FFFFFF" cx="31.121" cy="20.031" r="6.224" />
+                        <circle class="alien__eye" fill="#231815" cx="33.293" cy="20.031" r="4.052" />
+                    </g>
+                    <g class="alien__light">
+                        <circle fill="#FFFFFF" cx="9.244" cy="48.155" r="1.505" />
+                        <circle fill="#FFFFFF" cx="17.771" cy="48.155" r="1.505" />
+                        <circle fill="#FFFFFF" cx="26.299" cy="48.155" r="1.505" />
+                        <circle fill="#FFFFFF" cx="34.826" cy="48.155" r="1.505" />
+                        <circle fill="#FFFFFF" cx="43.353" cy="48.155" r="1.505" />
+                        <circle fill="#FFFFFF" cx="51.881" cy="48.155" r="1.505" />
+                    </g>
                 </svg>
+                <!-- <div class="speed">
+                        <svg version="1.1"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 29">
+                            <line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" x1="14" y1="2" x2="66" y2="2"/>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" x1="2" y1="14" x2="53" y2="14"/>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" x1="10" y1="26" x2="22" y2="26"/>
+                            <line fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" x1="34" y1="26" x2="56" y2="26"/>
+                        </svg>
+
+                    </div> -->
+                <div class="sparkling">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 130">
+                        <polygon fill="#FFFFFF" points="47.9,0 50.5,8.5 59,11 50.5,13.6 47.9,22.1 45.4,13.6 36.9,11 45.4,8.5 " />
+                        <polygon fill="#FFFFFF" points="11,76 13.6,84.5 22.1,87 13.6,89.6 11,98.1 8.5,89.6 0,87 8.5,84.5 " />
+                        <polygon fill="#FFFFFF" points="237.8,63.6 240.4,72.1 248.9,74.7 240.4,77.2 237.8,85.7 235.3,77.2 226.8,74.7 235.3,72.1 "
+                        />
+                        <polygon fill="#FFFFFF" points="120.9,51.3 122.4,56 127.1,57.5 122.4,58.9 120.9,63.6 119.5,58.9 114.8,57.5 119.5,56 " />
+                        <polygon fill="#FFFFFF" points="177.9,74.7 179.3,79.4 184,80.9 179.3,82.3 177.9,87 176.5,82.3 171.7,80.9 176.5,79.4 " />
+                        <polygon fill="#FFFFFF" points="79.6,47 80.8,51.1 84.8,52.2 80.8,53.4 79.6,57.5 78.4,53.4 74.4,52.2 78.4,51.1 " />
+                        <polygon fill="#FFFFFF" points="106.6,97.2 107.8,101.2 111.8,102.4 107.8,103.6 106.6,107.6 105.4,103.6 101.4,102.4 105.4,101.2 
+                                " />
+                        <polygon fill="#FFFFFF" points="66,118.4 67.2,122.5 71.2,123.7 67.2,124.8 66,128.9 64.8,124.8 60.8,123.7 64.8,122.5 " />
+                        <polygon fill="#FFFFFF" points="128.4,19.2 129.6,23.3 133.6,24.4 129.6,25.6 128.4,29.7 127.2,25.6 123.2,24.4 127.2,23.3 "
+                        />
+                    </svg>
+                </div>
             </div>
         </div>
         <div class="ground">
+            <div class="rock"><img src="img/rock.svg" alt=""></div>
             <div class="hill-left">
                 <img src="img/hill_left_main.svg" alt="">
                 <img src="img/hill_left_shadow.svg" alt="" class="hill-left__shadow">
@@ -311,6 +343,700 @@
         <div class="astronaut"><img src="img/astronaut.svg" alt=""></div>
         <div class="rocket"><img src="img/rocket.svg" alt=""></div>
     </header>
+    <div class="about--overflow">
+        <section class="about">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about__title">
+                            <h1>關於<br>Modern Web 2017<br>特色</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="about__feature-wrapper">
+                            <div class="about__feature">
+                                <h2>世界級 Web 公司，最精彩的觀點分享</h2>
+                                <p>Google、Slack、易寶支付、閱文集團、螞蟻金服、騰訊...來自世界各地的優秀的開發者、分享他們的技術觀點</p>
+                            </div>
+                            <div class="about__feature">
+                                <h2>2 天 X 4 軌議程，最豐富的技術盛會</h2>
+                                <p>2天議程開好開滿，天天4軌議程，涵括最新 Web 前、後端技術、開發團隊的協作、測試等等，更包含Chatbot、區塊鏈、PWA...等正夯的議題</p>
+                            </div>
+                            <div class="about__feature">
+                                <h2>多元場邊活動設計，最熱烈的經驗分享</h2>
+                                <p>不管是「專家面對面」與講者近距離請益、交流，或是透過 Lab 實作來學習新技術，各種場邊交流學習方式讓你10倍速成長</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="keynote">
+        <div class="title-bg-word">Keynote
+            <br>Speakers</div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="title">
+                        <h1>焦點講師<br><span>Keynote Speakers</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="keynote-speaker clearfix">
+                        <div class="keynote-speaker__img"><img src="img/keynote.jpg" alt="" class="img-responsive"></div>
+                        <div class="keynote-speaker__content">
+                            <h2 class="keynote-speaker__name">Douglas Crockford</h2>
+                            <p class="keynote-speaker__company">PayPal</p>
+                            <p class="keynote-speaker__desc">JSON、JSLint 的開創者</p>
+                        </div>
+                    </div>
+                    <div class="keynote-speaker keynote-speaker--right clearfix">
+                        <div class="keynote-speaker__img"><img src="img/keynote.jpg" alt="" class="img-responsive"></div>
+                        <div class="keynote-speaker__content">
+                            <h2 class="keynote-speaker__name">Ian Matthew Lewis</h2>
+                            <p class="keynote-speaker__company">Google</p>
+                            <p class="keynote-speaker__desc">日本 PyCon JP 大會的發起人和副主席</p>
+                        </div>
+                    </div>
+                    <div class="keynote-speaker clearfix">
+                        <div class="keynote-speaker__img"><img src="img/keynote.jpg" alt="" class="img-responsive"></div>
+                        <div class="keynote-speaker__content">
+                            <h2 class="keynote-speaker__name">Ian Matthew Lewis</h2>
+                            <p class="keynote-speaker__company">Google</p>
+                            <p class="keynote-speaker__desc">日本 PyCon JP 大會的發起人和副主席</p>
+                        </div>
+                    </div>
+                    <div class="keynote-speaker keynote-speaker--right clearfix">
+                        <div class="keynote-speaker__img"><img src="img/keynote.jpg" alt="" class="img-responsive"></div>
+                        <div class="keynote-speaker__content">
+                            <h2 class="keynote-speaker__name">Ian Matthew Lewis</h2>
+                            <p class="keynote-speaker__company">Google</p>
+                            <p class="keynote-speaker__desc">日本 PyCon JP 大會的發起人和副主席</p>
+                        </div>
+                    </div>
+                    <div class="keynote-speaker clearfix">
+                        <div class="keynote-speaker__img"><img src="img/keynote.jpg" alt="" class="img-responsive"></div>
+                        <div class="keynote-speaker__content">
+                            <h2 class="keynote-speaker__name">Ian Matthew Lewis</h2>
+                            <p class="keynote-speaker__company">Google</p>
+                            <p class="keynote-speaker__desc">日本 PyCon JP 大會的發起人和副主席</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured">
+        <div class="title-bg-word">Featured
+            <br>Speakers</div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="title">
+                        <h1>Modern Web,<br>Modern China</h1>
+                    </div>
+                    <div class="featured-desc">
+                        <h2>特別策劃</h2>
+                        <p>Modern Web 2017 邀請史海峰（噹噹網架構部總監）、程劭非（阿里巴巴無線事業部高級技術專家）兩位擔任 Web 架構與前端技術議題的出品人，策劃、邀集中國 Web 公司帶來最新、最深入的技術與實作經驗，來台與本地開發者做最深入的交流。</p>
+                    </div>
+                    <div class="featured-producer">
+                        <h3>Web 前端技術出品人</h3>
+                        <div class="featured-producer__wrapper clearfix">
+                            <img src="img/featured1.jpg" alt="" class="featured-producer__img">
+                            <div class="featured-producer__content featured-producer__content--space">
+                                <div class="featured-producer__name">程劭非</div>
+                                阿里巴巴 無線事業部高級技術專家
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-producer">
+                        <h3>Web 架構技術出品人</h3>
+                        <div class="featured-producer__wrapper clearfix">
+                            <img src="img/featured2.jpg" alt="" class="featured-producer__img">
+                            <div class="featured-producer__content">
+                                <div class="featured-producer__name">史海峰</div>
+                                噹噹網 架構部總監
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="featured-speaker clearfix">
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured1.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">鐘恒</div>
+                                    <div class="speaker__desc">奇虎360 前端工程師</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured2.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">袁鋒</div>
+                                    <div class="speaker__desc">螞蟻金服 Node.js 技術專家</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured1.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">沈劍</div>
+                                    <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured2.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">陳斌</div>
+                                    <div class="speaker__desc">易寶支付 CTO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured1.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">徐海峰</div>
+                                    <div class="speaker__desc">閱文集團（騰訊文學）首席架構師</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured2.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">趙子明</div>
+                                    <div class="speaker__desc">餓了麼 架構師</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured1.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">賀師俊</div>
+                                    <div class="speaker__desc">百姓網 前端架構師</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featured-speaker__wrapper">
+                            <div class="speaker">
+                                <div class="speaker__img">
+                                    <img src="img/featured2.jpg" alt="" class="img-responsive">
+                                </div>
+                                <div class="speaker__content">
+                                    <div class="speaker__name">潘佳韓</div>
+                                    <div class="speaker__desc">騰訊 高級前端工程師</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="speakers">
+        <div class="title-bg-word">Speakers</div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="speakers__title">
+                        <div class="title">
+                            <h1>講師陣容</h1>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speakers__speaker">
+                        <div class="speaker">
+                            <div class="speaker__img">
+                                <img src="img/featured1.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="speaker__content">
+                                <div class="speaker__name">徐海峰</div>
+                                <div class="speaker__desc">58到家 技術委員會主席 高級技術總監</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tickets">
+        <div class="title-bg-word">Tickets</div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="title">
+                        <h1>立即購票</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="tickets__wrapper">
+                        <div class="ticket">
+                            <div class="ticket__name">早鳥票
+                                <div class="ticket__time">6/26-7/6</div>
+                            </div>
+                            <div class="ticket__price">$ 4,490</div>
+                            <div class="ticket__desc">入場票 1 張</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">學生票
+                                <div class="ticket__time">6/26-7/6</div>
+                            </div>
+                            <div class="ticket__price">$ 1,990</div>
+                            <div class="ticket__desc">入場票 1 張，限 30 個名額，需具備在學學生資格</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">線上優惠票
+                                <div class="ticket__time">7/7-8/7</div>
+                            </div>
+                            <div class="ticket__price">$ 5,490</div>
+                            <div class="ticket__desc">入場票 1 張</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">2 人同行
+                                <div class="ticket__time">7/7-8/7</div>
+                            </div>
+                            <div class="ticket__price">$ 8,980</div>
+                            <div class="ticket__desc">入場票 2 張</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">銀級贊助套票
+                                <div class="ticket__time">6/26-8/11</div>
+                            </div>
+                            <div class="ticket__price">$ 60,000</div>
+                            <div class="ticket__desc">入場票 10 張+現場攤位+贊助露出</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">銅級贊助套票
+                                <div class="ticket__time">6/26-8/11</div>
+                            </div>
+                            <div class="ticket__price">$ 30,000</div>
+                            <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
+                            <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">現場票(雙日)
+                                <div class="ticket__time">8/10-11</div>
+                            </div>
+                            <div class="ticket__price">$ 8,000</div>
+                            <div class="ticket__desc">雙日入場票</div>
+                            <div class="ticket__btn">
+                                <div class="ticket__fake-btn">現場購買</div>
+                            </div>
+                        </div>
+                        <div class="ticket">
+                            <div class="ticket__name">現場票(單日)
+                                <div class="ticket__time">8/10-11</div>
+                            </div>
+                            <div class="ticket__price">$ 6,400</div>
+                            <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
+                            <div class="ticket__btn">
+                                <div class="ticket__fake-btn">現場購買</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="traffic">
+        <div class="title-bg-word">Traffic</div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="title">
+                        <h1>交通資訊</h1>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="traffic__loaction">
+                        臺灣大學社會科學院<br><span>(臺北市大安區羅斯福路四段一號)</span>
+                    </div>
+                    <div class="traffic__transportation">
+                        <h3>自行開車</h3>
+                        <ul>
+                            <li>社會科學院大樓位於臺大校總區北門（辛亥路與復興南路交叉口的西南角）的西側，靠近法律系霖澤館。</li>
+                            <li>停車場位於社科院大樓地下室 B1和B2（建議停B2，停車位多而方便），入口請：
+                                <ol>
+                                    <li>由復興南路往南穿過辛亥路進入臺大北門，再右轉進入停車場。</li>
+                                    <li>由辛亥路往東行駛，在復興南路口右轉進入台大北門，50 公尺後再右轉進入停車場。</li>
+                                </ol>
+                            </li>
+                        </ul>
+                        <h3>搭乘捷運</h3>
+                        <ul>
+                            <li>捷運科技大樓站 （文湖線）：<br>出口左轉，沿著復興南路步行至辛亥路交叉口，過馬路即可抵達臺大北門，右手邊大樓即為社會科學院，步行路程約 10 分鐘。捷運科技大樓站設有Ubike 站點，可騎乘Ubike
+                                至臺大社科院。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.394523844201!2d121.54021901500593!3d25.020681933978526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa26065ea50b%3A0x7c79b4b7bb42f485!2z5ZyL56uL6Ie654Gj5aSn5a2456S-5pyD56eR5a246Zmi!5e0!3m2!1szh-TW!2stw!4v1498040657217"
+                        width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sponser">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="sponser__host">
+                        <span>主辦單位</span><img src="img/ithome.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-bg"><img src="img/footer.svg" alt=""></div>
+        <div class="footer-clip"><img src="img/clip.svg" alt=""></div>
+
+        <div class="footer-robot"><img src="img/robot.svg" alt=""></div>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-8">
+                    <ul class="list-unstyled">
+                        <li>聯絡 Modern Web 服務小組</li>
+                        <li>客服專線：02-25622880 #3622 開小姐（週一至週五，上午 10:30 ~ 12:00，下午 1:30 ~ 5:30）</li>
+                        <li>客服信箱：service@mail.ithome.com.tw</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- game -->
     <div id="game_bg"></div>
     <canvas id="game" width="1000px" height="1000px"></canvas>
@@ -360,4 +1086,3 @@
 </body>
 
 </html>
->>>>>>> master

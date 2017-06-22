@@ -11,18 +11,18 @@ body {
     height: 100%;
 }
 
-body {
+/* body {
     min-height: 100%;
     max-width: 100%;
     background: #111;
     font-family: Lato, sans-serif;
-}
+} */
 
-.container {
+/* .container {
     min-height: 100%;
     max-width: 960px;
     margin: 0 auto;
-}
+} */
 
 .game-wrap {
     position: relative;
@@ -44,13 +44,13 @@ canvas {
     padding: 0 20px;
 }
 
-p {
+/* p {
     margin: 10px 0;
     font-size: 18px;
     line-height: 1.5em;
-}
+} */
 
-code {
+/* code {
     background: #222;
     background: linear-gradient(#222, #000);
     line-height: 1.3em;
@@ -69,9 +69,9 @@ a {
         color: lighten(skyblue, 10%);
         text-decoration: underline;
     }
-}
+} */
 
-.title {
+/* .title {
     font-size: 40px;
     font-weight: 900;
     margin: 20px 0;
@@ -80,4 +80,4 @@ a {
             color: hsl($i * 30, 50%, 50%);
         }
     }
-}
+} */

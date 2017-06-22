@@ -1,0 +1,36 @@
+.traffic {
+	@extend %section;
+	&__loaction {
+		color: #fff;
+		font-size: 24px;
+		@include media(">768px") {
+			margin-top: 40px;
+		}
+		span {
+			font-size: 18px;
+		}
+	}
+	&__transportation {
+		
+
+		color: #fff;
+		@include media(">768px") {
+			padding-right: 40px;
+		}
+		h3 {
+			color: lighten($main-green,5%);
+		}
+		ul {
+			padding-left: 24px;
+		}
+		li {
+			font-size: 16px;
+		}
+	}
+	iframe {
+		height: 200px;
+		@include media(">768px") {
+			height: 400px;
+		}
+	}
+}
