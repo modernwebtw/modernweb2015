@@ -1,5 +1,16 @@
 # Modern Web 
 
+http://modernweb.tw
+
+
+## 如何推到測試機
+http://it-dev.ithome.com.tw/modernweb/
+
+```
+git push origin testing
+```
+
+
 ## 如何推到production
 因為 2015 年時，網頁是放在Github modernwebtw/modernweb2015 的 gh-pages，一直延用至今，所以要推到 production ，需要加入以下的遠端branch 
 
@@ -7,7 +18,7 @@
 git remote add github git@github.com:modernwebtw/modernweb2015.git
 ```
 
-要推上正式機:
+推上正式機:
 ```
 git push github gh-pages
 ```
