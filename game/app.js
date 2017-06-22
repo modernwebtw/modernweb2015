@@ -18,17 +18,16 @@ $(function () {
     });
 
     $('#btn_share_fb').click(function () {
-        // FB.ui({
-        //     method: 'share_open_graph',
-        //     action_type: 'og.likes',
-        //     action_properties: JSON.stringify({
-        //         object: {
-        //             'og:url': location.href,
-        //             'og:title': this.SpeakerInner['speaker'],
-        //             'og:description': this.SpeakerInner['profile'],
-        //             'og:image': this.SpeakerInner['avatar']
-        //         }
-        //     })
-        // }, function (response) {});
+        FB.ui({
+            method: 'share_open_graph',
+            action_type: 'og.likes',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': location.href,
+                    'og:title': 'modernweb',
+                    'og:description': '技術在我們手上，世界就在我們手上'
+                }
+            })
+        }, function (response) {});
     });
 })
