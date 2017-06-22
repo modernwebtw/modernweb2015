@@ -1,0 +1,112 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	color: $main-black;
+	font-size: 16px;		
+	font-family: 微軟正黑體,sans-serif;
+	line-height: 1.7;
+	background-color: $space-color;
+	@include media(">768px") {
+        font-size: 18px;
+    }
+}
+h1,h2,h3,h4 {
+	line-height: 1.4;
+}
+h1 {
+	font-size: 30px;
+	@include media(">991px") {
+        font-size: 48px;
+    }
+}
+h2 {
+	@include media("<=991px") {
+        font-size: 24px;
+    }
+}
+h3 {
+	@include media("<=991px") {
+        font-size: 18px;
+    }
+}
+h4 {
+	font-size: 16px;
+	@include media(">991px") {
+        font-size: 20px;
+    }
+}
+a {
+	transition: .2s linear;
+}
+.wrapper {
+	width: 98%;
+	max-width: 1400px;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+%section {
+	position: relative;
+	margin: 10% 0;
+}
+
+%position-a {
+    position: absolute;
+}
+.title {
+	@include media("<=768px") {
+		margin-bottom: 30px;
+		text-align: center;
+    }
+	&-bg-word {
+		position: absolute;
+		left: 20%;
+		top: 0;
+		font-size: 60px;
+
+		font-weight: bold;
+		line-height: 0.8;
+		color: rgba(255,255,255,.05);
+		user-select:none;
+		@include media("<=768px") {
+			left: 50%;
+			transform:translateX(-50%);
+	    }
+		@include media(">768px") {
+			left: 0;
+	        top: -6%;
+	        font-size: 8em;
+			font-size: 8vw;
+	    }
+	}
+	h1 {
+		position: relative;
+		padding-bottom: 30px;
+		color: #fff;
+		line-height: 1;
+		display: inline-block;
+		text-align: left;
+		@include media(">991px") {
+			display: block;
+			padding-bottom: 60px;
+	    }
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20%;
+			height: 2px;
+			background-color: $main-green;
+		}
+		span {
+			font-size: 30px;
+			font-weight: normal;
+		}
+	}
+}

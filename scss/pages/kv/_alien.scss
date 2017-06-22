@@ -1,0 +1,164 @@
+@include media("<1024px") {
+    .alien,.sparkling {
+        display: none;
+    }
+}
+.alien {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    width: 5%;
+    cursor: pointer;
+    animation: alien-go 10s linear infinite alternate;
+    @keyframes alien-go {
+        0% {
+    		transform: translateX(0) rotate(0.02deg);
+    	}
+    	55% {
+    		transform: translateX(0) rotate(0.02deg);
+    	}
+        58% {
+            transform: translateX(150%) rotate(0.02deg);
+        }
+        100% {
+            transform: translateX(150%) rotate(0.02deg);
+        }
+    }
+    &__svg {
+    	animation: alien-move 2s linear infinite alternate;
+	    @keyframes alien-move {
+	        to {
+	            transform: rotate(0deg) translateY(3px);
+	        }
+	    }
+    }
+    &__eye {
+    	animation: alien-eye-move 4s linear infinite alternate;
+	    @keyframes alien-eye-move {
+	    	0% {
+	    		transform: translateX(0) rotate(0.02deg);
+	    	}
+	    	55% {
+	    		transform: translateX(0) rotate(0.02deg);
+	    	}
+	        60% {
+	            transform: translateX(-4px) rotate(0.02deg);
+	        }
+	        100% {
+	            transform: translateX(-4px) rotate(0.02deg);
+	        }
+	    }
+    }
+    &__light circle{
+    	fill:#fff;
+    	animation: alien-light 2s linear infinite;
+        @keyframes alien-light {
+            0% {
+                opacity: .5;
+            }
+            50% {
+                opacity: .5;
+            }
+            51% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+		@for $i from 2 to 7 {
+		  &:nth-child(#{$i}) {
+		    animation-delay: ($i*0.2)-0.1s;
+		  }
+		}
+    }
+}
+.sparkling {
+	position: absolute;
+    right: -50%;
+    top: 0;
+	width: 300%;
+	animation: sparkling-go 10s .1s linear infinite alternate;
+    @keyframes sparkling-go {
+        0% {
+    		transform: translateX(0) rotate(0.02deg);
+    	}
+    	55% {
+    		transform: translateX(0) rotate(0.02deg);
+    	}
+        58% {
+            transform: translateX(10%) rotate(0.02deg);
+        }
+        100% {
+            transform: translateX(10%) rotate(0.02deg);
+        }
+    }
+	polygon {
+		opacity: 0;
+			animation: sparkling .8s linear infinite  alternate;
+		    @keyframes sparkling {
+		       
+		        to {
+		            opacity: .5;
+		        }
+		    }
+		    @for $i from 2 to 10 {
+			  &:nth-child(#{$i}) {
+			    animation-delay: $i*0.1s;
+			  }
+			}
+	}
+}
+// .speed {
+// 	position: absolute;
+//     right: 100%;
+//     top: 30%;
+// 	width: 100%;
+// 	animation: speed-move 1s 10s ease-out infinite forwards;
+// 	@keyframes speed-move {
+// 		from {
+// 			right: -100%;
+// 		}
+// 		to {
+
+// 		}
+// 	}
+// 	line {
+		
+// 	 	stroke-dasharray: 90;
+// 	    stroke-dashoffset: -90;
+// 		animation: line-move 3s 5.3s ease-out infinite forwards;
+// 		@keyframes line-move {
+// 		    0%{
+// 		    	opacity: 0;
+// 		         stroke-dashoffset: -90;
+// 		    }
+// 		    14%{opacity: 1;
+// 		         stroke-dashoffset: 0;
+// 		    }
+// 		    22%{opacity: 1;
+// 		         stroke-dashoffset: 0;
+// 		    }
+// 		    30%{opacity: 0;
+// 		        stroke-dashoffset: -90;
+// 		    }
+// 		    31% {
+		    	
+// 		    }
+// 		    50%{
+		    	
+// 		    	opacity: 0;
+// 		         stroke-dashoffset: 90;
+// 		    }
+// 		    64%{opacity: 1;
+// 		         stroke-dashoffset: 0;
+// 		    }
+// 		    82%{opacity: 1;
+// 		         stroke-dashoffset: 0;
+// 		    }
+// 		    100%{opacity: 0;
+// 		        stroke-dashoffset: 90;
+// 		    }
+// 		}
+// 	}
+// }

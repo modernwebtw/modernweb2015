@@ -1,0 +1,46 @@
+.footer {
+	position: relative;
+	padding: 30px 20px;
+	min-height: 50px;
+	color: $space-color;
+	background-color: #B3C193;
+	font-size: 14px;
+	img {
+		width: 100%;
+		user-select: none;
+	}
+	@include media(">768px") {
+		font-size: 18px;
+		padding-bottom: 40px;
+	}
+}
+
+.footer-bg {
+	position: absolute;
+	left: 0;
+	bottom: 90%;
+	width: 100%;
+	
+}
+
+.footer-clip {
+	position: absolute;
+	left: 18%;
+	bottom: 90%;
+    width: 20%;
+    @include media(">768px") {
+		bottom: 110%;
+	}
+}
+
+.footer-robot {
+	position: absolute;
+	right: 22%;
+	bottom: 99%;
+	width: 4%;
+	@include media(">1199px") {
+		bottom: 140%;
+		width:3%;
+	}
+	
+}
