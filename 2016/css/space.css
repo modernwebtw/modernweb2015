@@ -1,0 +1,176 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*body {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e8e8e8;
+    background-color: #d9d9d9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#d9d9d9));
+    background-image: -webkit-linear-gradient(top, #e8e8e8, #d9d9d9);
+    background-image: -moz-linear-gradient(top, #e8e8e8, #d9d9d9);
+    background-image: -o-linear-gradient(top, #e8e8e8, #d9d9d9);
+    background-image: linear-gradient(to bottom, #e8e8e8, #d9d9d9);
+    font-family: 'lato', helvetica, arial, sans-serif;
+    font-size: 62.5%;
+}*/
+
+#wrapper {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: right;
+}
+
+#header {
+    display: block;
+    /*padding-top: 27px;*/
+    background: black;
+}
+
+#header ul {
+    display: block;
+    padding: 0;
+    margin: 0 0 0;
+    list-style: none;
+}
+
+#header ul li {
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+#header ul li a {
+    color: #f2f2f2;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-right: 1em;
+    cursor: pointer;
+    padding: 5px 10px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+}
+
+#header ul li a:focus,
+#header ul li a:hover {
+    background: white;
+    color: black;
+}
+
+.earth {
+    z-index: 9;
+}
+
+#banner {
+    background: #425169;
+    position: relative;
+    height: 500px;
+    margin: 0;
+    /*padding-bottom: 100px;*/
+    color: #f2f2f2;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#banner h1 {
+    margin-top: 100px;
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 1.2em;
+    width: 70%;
+    float: right;
+    text-align: right;
+    text-shadow: 0px 0px 20px rgba(17, 16, 16, 0.8);
+}
+
+#banner h1 span {
+    font-weight: 400;
+}
+
+#banner h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    width: 70%;
+    float: right;
+    text-align: right;
+    text-shadow: 0px 0px 25px rgba(17, 16, 16, 0.8);
+}
+
+#banner h4 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    width: 70%;
+    float: right;
+    text-align: right;
+    text-shadow: 0px 0px 20px rgba(17, 16, 16, 0.8);
+}
+
+#items {
+    display: block;
+    background: black;
+}
+
+.earthy {
+    display: block;
+    position: absolute;
+    background: url(../img/ee.png) no-repeat 0 0;
+    z-index: 3;
+}
+
+.shippy {
+    display: block;
+    position: absolute;
+    background: url(../img/rr.png) no-repeat 0 0;
+    z-index: 4;
+}
+
+.cloud {
+    display: block;
+    position: absolute;
+    background: #cccccc;
+    border-radius: 40px;
+    z-index: 2;
+}
+
+.star {
+    display: block;
+    position: absolute;
+    background: white;
+    border-radius: 4;
+    z-index: 1;
+}
+
+.wrap {
+    display: block;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+}
