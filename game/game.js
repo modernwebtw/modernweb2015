@@ -4,11 +4,16 @@ var loadImage = function (path) {
     imgObject.src = path;
     return imgObject;
 }
-var img_monster = [
-    loadImage('game/monster1.png'),
-    loadImage('game/monster2.png'),
-    loadImage('game/monster3.png'),
-];
+var monster = [{
+    color: '#A8FF73',
+    img: loadImage('game/monster1.png')
+}, {
+    color: '#FF8A73',
+    img: loadImage('game/monster2.png')
+}, {
+    color: '#39BD7A',
+    img: loadImage('game/monster3.png')
+}];
 var player_image = loadImage('game/player.png');
 
 // Color Blast!
@@ -295,8 +300,8 @@ var player_image = loadImage('game/player.png');
         this.vy = 8;
         this.index = Game.bulletIndex;
         this.active = true;
-        this.color = "white";
-
+        // this.color = "white";
+        this.color = "#FFB03B";
     };
 
 
@@ -328,8 +333,9 @@ var player_image = loadImage('game/player.png');
         this.speed = Game.random(2, 3);
         this.shootingSpeed = Game.random(30, 80);
         this.movingLeft = Math.random() < 0.5 ? true : false;
-        this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
-
+        // this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
+        var rand = this.index % 3;
+        this.color = monster[rand].color;
     };
 
 
@@ -338,7 +344,7 @@ var player_image = loadImage('game/player.png');
         // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
 
         var rand = this.index % 3;
-        Game.ctx.drawImage(img_monster[rand], this.x, this.y, 78, 70);
+        Game.ctx.drawImage(monster[rand].img, this.x, this.y, 78, 70);
     };
 
 
