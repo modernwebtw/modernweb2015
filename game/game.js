@@ -16,6 +16,20 @@ var monster = [{
 }];
 var player_image = loadImage('game/player.png');
 
+// 
+
+function roundRecta(ctx, x, y, w, h, r) {
+    var min_size = Math.min(w, h);
+    if (r > min_size / 2) r = min_size / 2;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+}
+
 // Color Blast!
 // License MIT
 // © 2014 Nate Wiley
@@ -306,19 +320,7 @@ var player_image = loadImage('game/player.png');
 
 
     Bullet.prototype.draw = function () {
-        var roundRect = function (ctx, x, y, w, h, r) {
-            var min_size = Math.min(w, h);
-            if (r > min_size / 2) r = min_size / 2;
-            ctx.beginPath();
-            ctx.moveTo(x + r, y);
-            ctx.arcTo(x + w, y, x + w, y + h, r);
-            ctx.arcTo(x + w, y + h, x, y + h, r);
-            ctx.arcTo(x, y + h, x, y, r);
-            ctx.arcTo(x, y, x + w, y, r);
-            ctx.closePath();
-        }
-
-        roundRect(Game.ctx, this.x, this.y, this.width, this.height, 95);
+        roundRecta(Game.ctx, this.x, this.y, this.width, this.height, 95);
         Game.ctx.fillStyle = this.color;
         // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
         Game.ctx.fill();
@@ -425,8 +427,10 @@ var player_image = loadImage('game/player.png');
     };
 
     EnemyBullet.prototype.draw = function () {
+        roundRecta(Game.ctx, this.x, this.y, this.width, this.height, 95);
         Game.ctx.fillStyle = this.color;
-        Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+        Game.ctx.fill();
+        // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
         // Game.ctx.drawImage(fire_2_image, this.x, this.y, 39, 92);
     };
 
