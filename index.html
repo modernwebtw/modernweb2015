@@ -821,15 +821,15 @@
                     <div class="speaker-brief__body">
                         <ul class="nav nav-tabs speaker-brief__tabs" role="tablist">
                             <li role="presentation" class="active">
-                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">議程介紹</a>
+                                <a href="#session_info" aria-controls="#session_info" role="tab" data-toggle="tab">議程介紹</a>
                             </li>
                             <li role="presentation">
-                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">講師簡介</a>
+                                <a href="#speaker_profile" aria-controls="#speaker_profile" role="tab" data-toggle="tab">講師簡介</a>
                             </li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
+                            <div role="tabpanel" class="tab-pane active" id="#session_info">
                                 <div class="speaker-brief__agenda" v-for="session in Modal_Speaker.session">
                                     <div class="speaker-brief__agenda-title">
                                         {{ session.title }}
@@ -837,7 +837,7 @@
                                     <div class="speaker-brief__agenda-content" v-html="session.summary"></div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
+                            <div role="tabpanel" class="tab-pane" id="#speaker_profile">
                                 <div class="speaker-brief__intro" v-html="Modal_Speaker.full_profile"></div>
                             </div>
                         </div>
