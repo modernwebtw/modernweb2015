@@ -49,24 +49,18 @@
 
 .featured-speaker {
 	margin-top: 60px;
-	@include media(">991px") {
+	@include media(">1199px") {
        margin-left: 15%;
 	}
 	&__wrapper {
 		display: inline-block;
-	    margin-left: -2px;
+	    // margin-left: -2px;
 		margin-bottom: 8%;
-		width: 49.5%;
-		
+		width: 50%;
+		font-size: 0;
 	    vertical-align: top;
-	    @include media("<=768px") {
-	       max-width: 230px;
-		}
-		@include media(">768px") {
-			width: 33%;
-	    }
-	    @include media(">991px") {
-	       width: 33%;
+	    @include media(">699px") {
+	       width: 33.3%;
 		}
 	}
 	

@@ -18,20 +18,21 @@
 	}
 	&__speaker {
 		display: inline-block;
-		width: 49.5%;
-	    margin-left: -2px;
+		width: 50%;
 		margin-bottom: 4%;
+		font-size: 0;
 	    vertical-align: top;
-	    @include media("<=768px") {
-	       max-width: 230px;
-		}
+	 //    @include media("<=768px") {
+	 //       max-width: 230px;
+		// }
 		@include media(">768px") {
-			width: 30%;
-		    margin-left: 2%;
+			width: 33.3%;
+		}
+		@include media(">991px") {
+			width: 25%;
 		}
 		@include media(">1199px") {
 			width: 20%;
-			margin-left: -6px;
 		}
 	}
 }

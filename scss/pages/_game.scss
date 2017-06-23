@@ -7,15 +7,62 @@
 
 
 .game {
+    
+    
+    &--warning {
+        .game__panel {
+
+            animation:game-warning .4s linear infinite alternate;
+            @keyframes game-warning {
+                from {background-color: rgba(#A00008, .9);}
+                to {background-color: rgba(#5B0710, .9);}
+            }
+        }
+        &.in {
+             .game__panel {
+                
+                animation:scale-modal .7s linear forwards;
+                @keyframes scale-modal {
+                    from, 20%, 40%, 60%, 80%, to {
+                        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                      }
+
+                      0% {
+                        opacity: 0;
+                        transform: scale3d(.3, .3, .3);
+                      }
+
+                      20% {
+                        transform: scale3d(1.1, 1.1, 1.1);
+                      }
+
+                      40% {
+                        transform: scale3d(.9, .9, .9);
+                      }
+
+                      60% {
+                        opacity: 1;
+                        transform: scale3d(1.03, 1.03, 1.03);
+                      }
+
+                      80% {
+                        transform: scale3d(.97, .97, .97);
+                      }
+
+                      to {
+                        opacity: 1;
+                        transform: scale3d(1, 1, 1);
+                      }
+                }
+             }
+        }
+    }
     &__panel {
         padding: 20px;
         background-color: rgba(#A00008, .9);
-        animation:game-warning .4s linear infinite alternate;
         box-shadow: 0 2px 60px rgba(#2D0408, .9);
-        @keyframes game-warning {
-        	from {background-color: rgba(#A00008, .9);}
-        	to {background-color: rgba(#5B0710, .9);}
-        }
+        // transform:scale(0.1,0.1);
+        // transition: .2s linear;
     }
     &__monster {
         float: left;
@@ -37,6 +84,10 @@
         font-size: 48px;
         font-weight: 700;
     }
+    &__score {
+        font-size: 48px;
+        text-align: center;
+    }
     &__btn-group {
         margin-top: 20px;
         text-align: center;
@@ -44,6 +95,8 @@
     &__btn {
         padding: 6px 20px;
         font-size: 18px;
+        font-weight: 700;
+        color: #fff;
         background-color: transparent;
         border-radius: 0;
         &+& {
