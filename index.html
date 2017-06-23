@@ -26,7 +26,7 @@
 
 <body>
     <div id="modernweb2017">
-        <nav class="menu">
+        <nav class="menu" id="menu">
             <div class="wrapper">
                 <div class="row">
                     <div class="col-md-12">
@@ -60,7 +60,7 @@
                                             <li><a href="" target="_blank">2016</a></li>
                                         </ul>
                                     </div>
-                                    
+
                                 </li>
                                 <li><a href="" target="_blank" class="visible-xs">回顧 2015</a></li>
                                 <li><a href="" target="_blank" class="visible-xs">回顧 2016</a></li>
@@ -456,7 +456,7 @@
                 </div>
             </div>
         </section>
-        <section class="featured">
+        <section class="featured" id="featured">
             <div class="title-bg-word">Featured
                 <br>Speakers</div>
             <div class="wrapper">
@@ -597,8 +597,7 @@
                                 </div>
                                 <div class="ticket__price">$ 60,000</div>
                                 <div class="ticket__desc">入場票 10 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw"
-                                        class="btn ticket__button">立即洽詢</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw" class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">銅級贊助套票
@@ -606,8 +605,7 @@
                                 </div>
                                 <div class="ticket__price">$ 30,000</div>
                                 <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw"
-                                        class="btn ticket__button">立即洽詢</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw" class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">現場票(雙日)
@@ -907,14 +905,6 @@
 
         ga('create', 'UA-48349256-7', 'auto');
         ga('send', 'pageview');
-    </script>
-    <script>
-        $(".menu__burger").on('click', function() {
-          $(this).toggleClass("on");
-          $('.menu__content').toggleClass("on");
-          $(".menu").toggleClass('on');
-          $('body').toggleClass('is-hidden');
-        });
     </script>
 </body>
 
