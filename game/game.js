@@ -1,12 +1,15 @@
 // temp img
-var fire_1_image = new Image();
-fire_1_image.src = 'game/fire_1.png';
-var fire_2_image = new Image();
-fire_2_image.src = 'game/fire_2.png';
-var mon_image = new Image();
-mon_image.src = 'game/mon.png';
-var player_image = new Image();
-player_image.src = 'game/player.png';
+var loadImage = function (path) {
+    var imgObject = new Image();
+    imgObject.src = path;
+    return imgObject;
+}
+var img_monster = [
+    loadImage('game/monster1.png'),
+    loadImage('game/monster2.png'),
+    loadImage('game/monster3.png'),
+];
+var player_image = loadImage('game/player.png');
 
 // Color Blast!
 // License MIT
@@ -334,15 +337,8 @@ player_image.src = 'game/player.png';
         // Game.ctx.fillStyle = this.color;
         // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
 
-        var rand = this.index % 2;
-        if (rand == 1) {
-            Game.ctx.drawImage(mon_image, this.x, this.y, 54, 94);
-        } else {
-            Game.ctx.drawImage(fire_2_image, this.x, this.y, 39, 92);
-        }
-
-
-
+        var rand = this.index % 3;
+        Game.ctx.drawImage(img_monster[rand], this.x, this.y, 78, 70);
     };
 
 
