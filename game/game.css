@@ -32,14 +32,18 @@
 
 #btn_exit {
     position: absolute;
-    top: 77%;
-    left: 80%;
+    top: 3%;
+    right: 2%;
     z-index: 1000;
-    color: #fff;
-    background-color: red;
+    color: #FF8A73;
+    border: 1px solid #FF8A73;
     padding: 0 10px;
     cursor: pointer;
     display: none;
+    &:hover {
+        color: #FFACA1;
+        border-color: #FF8A73;
+    }
 }
 
 .alien {

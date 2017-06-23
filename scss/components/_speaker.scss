@@ -148,6 +148,7 @@
 		margin-bottom: 10px;
 		font-size: 18px;
 		font-weight: 700;
+		line-height: 1.4;
 		color: $main-green;
 		@include media(">599px") {
 			font-size: 20px;
@@ -192,7 +193,7 @@
 	// 定位
 	.modal-dialog {
 		margin-top: 20%;
-		margin-bottom: 20%;
+		margin-bottom: 30px;
 		@include media(">599px") {
 			margin-top: 10%;
 		}
