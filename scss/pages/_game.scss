@@ -1,26 +1,26 @@
-.game.modal.in .modal-dialog {
-	position: absolute;
-	left: 50%;
-	top: 30%;
-	transform: translateX(-50%);
+// 燈箱定位
+.game-modal .modal-dialog {
+	position: relative;
+    top: 30%;
 }
 
-
-.game {
-    
-    
-    &--warning {
-        .game__panel {
-
-            animation:game-warning .4s linear infinite alternate;
-            @keyframes game-warning {
-                from {background-color: rgba(#A00008, .9);}
-                to {background-color: rgba(#5B0710, .9);}
-            }
+// 燈箱動畫
+.game-modal {
+    // 關閉動畫
+    &.fade .modal-dialog {
+        transform: translate(0,0);
+        
+    }
+    // 開啟動畫
+    &.in {
+        .modal-dialog { 
+            
         }
+    }
+    // 遭遇怪獸燈箱彈跳動畫
+    &--warning {
         &.in {
-             .game__panel {
-                
+            .modal-dialog { 
                 animation:scale-modal .7s linear forwards;
                 @keyframes scale-modal {
                     from, 20%, 40%, 60%, 80%, to {
@@ -54,9 +54,21 @@
                         transform: scale3d(1, 1, 1);
                       }
                 }
-             }
+            }
         }
     }
+}
+
+// 燈箱背景警告閃爍
+.game-bg-waring {
+    background-color: rgba(#A00008, .9);
+    animation:bg-warning .4s ease-in-out infinite alternate;
+    @keyframes bg-warning {
+        to{background-color: rgba(50, 4, 6, 0.9)};
+    }
+}
+
+.game-modal {
     &__panel {
         padding: 20px;
         background-color: rgba(#A00008, .9);
