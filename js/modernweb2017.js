@@ -84,16 +84,13 @@ var modernweb2017 = new Vue({
                 });
 
                 $('#btn_share_fb').click(function () {
+                    var score = $('#score').text();
                     FB.ui({
-                        method: 'share_open_graph',
-                        action_type: 'og.likes',
-                        action_properties: JSON.stringify({
-                            object: {
-                                'og:url': location.href,
-                                'og:title': 'modernweb',
-                                'og:description': '技術在我們手上，世界就在我們手上'
-                            }
-                        })
+                        method: 'feed',
+                        link: location.href,
+                        picture: 'http://modernweb.tw/img/social-pic.jpg',
+                        description: 'ModernWeb 2017',
+                        caption: '消滅外星怪獸，得到了 ' + score + ' 分'
                     }, function (response) {});
                 });
 
