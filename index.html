@@ -468,7 +468,7 @@
                     <div class="col-md-8">
                         <div class="featured-speaker clearfix">
                             <template v-for="speaker in SpeakerFilter.china">
-                                <div class="featured-speaker__wrapper">
+                                <div class="featured-speaker__wrapper" @click="showModal(speaker)">
                                     <div class="speaker">
                                         <div class="speaker__img">
                                             <img :src="speaker.avatar" alt="" class="img-responsive">
@@ -500,7 +500,7 @@
                             </div>
                         </div>
                         <div class="speakers__speaker" v-for="speaker in SpeakerFilter.normal">
-                            <div class="speaker">
+                            <div class="speaker" @click="showModal(speaker)">
                                 <div class="speaker__img">
                                     <img :src="speaker.avatar" alt="" class="img-responsive">
                                 </div>
