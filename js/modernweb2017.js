@@ -35,6 +35,9 @@ var modernweb2017 = new Vue({
         showModal: function (speaker) {
             this.Modal_Speaker = speaker;
             $('#speakerModal').modal('show');
+        },
+        arcToSpan: function (str) {
+            return str.replace(/\(/igm, '<span>(').replace(/\)/igm, ')</span>');
         }
     },
     filters: {

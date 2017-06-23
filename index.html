@@ -474,9 +474,7 @@
                                             <img :src="speaker.avatar" alt="" class="img-responsive">
                                         </div>
                                         <div class="speaker__content">
-                                            <div class="speaker__name">
-                                                {{ speaker.speaker }}
-                                            </div>
+                                            <div class="speaker__name" v-html="arcToSpan(speaker.speaker)"></div>
                                             <div class="speaker__desc">
                                                 {{ speaker.company }} {{ speaker.position }}
                                             </div>
@@ -505,9 +503,7 @@
                                     <img :src="speaker.avatar" alt="" class="img-responsive">
                                 </div>
                                 <div class="speaker__content">
-                                    <div class="speaker__name">
-                                        {{ speaker.speaker }}
-                                    </div>
+                                    <div class="speaker__name" v-html="arcToSpan(speaker.speaker)"></div>
                                     <div class="speaker__desc">
                                         {{ speaker.company }} {{ speaker.position }}
                                     </div>
