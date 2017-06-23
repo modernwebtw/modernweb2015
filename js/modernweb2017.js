@@ -34,7 +34,7 @@ var modernweb2017 = new Vue({
         },
         showModal: function (speaker) {
             this.Modal_Speaker = speaker;
-            $('#modal_speaker').modal('show');
+            $('#speakerModal').modal('show');
         }
     },
     filters: {

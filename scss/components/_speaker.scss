@@ -7,6 +7,7 @@
 		min-width: 100px;
 		// max-width: 70%;
 		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		cursor: pointer;
 		@include media(">768px") {
 			
 			// max-width: 180px;
@@ -22,6 +23,7 @@
 		margin-top: -10%;
 		width: 80%;
 		text-align: left;
+		cursor: pointer;
 		@include media(">768px") {
 			margin-top: -24px;
 			margin-left: 10%;
@@ -41,7 +43,6 @@
 		background-color: $main-green;
 		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
 		@include media(">768px") {
-			
 			padding: 9px 12px 7px;
 			// max-width: 200px;
 			font-size: 24px;
@@ -70,34 +71,64 @@
 	}
 }
 
-
+// 講師資料燈箱
 .speaker-brief {
-	padding: 0 30px;
-	background-color: rgba(255,255,255,.9);
+	background-color: rgba(255,255,255,.96);
+	box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+
+	// 位移動畫
+	&--animate {
+		opacity: 0;
+		transition: .3s ease-out;
+		transform: translateY(10px);
+	}
+
 	&__head {
 		position: relative;
+		button {
+			position: absolute;
+		    right: 18px;
+		    top: 16px;
+		}
 	}
+
 	&__img {
-		position: absolute;
-		left: -10%;
-		top: -10%;
-		width: 20%;
+		float: left;
+		position: relative;
+		left: -20px;
+		top: -20px;
+		max-width: 160px;
+		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		transition-delay: 0.3s;
 		img {
 			width: 100%;
 		}
 	}
+
 	&__person {
-		padding-left: 20%;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 16px;
+		transition-delay: 0.4s;
 	}
+
 	&__name {
 		color: $main-green;
 		font-size: 30px;
 	}
+
 	&__company {
 		color: $main-black;
 		font-size: 18px;
 	}
+
+	&__body {
+		padding: 10px 20px;
+		min-height: 150px;
+		transition-delay: 0.5s;
+	}
 	&__agenda-title {
+		margin-bottom: 10px;
 		font-size: 20px;
 		font-weight: 700;
 		color: $main-green;
@@ -105,31 +136,58 @@
 	&__agenda-content {
 		font-size: 16px;
 	}
+	&__intro {
+		font-size: 16px;
+	}
+	&__tabs {
+		a {
+			display: block;
+			padding: 6px 16px;
+			color: $main-green;
+			font-size: 16px;
+			border: 1px solid transparent;
+			&:focus {
+				color: $main-green;
+				text-decoration: none;
+			}
+			&:hover {
+				color: lighten($main-green,2%);
+			}
+			&:active {
+				color: darken($main-green,2%);
+			}
+		}
+		li.active>a {
+			border-color: $main-green;
+		}
+	}
 }
-.speaker-brief__tabs {
-	border: none;
-}
-.speaker-brief__tabs>li>a {
 
-	font-size: 16px;
-	color: $main-green;
-	background-color: transparent;
-	border: 1px solid transparent;
-	border: none;
-	border-radius: 0;
-}
 
-.nav>li>a:focus, .nav>li>a:hover {
-	background-color: transparent;
-	color: $main-green;
-}
+// 燈箱動畫
+.speaker-brief-modal {
+	// 定位
+	.modal-dialog {
+		margin-top: 10%;
+	}
 
-.nav-tabs>li>a:hover {
-	border: none;
-}
+	// 燈箱關閉縮放動畫
+	&.scale .modal-dialog {
+		transition:.2s ease-in;
+	    transform: scale(0);
+	}
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-	color: $main-green;
-	background-color: transparent;
-	border: 1px solid $main-green;
+	// 燈箱開啟縮放動畫
+	&.in {
+		.modal-dialog { 
+			transform: scale(1); 
+		}
+
+		// 位移淡入動畫
+		.speaker-brief--animate {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
 }
