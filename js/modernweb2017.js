@@ -4,15 +4,13 @@ var modernweb2017 = new Vue({
         Session: {},
         Speaker: {},
         Sponsor: {},
-        Modal_ID: 0
+        Modal_Speaker: {}
     },
     computed: {
-        ModalData: function () {
-            var Modal_ID = this.Modal_ID;
-            return {
-                Session: this.Session[Modal_ID] || {}
-            }
-        },
+        // ModalData: function () {
+        //     var Modal_ID = this.Modal_ID;
+        //     return this.Speaker[Modal_ID] || {}
+        // },
         SpeakerFilter: function () {
             var speaker = this.Speaker;
             return {
@@ -34,9 +32,9 @@ var modernweb2017 = new Vue({
                 }
             });
         },
-        showModal: function (sID) {
-            this.Modal_ID = sID;
-            $('#modal_box').modal('show');
+        showModal: function (speaker) {
+            this.Modal_Speaker = speaker;
+            $('#speakerModal').modal('show');
         }
     },
     filters: {
@@ -55,13 +53,17 @@ var modernweb2017 = new Vue({
         $.when(
             confapi.getSessionWithSpeaker(),
             confapi.getSpeakerWithSession(),
-            confapi.getSponsor()
+            // confapi.getSponsor()
         ).done(function (session, speaker, sponsor) {
             modernweb2017.Session = session;
             modernweb2017.Speaker = speaker;
-            modernweb2017.Sponsor = sponsor;
+            // modernweb2017.Sponsor = sponsor;
 
             modernweb2017.$nextTick(function () {
+                // fb
+                FB.init({
+                    appId: '681372298729949'
+                });
                 // game
                 $('#alien').click(function () {
                     $('#modal_game_start').modal('show');

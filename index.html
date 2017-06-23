@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Modern Web 2017 ─ 技術在我們手上，世界就在我們手上</title>
-    <meta property="og:url"           content="http://modernweb.tw/" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Modern Web 2017 ─ 技術在我們手上，世界就在我們手上" />
-    <meta property="og:description"   content="Modern Web 2017將在8/10-11兩日，邀集來自 Google、Slack、易寶支付、螞蟻金服、騰訊...等世界級的 Web 公司的開發者，分享他們的技術觀點，還有台灣優秀的開發者帶來最新、最深入的技術分享。2天4軌最豐盛而精彩的技術與交流盛會，就在Modern Web 2017" />
+    <meta property="og:url" content="http://modernweb.tw/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Modern Web 2017 ─ 技術在我們手上，世界就在我們手上" />
+    <meta property="og:description" content="Modern Web 2017將在8/10-11兩日，邀集來自 Google、Slack、易寶支付、螞蟻金服、騰訊...等世界級的 Web 公司的開發者，分享他們的技術觀點，還有台灣優秀的開發者帶來最新、最深入的技術分享。2天4軌最豐盛而精彩的技術與交流盛會，就在Modern Web 2017"
+    />
     <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -410,7 +411,7 @@
                     </div>
                     <div class="col-md-8">
                         <template v-for="(speaker, index) in SpeakerFilter.featured">
-                            <div class="keynote-speaker clearfix" :class="{ 'keynote-speaker--right': index % 2 == 1 }" data-toggle="modal" data-target="#speakerModal">
+                            <div class="keynote-speaker clearfix" :class="{ 'keynote-speaker--right': index % 2 == 1 }" @click="showModal(speaker)">
                                 <div class="keynote-speaker__img">
                                     <img :src="speaker.avatar" alt="" class="img-responsive">
                                 </div>
@@ -576,7 +577,8 @@
                                 </div>
                                 <div class="ticket__price">$ 60,000</div>
                                 <div class="ticket__desc">入場票 10 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx" class="btn ticket__button">立即購票</a></div>
+                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx"
+                                        class="btn ticket__button">立即購票</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">銅級贊助套票
@@ -584,7 +586,8 @@
                                 </div>
                                 <div class="ticket__price">$ 30,000</div>
                                 <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx" class="btn ticket__button">立即購票</a></div>
+                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx"
+                                        class="btn ticket__button">立即購票</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">現場票(雙日)
@@ -738,6 +741,7 @@
             <div class="modal-dialog" role="document">
                 <div class="game-modal__panel clearfix">
                     <div class="game-modal__monster">
+<<<<<<< HEAD
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 178" class="alien__svg">
                         <path opacity="0.2" fill="#FFFFFF" enable-background="new    " d="M168.2,137.4V68.2C168.2,30.5,137.7,0,100,0S31.8,30.5,31.8,68.2
                             v69.2H168.2z"/>
@@ -795,50 +799,40 @@
             <div class="modal-dialog" role="document">
                 <div class="speaker-brief">
                     <div class="speaker-brief__head clearfix">
-                        <div class="speaker-brief__img speaker-brief--animate"><img src="img/keynote.jpg" alt=""></div>
+                        <div class="speaker-brief__img speaker-brief--animate">
+                            <img :src="Modal_Speaker.avatar" alt="">
+                        </div>
                         <div class="speaker-brief__person speaker-brief--animate">
-                            <div class="speaker-brief__name">井村友美(Tomomi Imura)
+                            <div class="speaker-brief__name">
+                                {{ Modal_Speaker.speaker }}
                             </div>
                             <div class="speaker-brief__company">
-                            Slack <br>Developer Relations Manager
+                                {{ Modal_Speaker.company }} <br> {{ Modal_Speaker.position }}
                             </div>
                         </div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="speaker-brief__body speaker-brief--animate">
-                        <ul class="list-inline speaker-brief__tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#speakerModalAgenda" aria-controls="speakerModalAgenda" role="tab" data-toggle="tab">議程介紹</a></li>
-                            <li role="presentation"><a href="#speakerModalIntro" aria-controls="speakerModalIntro" role="tab" data-toggle="tab">講師簡介</a></li>
+                        <ul class="list-inline  speaker-brief__tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#speakerModalAgenda" aria-controls="#speakerModalAgenda" role="tab" data-toggle="tab">議程介紹</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#speakerModalIntro" aria-controls="#speakerModalIntro" role="tab" data-toggle="tab">講師簡介</a>
+                            </li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="speakerModalAgenda">
-                                <div class="speaker-brief__agenda">
+                            <div role="tabpanel" class="tab-pane active" id="#speakerModalAgenda">
+                                <div class="speaker-brief__agenda" v-for="session in Modal_Speaker.session">
                                     <div class="speaker-brief__agenda-title">
-                                        Dance with i13n (與 instrumentation 共舞)
+                                        {{ session.title }}
                                     </div>
-                                    <div class="speaker-brief__agenda-content">
-                                        <p>
-                                            「HTML5」&「CSS3」已為整個 web develop 世界帶來了無限的驚奇與想像！<br>
-                                            透過不斷推陳出新的嶄新 Web APIs，<br>
-                                            前端的互動與呈現已非昔日所可比擬，<br>
-                                            一些有趣的互動行為，<br>
-                                            更無法透過呆板的 server log 來得知 user 真正的心意，<br>
-                                            藉由 i13n 的導入，<br>
-                                            我們可以得知服務與 user 間的距離，<br>
-                                            透過這些 data 的分析，<br>
-                                            推出讓每個 user 心所嚮往的 UI/UX 變的更加有趣且活潑，<br>
-                                            與 i13n 共舞，<br>
-                                            貼近 user 的想法將不再是遙不可及的夢想與空談了。<br>
-                                            我們堅信這一切的一切都可以被描繪成現實...
-                                        </p>        
-                                    </div>
+                                    <div class="speaker-brief__agenda-content" v-html="session.summary"></div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="speakerModalIntro">
-                                <div class="speaker-brief__intro">
-                                    <p>尊重傳統且喜好浮華的熱血 front end</p>
-                                </div>
+                            <div role="tabpanel" class="tab-pane" id="#speakerModalIntro">
+                                <div class="speaker-brief__intro" v-html="Modal_Speaker.full_profile"></div>
                             </div>
                         </div>
                     </div>

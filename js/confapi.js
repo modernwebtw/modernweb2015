@@ -69,7 +69,8 @@ var confapi = confapi || (function () {
                         'position',
                         'profile',
                         'role',
-                        'which_session'
+                        'which_session',
+                        'full_profile'
                     ]);
                     // fixed null avatar
                     if (!!rowData['avatar'].length) {
