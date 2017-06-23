@@ -405,7 +405,7 @@
                     </div>
                     <div class="col-md-8">
                         <template v-for="(speaker, index) in SpeakerFilter.featured">
-                            <div class="keynote-speaker clearfix" :class="{ 'keynote-speaker--right': index % 2 == 1 }" data-toggle="modal" data-target="#speaker">
+                            <div class="keynote-speaker clearfix" :class="{ 'keynote-speaker--right': index % 2 == 1 }" @click="showModal(speaker)">
                                 <div class="keynote-speaker__img">
                                     <img :src="speaker.avatar" alt="" class="img-responsive">
                                 </div>
@@ -740,14 +740,20 @@
                 <div class="game__panel clearfix">
                     <div class="game__monster">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 56" class="alien__svg">
-                            <path opacity="0.2" fill="#FFFFFF" d="M52.341,42.757V21.221C52.341,9.5,42.841,0,31.121,0S9.9,9.5,9.9,21.221v21.536H52.341z" />
+                            <path opacity="0.2" fill="#FFFFFF" d="M52.341,42.757V21.221C52.341,9.5,42.841,0,31.121,0S9.9,9.5,9.9,21.221v21.536H52.341z"
+                            />
                             <g>
-                                <path fill="#A8FF73" d="M43.558,43.058c0,6.869-5.568,12.436-12.437,12.436l0,0c-6.869,0-12.437-5.566-12.437-12.436v-21.46c0-6.868,5.568-12.437,12.437-12.437l0,0c6.869,0,12.437,5.568,12.437,12.437V43.058z" />
-                                <path fill="#231815" d="M31.05,33.463c-1.145-0.007-3.994-0.124-5.704-1.059c-1.105-0.603-1.512-1.985-0.911-3.091c0.603-1.105,1.986-1.512,3.09-0.91c0.292,0.158,1.542,0.488,3.555,0.501c2.002,0.014,3.283-0.308,3.56-0.456c1.079-0.647,2.475-0.295,3.12,0.786c0.648,1.079,0.292,2.479-0.788,3.127C35.277,33.378,32.266,33.471,31.05,33.463" />
-                                <path fill="#FF7373" d="M26.188,32.773c1.69,0.598,3.89,0.683,4.861,0.689c0.993,0.005,3.178-0.054,4.87-0.628c-0.505-1.291-2.481-2.266-4.852-2.279C28.699,30.541,26.71,31.489,26.188,32.773" />
+                                <path fill="#A8FF73" d="M43.558,43.058c0,6.869-5.568,12.436-12.437,12.436l0,0c-6.869,0-12.437-5.566-12.437-12.436v-21.46c0-6.868,5.568-12.437,12.437-12.437l0,0c6.869,0,12.437,5.568,12.437,12.437V43.058z"
+                                />
+                                <path fill="#231815" d="M31.05,33.463c-1.145-0.007-3.994-0.124-5.704-1.059c-1.105-0.603-1.512-1.985-0.911-3.091c0.603-1.105,1.986-1.512,3.09-0.91c0.292,0.158,1.542,0.488,3.555,0.501c2.002,0.014,3.283-0.308,3.56-0.456c1.079-0.647,2.475-0.295,3.12,0.786c0.648,1.079,0.292,2.479-0.788,3.127C35.277,33.378,32.266,33.471,31.05,33.463"
+                                />
+                                <path fill="#FF7373" d="M26.188,32.773c1.69,0.598,3.89,0.683,4.861,0.689c0.993,0.005,3.178-0.054,4.87-0.628c-0.505-1.291-2.481-2.266-4.852-2.279C28.699,30.541,26.71,31.489,26.188,32.773"
+                                />
                                 <polygon fill="#FF8787" points="48.25,43.442 13.458,43.442 15.722,35.521 45.985,35.521 " />
-                                <path fill="#87B1FF" d="M59.386,48.155c0,4.077-3.818,7.384-8.529,7.384H11.385c-4.71,0-8.53-3.307-8.53-7.384l0,0c0-4.078,3.819-7.385,8.53-7.385h39.472C55.567,40.771,59.386,44.077,59.386,48.155L59.386,48.155z" />
-                                <path fill="#5D5DB3" d="M62.241,48.157c0,2.4-1.947,4.348-4.35,4.348H4.349C1.947,52.505,0,50.558,0,48.157l0,0c0-2.402,1.947-4.35,4.349-4.35h53.542C60.294,43.808,62.241,45.755,62.241,48.157L62.241,48.157z" />
+                                <path fill="#87B1FF" d="M59.386,48.155c0,4.077-3.818,7.384-8.529,7.384H11.385c-4.71,0-8.53-3.307-8.53-7.384l0,0c0-4.078,3.819-7.385,8.53-7.385h39.472C55.567,40.771,59.386,44.077,59.386,48.155L59.386,48.155z"
+                                />
+                                <path fill="#5D5DB3" d="M62.241,48.157c0,2.4-1.947,4.348-4.35,4.348H4.349C1.947,52.505,0,50.558,0,48.157l0,0c0-2.402,1.947-4.35,4.349-4.35h53.542C60.294,43.808,62.241,45.755,62.241,48.157L62.241,48.157z"
+                                />
                             </g>
                             <g>
                                 <circle fill="#FFFFFF" cx="31.121" cy="20.031" r="6.224" />
@@ -772,7 +778,7 @@
                     <div class="game__btn-group">
                         <button id="btn_continue" type="button" class="btn btn game__btn game__btn--line" data-dismiss="modal">繼續作戰</button>
                         <button id="btn_share_fb" type="button" class="btn btn game__btn game__btn--line">分享戰績</button>
-                        <button id="btn_ranking" type="button" class="btn btn game__btn game__btn--line">登陸戰績</button>
+                        <!--<button id="btn_ranking" type="button" class="btn btn game__btn game__btn--line">登陸戰績</button>-->
                         <button id="btn_back" type="button" class="btn btn game__btn game__btn--line" data-dismiss="modal">返回基地</button>
                     </div>
                 </div>
@@ -796,53 +802,43 @@
         </div>
         <!-- /.modal_game_over -->
         <!-- 講師簡介 -->
-        <div class="modal fade" tabindex="-1" role="dialog" id="speaker">
+        <div class="modal fade" tabindex="-1" role="dialog" id="modal_speaker">
             <div class="modal-dialog" role="document">
                 <div class="speaker-brief">
                     <div class="speaker-brief__head">
-                        <div class="speaker-brief__img"><img src="img/keynote.jpg" alt=""></div>
+                        <div class="speaker-brief__img">
+                            <img :src="Modal_Speaker.avatar" alt="">
+                        </div>
                         <div class="speaker-brief__person">
-                            <div class="speaker-brief__name">井村友美(Tomomi Imura)
+                            <div class="speaker-brief__name">
+                                {{ Modal_Speaker.speaker }}
                             </div>
                             <div class="speaker-brief__company">
-                            Slack <br>Developer Relations Manager
+                                {{ Modal_Speaker.company }} <br> {{ Modal_Speaker.position }}
                             </div>
                         </div>
                     </div>
                     <div class="speaker-brief__body">
                         <ul class="nav nav-tabs speaker-brief__tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">議程介紹</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">講師簡介</a></li>
+                            <li role="presentation" class="active">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">議程介紹</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">講師簡介</a>
+                            </li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
-                                <div class="speaker-brief__agenda">
+                                <div class="speaker-brief__agenda" v-for="session in Modal_Speaker.session">
                                     <div class="speaker-brief__agenda-title">
-                                        Dance with i13n (與 instrumentation 共舞)
+                                        {{ session.title }}
                                     </div>
-                                    <div class="speaker-brief__agenda-content">
-                                        <p>
-                                            「HTML5」&「CSS3」已為整個 web develop 世界帶來了無限的驚奇與想像！<br>
-                                            透過不斷推陳出新的嶄新 Web APIs，<br>
-                                            前端的互動與呈現已非昔日所可比擬，<br>
-                                            一些有趣的互動行為，<br>
-                                            更無法透過呆板的 server log 來得知 user 真正的心意，<br>
-                                            藉由 i13n 的導入，<br>
-                                            我們可以得知服務與 user 間的距離，<br>
-                                            透過這些 data 的分析，<br>
-                                            推出讓每個 user 心所嚮往的 UI/UX 變的更加有趣且活潑，<br>
-                                            與 i13n 共舞，<br>
-                                            貼近 user 的想法將不再是遙不可及的夢想與空談了。<br>
-                                            我們堅信這一切的一切都可以被描繪成現實...
-                                        </p>        
-                                    </div>
+                                    <div class="speaker-brief__agenda-content" v-html="session.summary"></div>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
-                                <div class="speaker-brief__intro">
-                                    <p>尊重傳統且喜好浮華的熱血 front end</p>
-                                </div>
+                                <div class="speaker-brief__intro" v-html="Modal_Speaker.full_profile"></div>
                             </div>
                         </div>
                     </div>
