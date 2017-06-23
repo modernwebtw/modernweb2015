@@ -816,7 +816,7 @@
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="#speakerModalAgenda">
+                            <div role="tabpanel" class="tab-pane active" id="speakerModalAgenda">
                                 <div class="speaker-brief__agenda" v-for="session in Modal_Speaker.session">
                                     <div class="speaker-brief__agenda-title">
                                         {{ session.title }}
@@ -824,7 +824,7 @@
                                     <div class="speaker-brief__agenda-content" v-html="session.summary"></div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="#speakerModalIntro">
+                            <div role="tabpanel" class="tab-pane" id="speakerModalIntro">
                                 <div class="speaker-brief__intro" v-html="Modal_Speaker.full_profile"></div>
                             </div>
                         </div>
