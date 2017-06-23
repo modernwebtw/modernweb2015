@@ -1,12 +1,34 @@
 // temp img
-var fire_1_image = new Image();
-fire_1_image.src = 'game/fire_1.png';
-var fire_2_image = new Image();
-fire_2_image.src = 'game/fire_2.png';
-var mon_image = new Image();
-mon_image.src = 'game/mon.png';
-var player_image = new Image();
-player_image.src = 'game/player.png';
+var loadImage = function (path) {
+    var imgObject = new Image();
+    imgObject.src = path;
+    return imgObject;
+}
+var monster = [{
+    color: '#A8FF73',
+    img: loadImage('game/monster1.png')
+}, {
+    color: '#FF8A73',
+    img: loadImage('game/monster2.png')
+}, {
+    color: '#39BD7A',
+    img: loadImage('game/monster3.png')
+}];
+var player_image = loadImage('game/player.png');
+
+// 
+
+function roundRecta(ctx, x, y, w, h, r) {
+    var min_size = Math.min(w, h);
+    if (r > min_size / 2) r = min_size / 2;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+}
 
 // Color Blast!
 // License MIT
@@ -292,14 +314,16 @@ player_image.src = 'game/player.png';
         this.vy = 8;
         this.index = Game.bulletIndex;
         this.active = true;
-        this.color = "white";
-
+        // this.color = "white";
+        this.color = "#FFB03B";
     };
 
 
     Bullet.prototype.draw = function () {
+        roundRecta(Game.ctx, this.x, this.y, this.width, this.height, 95);
         Game.ctx.fillStyle = this.color;
-        Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+        // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+        Game.ctx.fill();
         // Game.ctx.drawImage(fire_1_image, this.x, this.y, 39, 92);
     };
 
@@ -325,8 +349,9 @@ player_image.src = 'game/player.png';
         this.speed = Game.random(2, 3);
         this.shootingSpeed = Game.random(30, 80);
         this.movingLeft = Math.random() < 0.5 ? true : false;
-        this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
-
+        // this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
+        var rand = this.index % 3;
+        this.color = monster[rand].color;
     };
 
 
@@ -334,15 +359,8 @@ player_image.src = 'game/player.png';
         // Game.ctx.fillStyle = this.color;
         // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
 
-        var rand = this.index % 2;
-        if (rand == 1) {
-            Game.ctx.drawImage(mon_image, this.x, this.y, 54, 94);
-        } else {
-            Game.ctx.drawImage(fire_2_image, this.x, this.y, 39, 92);
-        }
-
-
-
+        var rand = this.index % 3;
+        Game.ctx.drawImage(monster[rand].img, this.x, this.y, 78, 70);
     };
 
 
@@ -409,8 +427,10 @@ player_image.src = 'game/player.png';
     };
 
     EnemyBullet.prototype.draw = function () {
+        roundRecta(Game.ctx, this.x, this.y, this.width, this.height, 95);
         Game.ctx.fillStyle = this.color;
-        Game.ctx.fillRect(this.x, this.y, this.width, this.height);
+        Game.ctx.fill();
+        // Game.ctx.fillRect(this.x, this.y, this.width, this.height);
         // Game.ctx.drawImage(fire_2_image, this.x, this.y, 39, 92);
     };
 
