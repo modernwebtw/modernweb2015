@@ -34,6 +34,7 @@ var modernweb2017 = new Vue({
         },
         showModal: function (speaker) {
             this.Modal_Speaker = speaker;
+            $('a[href="#speakerModalAgenda"]').tab('show');
             $('#speakerModal').modal('show');
         },
         arcToSpan: function (str) {
