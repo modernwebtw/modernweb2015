@@ -35,6 +35,9 @@ var modernweb2017 = new Vue({
         showModal: function (speaker) {
             this.Modal_Speaker = speaker;
             $('#speakerModal').modal('show');
+        },
+        arcToSpan: function (str) {
+            return str.replace(/\(/igm, '<span>(').replace(/\)/igm, ')</span>');
         }
     },
     filters: {
@@ -66,7 +69,9 @@ var modernweb2017 = new Vue({
                 });
                 // game
                 $('#alien').click(function () {
-                    $('#modal_game_start').modal('show');
+                    $('#modal_game_start').on('shown.bs.modal', function () {
+                        $('.modal-backdrop').addClass('game-bg-waring');
+                    }).modal('show');
                 });
 
                 $('#btn_game_start, #btn_continue').click(function () {
