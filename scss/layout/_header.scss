@@ -5,7 +5,7 @@ html {
 body {
 	color: $main-black;
 	font-size: 16px;		
-	font-family: 微軟正黑體,sans-serif;
+	font-family: 'Open Sans','微軟正黑體',sans-serif;
 	line-height: 1.7;
 	background-color: $space-color;
 	@include media(">768px") {
@@ -71,7 +71,7 @@ a {
 		top: 0;
 		font-size: 60px;
 
-		font-weight: bold;
+		font-weight: 700;
 		line-height: 0.8;
 		color: rgba(255,255,255,.05);
 		user-select:none;

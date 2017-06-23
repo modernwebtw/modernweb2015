@@ -71,8 +71,11 @@
 .game-modal {
     &__panel {
         padding: 20px;
-        background-color: rgba(#A00008, .9);
-        box-shadow: 0 2px 60px rgba(#2D0408, .9);
+        background-color: rgba($main-green, .9);
+        &--warning {
+            background-color: rgba(#A00008, .9);
+            box-shadow: 0 2px 60px rgba(#2D0408, .9);
+        }
         // transform:scale(0.1,0.1);
         // transition: .2s linear;
     }

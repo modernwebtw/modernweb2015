@@ -93,13 +93,19 @@
 	}
 
 	&__img {
-		float: left;
+		
 		position: relative;
-		left: -20px;
-		top: -20px;
-		max-width: 160px;
+		margin: 0 auto;
+		top: -30px;
+		max-width: 120px;
 		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
 		transition-delay: 0.3s;
+		@include media(">599px") {
+			float: left;
+			left: -20px;
+			top: -20px;
+			max-width: 160px;
+		}
 		img {
 			width: 100%;
 		}
@@ -108,18 +114,29 @@
 	&__person {
 		padding-left: 20px;
 		padding-right: 20px;
-		margin-top: 16px;
+		margin-top: -16px;
+		margin-bottom: 10px;
 		transition-delay: 0.4s;
+		@include media(">599px") {
+			margin-top: 16px;
+			margin-bottom: 0;
+		}
 	}
 
 	&__name {
 		color: $main-green;
-		font-size: 30px;
+		font-size: 20px;
+		@include media(">599px") {
+			font-size: 30px;
+		}
 	}
 
 	&__company {
 		color: $main-black;
-		font-size: 18px;
+		font-size: 16px;
+		@include media(">599px") {
+			font-size: 18px;
+		}
 	}
 
 	&__body {
@@ -129,22 +146,24 @@
 	}
 	&__agenda-title {
 		margin-bottom: 10px;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 700;
 		color: $main-green;
+		@include media(">599px") {
+			font-size: 20px;
+		}
 	}
-	&__agenda-content {
-		font-size: 16px;
-	}
-	&__intro {
-		font-size: 16px;
+	&__agenda-content,&__intro {
+		font-size: 14px;
+		@include media(">599px") {
+			font-size: 16px;
+		}
 	}
 	&__tabs {
 		a {
 			display: block;
 			padding: 6px 16px;
 			color: $main-green;
-			font-size: 16px;
 			border: 1px solid transparent;
 			&:focus {
 				color: $main-green;
@@ -155,6 +174,10 @@
 			}
 			&:active {
 				color: darken($main-green,2%);
+			}
+			font-size: 14px;
+			@include media(">599px") {
+				font-size: 16px;
 			}
 		}
 		li.active>a {
@@ -168,7 +191,17 @@
 .speaker-brief-modal {
 	// 定位
 	.modal-dialog {
-		margin-top: 10%;
+		margin-top: 20%;
+		margin-bottom: 20%;
+		@include media(">599px") {
+			margin-top: 10%;
+		}
+		@include media(">767px") {
+			margin-top: 14%;
+		}
+		@include media(">1199px") {
+			margin-top: 10%;
+		}
 	}
 
 	// 燈箱關閉縮放動畫
