@@ -125,6 +125,12 @@ var modernweb2017 = new Vue({
                         })
                     }
                 }
+
+                // scroll menu
+                var $window = $(window);
+                $window.scroll(function () {
+                    $('.menu').toggleClass('menu--scroll', $window.scrollTop() >= distance);
+                });
             });
         });
     }
