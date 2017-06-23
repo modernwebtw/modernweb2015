@@ -30,16 +30,40 @@
             <div class="wrapper">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="" class="pull-left menu__logo">
+                        <a href="" class="pull-left menu__logo hidden-xs">
                             <img src="img/logo.svg" alt="Modern Web 2017">
                         </a>
-                        <div class="pull-right">
+                        <div class="menu__burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu__content">
+                            <a href="" class="menu__burger-logo visible-xs">
+                                <img src="img/logo_color.svg" alt="Modern Web 2017">
+                            </a>
                             <ul class="list-unstyled menu__list">
-                                <li><a href=""></a></li>
-                                <li><a href="">講者</a></li>
-                                <li><a href="">售票</a></li>
-                                <li><a href="">交通</a></li>
-                                <li><a href="">回顧</a></li>
+                                <li><a href="#about">特色</a></li>
+                                <li><a href="#speaker">講者</a></li>
+                                <li><a href="#ticket">售票</a></li>
+                                <li><a href="#traffic">交通</a></li>
+                                <li><a href="http://s.itho.me/modernweb/2017/ModernWeb2017-Sponsorship-v20170617.pdf" target="_blank">贊助</a></li>
+                                <li class="hidden-xs">
+                                    <div class="dropdown">
+                                        <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        回顧
+                                        <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                            <li><a href="" target="_blank">2015</a></li>
+                                            <li><a href="" target="_blank">2016</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </li>
+                                <li><a href="" target="_blank" class="visible-xs">回顧 2015</a></li>
+                                <li><a href="" target="_blank" class="visible-xs">回顧 2016</a></li>
                             </ul>
                         </div>
                     </div>
@@ -370,7 +394,7 @@
             <div class="astronaut"><img src="img/astronaut.svg" alt=""></div>
             <div class="rocket"><img src="img/rocket.svg" alt=""></div>
         </header>
-        <div class="about--overflow">
+        <div class="about--overflow" id="about">
             <section class="about">
                 <div class="wrapper">
                     <div class="row">
@@ -399,7 +423,7 @@
                 </div>
             </section>
         </div>
-        <section class="keynote">
+        <section class="keynote" id="speaker">
             <div class="title-bg-word">Keynote
                 <br>Speakers</div>
             <div class="wrapper">
@@ -515,7 +539,7 @@
                 </div>
             </div>
         </section>
-        <section class="tickets">
+        <section class="tickets" id="ticket">
             <div class="title-bg-word">Tickets</div>
             <div class="wrapper">
                 <div class="row">
@@ -542,7 +566,7 @@
                                 </div>
                                 <div class="ticket__price">$ 1,990</div>
                                 <div class="ticket__desc">入場票 1 張，限在學學生，報到時需攜帶學生證。資格驗證不符或當日未攜帶學生證將不予入場(30個名額)</div>
-                                <div class="ticket__btn"><a href="" class="btn ticket__button">立即購票</a></div>
+                                <div class="ticket__btn"><a href="https://ec.ithome.com.tw/modernweb2017/class?p=20170041" class="btn ticket__button">立即購票</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">線上優惠票
@@ -573,8 +597,8 @@
                                 </div>
                                 <div class="ticket__price">$ 60,000</div>
                                 <div class="ticket__desc">入場票 10 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx"
-                                        class="btn ticket__button">立即購票</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw"
+                                        class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">銅級贊助套票
@@ -582,8 +606,8 @@
                                 </div>
                                 <div class="ticket__price">$ 30,000</div>
                                 <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="https://s3-ap-northeast-1.amazonaws.com/s.itho.me/modernweb/2017/Modern_Web_2017_group_application_+form.xlsx"
-                                        class="btn ticket__button">立即購票</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw"
+                                        class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">現場票(雙日)
@@ -610,7 +634,7 @@
                 </div>
             </div>
         </section>
-        <section class="traffic">
+        <section class="traffic" id="traffic">
             <div class="title-bg-word">Traffic</div>
             <div class="wrapper">
                 <div class="row">
@@ -883,6 +907,14 @@
 
         ga('create', 'UA-48349256-7', 'auto');
         ga('send', 'pageview');
+    </script>
+    <script>
+        $(".menu__burger").on('click', function() {
+          $(this).toggleClass("on");
+          $('.menu__content').toggleClass("on");
+          $(".menu").toggleClass('on');
+          $('body').toggleClass('is-hidden');
+        });
     </script>
 </body>
 
