@@ -128,24 +128,6 @@ var modernweb2017 = new Vue({
                         })
                     }
                 }
-                // gmap
-                // google.maps.event.addDomListener(window, 'load', init);
-
-                // function init() {
-                //     var mapOptions = {
-                //         zoom: 17,
-                //         scrollwheel: false,
-                //         center: new google.maps.LatLng(25.010649, 121.528285)
-                //     };
-
-                //     var mapElement = document.getElementById('map');
-                //     var map = new google.maps.Map(mapElement, mapOptions);
-                //     var marker = new google.maps.Marker({
-                //         position: new google.maps.LatLng(25.010649, 121.528285),
-                //         map: map,
-                //         title: ''
-                //     });
-                // }
             });
         });
     }
