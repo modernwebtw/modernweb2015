@@ -20,7 +20,7 @@ var modernweb2017 = new Vue({
                 session: this.filter(speaker, 'session_type', 'session', true),
                 featured: this.filter(speaker, 'role', '關鍵講師', true),
                 china: this.filter(speaker, 'tags', 'China', true),
-                normal: this.filter(this.filter(speaker, 'role', '講師', true), 'role', 'China', false)
+                normal: this.filter(this.filter(speaker, 'role', '講師', true), 'tags', 'China', false)
             }
         }
     },
