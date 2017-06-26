@@ -1,0 +1,141 @@
+// 燈箱定位
+.game-modal .modal-dialog {
+	position: relative;
+    top: 30%;
+}
+
+// 燈箱動畫
+.game-modal {
+    // 關閉動畫
+    &.fade .modal-dialog {
+        transform: translate(0,0);
+        
+    }
+    // 開啟動畫
+    &.in {
+        .modal-dialog { 
+            
+        }
+    }
+    // 遭遇怪獸燈箱彈跳動畫
+    &--warning {
+        &.in {
+            .modal-dialog { 
+                animation:scale-modal .7s linear forwards;
+                @keyframes scale-modal {
+                    from, 20%, 40%, 60%, 80%, to {
+                        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                      }
+
+                      0% {
+                        opacity: 0;
+                        transform: scale3d(.3, .3, .3);
+                      }
+
+                      20% {
+                        transform: scale3d(1.1, 1.1, 1.1);
+                      }
+
+                      40% {
+                        transform: scale3d(.9, .9, .9);
+                      }
+
+                      60% {
+                        opacity: 1;
+                        transform: scale3d(1.03, 1.03, 1.03);
+                      }
+
+                      80% {
+                        transform: scale3d(.97, .97, .97);
+                      }
+
+                      to {
+                        opacity: 1;
+                        transform: scale3d(1, 1, 1);
+                      }
+                }
+            }
+        }
+    }
+}
+
+// 燈箱背景警告閃爍
+.game-bg-waring {
+    background-color: rgba(#A00008, .9);
+    animation:bg-warning .4s ease-in-out infinite alternate;
+    @keyframes bg-warning {
+        to{background-color: rgba(50, 4, 6, 0.9)};
+    }
+}
+
+.game-modal {
+    &__panel {
+        padding: 20px;
+        background-color: rgba($main-green, .9);
+        &--warning {
+            background-color: rgba(#A00008, .9);
+            box-shadow: 0 2px 60px rgba(#2D0408, .9);
+        }
+        // transform:scale(0.1,0.1);
+        // transition: .2s linear;
+    }
+    &__monster {
+        float: left;
+        width: 40%;
+        img {
+            width: 100%;
+        }
+    }
+    &__desc {
+        color: #fff;
+        overflow: hidden;
+        p {
+            padding-left: 40px;
+        }
+    }
+    &__warning {
+        text-align: center;
+        color: yellow;
+        font-size: 48px;
+        font-weight: 700;
+    }
+    &__score {
+        font-size: 48px;
+        text-align: center;
+    }
+    &__btn-group {
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__btn {
+        padding: 6px 20px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        background-color: transparent;
+        border-radius: 0;
+        &+& {
+            margin-left: 20px;
+        }
+        &--line {
+            border: 1px solid #fff;
+            &:hover,
+            &:focus {
+                color: #fff;
+            }
+        }
+        &--solid {
+            color: #A00008;
+            background-color: yellow;
+            &:hover,
+            &:focus {
+                color: #A00008;
+                background-color: lighten(yellow,7%);
+            }
+            &:active {
+                color: #A00008;
+                background-color: darken(yellow,7%);
+            }
+        }
+    }
+}

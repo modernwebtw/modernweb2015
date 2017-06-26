@@ -1,0 +1,280 @@
+.space {
+    position: relative;
+    max-height: 360px;
+    height: 80vh;
+    background-image: url(../img/bg.svg);
+    background-size: 160%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @include media(">640px") {
+        max-height: 480px;
+        background-size: 140%;
+    }
+    @include media(">991px") {
+        min-height: 480px;
+        max-height: 760px;
+        background-size: 110%;
+    }
+    &:before {
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/star.svg);
+        background-size: 90%;
+        background-position: center bottom;
+        background-repeat: repeat-y;
+        opacity: .7;
+    }
+}
+
+.base {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    @include media(">768px") {
+        width: 80%;
+        left: 10%;
+    }
+    .space-left {
+        @extend %position-a;
+        left: 14%;
+        bottom: -9px;
+        width: 26%;
+        @include media(">768px") {
+            bottom: -10px;
+        }
+        &__reflection {
+            g rect {
+                animation: reflection 2s linear infinite;
+                @keyframes reflection {
+                    0% {
+                        opacity: .8;
+                    }
+                    50% {
+                        opacity: .8;
+                    }
+                    51% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+            g:nth-child(2) rect {
+                animation-delay: 1.3s;
+            }
+            g:nth-child(3) rect {
+                animation-delay: 1.6s;
+            }
+            g:nth-child(4) rect {
+                animation-delay: 1.9s;
+            }
+        }
+    }
+    .radar {
+        @extend %position-a;
+        left: 64%;
+        bottom: -11px;
+        width: 12%;
+        @include media(">768px") {
+            bottom: -12px;
+        }
+        &__rotate {
+            transform-origin: 101px 191px;
+            animation: radar-rotate 3s infinite alternate linear;
+            @keyframes radar-rotate {
+                from {
+                    // transform:rotate(0deg);
+                }
+                to {
+                    transform: rotate(20deg);
+                }
+            }
+        }
+        &__wave {
+            path {
+                opacity: 0;
+                &:nth-child(1) {
+                    animation: radar-wave 1s 1s infinite linear forwards;
+                }
+                &:nth-child(2) {
+                    animation: radar-wave 1s 1.3s infinite linear forwards;
+                }
+                &:nth-child(3) {
+                    animation: radar-wave 1s 1.5s infinite linear forwards;
+                }
+            }
+            @keyframes radar-wave {
+                0% {
+                    opacity: 0;
+                    transform: translateY(0);
+                }
+                33% {
+                    opacity: .2;
+                }
+                66% {
+                    transform: translateY(-8px);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .space-right {
+        @extend %position-a;
+        left: 70%;
+        bottom: -9px;
+        width: 20%;
+        @include media(">768px") {
+            bottom: -10px;
+        }
+        &__light path {
+            fill: #57A6FF;
+            animation: light 2s linear infinite;
+            @keyframes light {
+                0% {
+                    fill: #57A6FF;
+                }
+                50% {
+                    fill: #57A6FF;
+                }
+                51% {
+                    fill: lighten(#57A6FF, 8%);
+                }
+                100% {
+                    fill: lighten(#57A6FF, 8%);
+                }
+            }
+            &:nth-child(1) {
+                animation-delay: 1s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1.3s;
+            }
+            &:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+        }
+    }
+}
+
+.rocket {
+    @extend %position-a;
+    left: 50%;
+    width: 20%;
+    bottom: -5%;
+    transform: translateX(-50%) translateY(-250%);
+    z-index: 2;
+    opacity: 0;
+    animation: down 4s .8s cubic-bezier(0,.27,0,1) forwards;
+    @keyframes down {
+        0% {
+            transform: translateX(-50%) translateY(-250%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+    @include media(">768px") {
+        width: 15%;
+    }
+}
+
+.astronaut {
+    @extend %position-a;
+    left: 51%;
+    width: 7%;
+    bottom: -5%;
+    z-index: 1;
+    opacity: 0;
+    animation: rot 1s 5.5s linear forwards;
+    @keyframes rot {
+        0% {
+            transform: rotate(0deg) translate(-100%) rotate(-0deg);
+        }
+        99% {
+            transform: rotate(180deg) translate(-130%) rotate(-180deg);
+        }
+        100% {
+            z-index: 2;
+            opacity: 1;
+            transform: rotate(180deg) translate(-130%) rotate(-180deg);
+        }
+    }
+    @include media(">768px") {
+        width: 5%;
+    }
+}
+
+
+
+.planet {
+    position: absolute;
+    left: 2%;
+    top: 26%;
+    width: 12%;
+    animation: planet-move 3s 1.5s linear infinite alternate;
+    &__light {
+    	opacity: 0.1;
+    	animation: planet-light 1.5s linear infinite alternate;
+	    @keyframes planet-light {
+	        to {
+	            opacity: .15;
+	        }
+	    }
+	    &:last-child {
+	    	animation-delay: 2s;
+	    }
+    }
+    @include media(">768px") {
+       left: 10%;
+       top: 24%;
+       width: 8%;
+    }
+}
+
+.satellite {
+    position: absolute;
+    width: 5%;
+    right:16%;
+    top: 63%;
+    animation: satellite-move 2s linear infinite alternate;
+    @keyframes satellite-move {
+        to {
+            transform: translateY(8px) rotate(0.02deg);
+        }
+    }
+    @include media(">768px") {
+        right: 20%;
+        top: 50%;
+        width: 4%;
+    }
+}
+
+.saturn {
+    position: absolute;
+    width: 10%;
+    right:3%;
+    top: 55%;
+    animation: planet-move 3s 1.5s linear infinite alternate;
+    @keyframes planet-move {
+        to {
+            transform: translateY(4px) rotate(2deg);
+        }
+    }
+    @include media(">768px") {
+        right: 14%;
+        top: 35%;
+        width: 6%;
+    }
+}
