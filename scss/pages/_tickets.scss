@@ -141,12 +141,13 @@
         color: #fff;
         background-color: darken(#FF8787, 5%);
     }
-    
+
     img {
         position: absolute;
-        left: 95%;
+        right: -80px;
         bottom: 50%;
         display: block;
+        width: 80px;
         transition: .2s .5s linear;
         transform-origin: center bottom;
     }

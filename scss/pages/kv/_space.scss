@@ -175,7 +175,7 @@
     transform: translateX(-50%) translateY(-250%);
     z-index: 2;
     opacity: 0;
-    animation: down 2s .8s ease-in-out forwards;
+    animation: down 4s .8s cubic-bezier(0,.27,0,1) forwards;
     @keyframes down {
         0% {
             transform: translateX(-50%) translateY(-250%);
@@ -197,7 +197,7 @@
     bottom: -5%;
     z-index: 1;
     opacity: 0;
-    animation: rot 1s 3.5s linear forwards;
+    animation: rot 1s 5.5s linear forwards;
     @keyframes rot {
         0% {
             transform: rotate(0deg) translate(-100%) rotate(-0deg);

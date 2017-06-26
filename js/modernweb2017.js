@@ -152,7 +152,7 @@ var modernweb2017 = new Vue({
                 });
 
                 // scroll
-                $('#menu a[href^="#"]:not([href="#"])').click(function() {
+                $('#menu a[href^="#"]:not([href="#"]), #buy_ticket').click(function() {
                     var target = '#' + $(this).attr('href').split('#')[1];
                     goScroll(target);
                     return false;
