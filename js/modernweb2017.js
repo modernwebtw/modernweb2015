@@ -11,7 +11,7 @@ var modernweb2017 = new Vue({
         //     var Modal_ID = this.Modal_ID;
         //     return this.Speaker[Modal_ID] || {}
         // },
-        SpeakerFilter: function () {
+        SpeakerFilter: function() {
             var speaker = this.Speaker;
             return {
                 keynote: this.filter(speaker, 'session_type', 'keynote', true),
@@ -23,8 +23,8 @@ var modernweb2017 = new Vue({
         }
     },
     methods: {
-        filter: function (data, field, value, boolean) {
-            return $.grep(data, function (obj) {
+        filter: function(data, field, value, boolean) {
+            return $.grep(data, function(obj) {
                 if (typeof obj[field] === 'object') {
                     return (!!~$.inArray(value, obj[field]) == boolean) ? obj : null;
                 } else {
@@ -32,18 +32,18 @@ var modernweb2017 = new Vue({
                 }
             });
         },
-        showModal: function (speaker) {
+        showModal: function(speaker) {
             this.Modal_Speaker = speaker;
             $('a[href="#speakerModalAgenda"]').tab('show');
             $('#speakerModal').modal('show');
         },
-        arcToSpan: function (str) {
+        arcToSpan: function(str) {
             return str.replace(/\(/igm, '<span>(').replace(/\)/igm, ')</span>');
         }
     },
     filters: {
-        time: function (date) {
-            var leftPadZero = function (str, n) {
+        time: function(date) {
+            var leftPadZero = function(str, n) {
                 str = ('' + str);
                 return Array(n - str.length + 1).join('0') + str;
             }
@@ -53,37 +53,37 @@ var modernweb2017 = new Vue({
             return '';
         }
     },
-    beforeCreate: function () {
+    beforeCreate: function() {
         $.when(
             confapi.getSessionWithSpeaker(),
             confapi.getSpeakerWithSession(),
             // confapi.getSponsor()
-        ).done(function (session, speaker, sponsor) {
+        ).done(function(session, speaker, sponsor) {
             modernweb2017.Session = session;
             modernweb2017.Speaker = speaker;
             // modernweb2017.Sponsor = sponsor;
 
-            modernweb2017.$nextTick(function () {
+            modernweb2017.$nextTick(function() {
                 // fb
                 FB.init({
                     appId: '681372298729949'
                 });
                 // game
-                $('#alien').click(function () {
-                    $('#modal_game_start').on('shown.bs.modal', function () {
+                $('#alien').click(function() {
+                    $('#modal_game_start').on('shown.bs.modal', function() {
                         $('.modal-backdrop').addClass('game-bg-waring');
                     }).modal('show');
                 });
 
-                $('#btn_game_start, #btn_continue').click(function () {
+                $('#btn_game_start, #btn_continue').click(function() {
                     gameStart();
                 });
 
-                $('#btn_back, #btn_exit').click(function () {
+                $('#btn_back, #btn_exit').click(function() {
                     gamePause();
                 });
 
-                $('#btn_share_fb').click(function () {
+                $('#btn_share_fb').click(function() {
                     var score = $('#score').text();
                     FB.ui({
                         method: 'feed',
@@ -91,10 +91,10 @@ var modernweb2017 = new Vue({
                         picture: 'http://modernweb.tw/img/social-pic.jpg',
                         description: 'ModernWeb 2017',
                         caption: '消滅外星怪獸，得到了 ' + score + ' 分'
-                    }, function (response) {});
+                    }, function(response) {});
                 });
 
-                var gameStart = function () {
+                var gameStart = function() {
                     $('html, body').scrollTop(0);
                     $('body').addClass('game_start');
                     var $game = $('#game');
@@ -108,17 +108,17 @@ var modernweb2017 = new Vue({
                     toggleScroll(false);
                 }
 
-                var gamePause = function () {
+                var gamePause = function() {
                     $('body').removeClass('game_start');
                     Game.pause();
                     toggleScroll(true);
                 }
 
-                var toggleScroll = function (boolean) {
+                var toggleScroll = function(boolean) {
                     if (boolean) {
                         $(window).off('scroll touchmove mousewheel');
                     } else {
-                        $(window).on('scroll touchmove mousewheel', function (e) {
+                        $(window).on('scroll touchmove mousewheel', function(e) {
                             e.preventDefault();
                             e.stopPropagation();
                             return false;
@@ -132,20 +132,20 @@ var modernweb2017 = new Vue({
                 var $menu = $('#menu');
                 var $featured = $('#featured');
                 var timer;
-                $window.scroll(function () {
+                $window.scroll(function() {
                     if (timer) {
                         window.clearTimeout(timer);
                     }
-                    timer = window.setTimeout(function () {
+                    timer = window.setTimeout(function() {
                         $menu.toggleClass('menu--scroll', $window.scrollTop() >= $about.offset().top);
                         // liang
-                        // var $liang = $('#liang');
-                        // $liang.toggleClass('menu--scroll', $window.scrollTop() >= $featured.offset().top);
+                        var $buy_ticket_btn = $('#buy_ticket');
+                        $buy_ticket_btn.toggleClass('active', $window.scrollTop() >= $featured.offset().top);
                     }, 500);
                 });
 
                 // mobile
-                $(".menu__burger").on('click', function () {
+                $(".menu__burger").on('click', function() {
                     $(this).toggleClass("on");
                     $('.menu__content').toggleClass("on");
                     $(".menu").toggleClass('on');
@@ -153,7 +153,7 @@ var modernweb2017 = new Vue({
                 });
 
                 // scroll
-                $('#menu a[href^="#"]:not([href="#"])').click(function () {
+                $('#menu a[href^="#"]:not([href="#"])').click(function() {
                     var target = '#' + $(this).attr('href').split('#')[1];
                     goScroll(target);
                     return false;
@@ -166,7 +166,7 @@ var modernweb2017 = new Vue({
 
                     $("html, body").stop().animate({
                         scrollTop: sTop
-                    }, 1000, function () {
+                    }, 1000, function() {
                         location.hash = target;
                     });
                 }

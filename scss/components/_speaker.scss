@@ -1,227 +1,215 @@
 .speaker {
-	@include media("<=768px") {
-		margin-left: 10%;
-	}
-	&__img {
-		width: 80%;
-		min-width: 100px;
-		// max-width: 70%;
-		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
-		cursor: pointer;
-		@include media(">768px") {
-			
-			// max-width: 180px;
-		}
-		@include media(">991px") {
-			max-width: 200px;
-		}
-		
-	}
-	&__content {
-		position: relative;
-		margin-left: 8%;
-		margin-top: -10%;
-		width: 80%;
-		text-align: left;
-		cursor: pointer;
-		@include media(">768px") {
-			margin-top: -24px;
-			margin-left: 10%;
-			width: 80%;
-		}
-		@include media(">1190px") {
-			width: 80%;
-		}
-	}
-	&__name {
-		padding: 6% 5% 5%;
-		color: #fff;
-		line-height: 1;
-		font-weight: 300;
-		letter-spacing: 1px;
-		font-size: 20px;
-		background-color: $main-green;
-		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
-		@include media(">768px") {
-			padding: 9px 12px 7px;
-			// max-width: 200px;
-			font-size: 24px;
-		}
-		@include media(">1199px") {
-			
-			max-width: 200px;
-		}
-		span {
-			font-size: 68%;
-		}
-	}
-	&__desc {
-		margin-top: 8px;
-		padding-left: 5%;
-		padding-right: 5%;
-		color: #fff;
-		font-weight: 300;
-		line-height: 1.4;
-		font-size: 16px;
-		@include media(">768px") {
-			padding-left: 12px;
-			padding-right: 12px;
-			font-size: 18px;
-		}
-	}
+    @include media("<=768px") {
+        margin-left: 10%;
+    }
+    &__img {
+        width: 80%;
+        min-width: 100px;
+        // max-width: 70%;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
+        cursor: pointer;
+        @include media(">768px") {
+            // max-width: 180px;
+        }
+        @include media(">991px") {
+            max-width: 200px;
+        }
+    }
+    &__content {
+        position: relative;
+        margin-left: 8%;
+        margin-top: -10%;
+        width: 80%;
+        text-align: left;
+        cursor: pointer;
+        @include media(">768px") {
+            margin-top: -24px;
+            margin-left: 10%;
+            width: 80%;
+        }
+        @include media(">1190px") {
+            width: 80%;
+        }
+    }
+    &__name {
+        padding: 6% 5% 5%;
+        color: #fff;
+        line-height: 1;
+        font-weight: 300;
+        letter-spacing: 1px;
+        font-size: 20px;
+        background-color: $main-green;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
+        @include media(">768px") {
+            padding: 9px 12px 7px;
+            // max-width: 200px;
+            font-size: 24px;
+        }
+        @include media(">1199px") {
+            max-width: 200px;
+        }
+        span {
+            font-size: 68%;
+        }
+    }
+    &__desc {
+        margin-top: 8px;
+        padding-left: 5%;
+        padding-right: 5%;
+        color: #fff;
+        font-weight: 300;
+        line-height: 1.4;
+        font-size: 16px;
+        @include media(">768px") {
+            padding-left: 12px;
+            padding-right: 12px;
+            font-size: 18px;
+        }
+        @include media(">1199px") {
+            max-width: 200px;
+        }
+    }
 }
 
 // 講師資料燈箱
 .speaker-brief {
-	background-color: rgba(255,255,255,.96);
-	box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
-
-	// 位移動畫
-	&--animate {
-		opacity: 0;
-		transition: .3s ease-out;
-		transform: translateY(10px);
-	}
-
-	&__head {
-		position: relative;
-		button {
-			position: absolute;
-		    right: 18px;
-		    top: 16px;
-		}
-	}
-
-	&__img {
-		
-		position: relative;
-		margin: 0 auto;
-		top: -30px;
-		max-width: 120px;
-		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
-		transition-delay: 0.3s;
-		@include media(">599px") {
-			float: left;
-			left: -20px;
-			top: -20px;
-			max-width: 160px;
-		}
-		img {
-			width: 100%;
-		}
-	}
-
-	&__person {
-		padding-left: 20px;
-		padding-right: 20px;
-		margin-top: -16px;
-		margin-bottom: 10px;
-		transition-delay: 0.4s;
-		@include media(">599px") {
-			margin-top: 16px;
-			margin-bottom: 0;
-		}
-	}
-
-	&__name {
-		color: $main-green;
-		font-size: 20px;
-		@include media(">599px") {
-			font-size: 30px;
-		}
-	}
-
-	&__company {
-		color: $main-black;
-		font-size: 16px;
-		@include media(">599px") {
-			font-size: 18px;
-		}
-	}
-
-	&__body {
-		padding: 10px 20px;
-		min-height: 150px;
-		transition-delay: 0.5s;
-	}
-	&__agenda-title {
-		margin-bottom: 10px;
-		font-size: 18px;
-		font-weight: 700;
-		line-height: 1.4;
-		color: $main-green;
-		@include media(">599px") {
-			font-size: 20px;
-		}
-	}
-	&__agenda-content,&__intro {
-		font-size: 14px;
-		@include media(">599px") {
-			font-size: 16px;
-		}
-	}
-	&__tabs {
-		a {
-			display: block;
-			padding: 6px 16px;
-			color: $main-green;
-			border: 1px solid transparent;
-			&:focus {
-				color: $main-green;
-				text-decoration: none;
-			}
-			&:hover {
-				color: lighten($main-green,2%);
-			}
-			&:active {
-				color: darken($main-green,2%);
-			}
-			font-size: 14px;
-			@include media(">599px") {
-				font-size: 16px;
-			}
-		}
-		li.active>a {
-			border-color: $main-green;
-		}
-	}
+    background-color: rgba(255, 255, 255, .96);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
+    // 位移動畫
+    &--animate {
+        opacity: 0;
+        transition: .3s ease-out;
+        transform: translateY(10px);
+    }
+    &__head {
+        position: relative;
+        button {
+            position: absolute;
+            right: 18px;
+            top: 16px;
+        }
+    }
+    &__img {
+        position: relative;
+        margin: 0 auto;
+        top: -30px;
+        max-width: 120px;
+        box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
+        transition-delay: 0.3s;
+        @include media(">599px") {
+            float: left;
+            left: -20px;
+            top: -20px;
+            max-width: 160px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &__person {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: -16px;
+        margin-bottom: 10px;
+        transition-delay: 0.4s;
+        @include media(">599px") {
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+    }
+    &__name {
+        color: $main-green;
+        font-size: 20px;
+        @include media(">599px") {
+            font-size: 30px;
+        }
+    }
+    &__company {
+        color: $main-black;
+        font-size: 16px;
+        @include media(">599px") {
+            font-size: 18px;
+        }
+    }
+    &__body {
+        padding: 10px 20px;
+        min-height: 150px;
+        transition-delay: 0.5s;
+    }
+    &__agenda-title {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: $main-green;
+        @include media(">599px") {
+            font-size: 20px;
+        }
+    }
+    &__agenda-content,
+    &__intro {
+        font-size: 14px;
+        @include media(">599px") {
+            font-size: 16px;
+        }
+    }
+    &__tabs {
+        a {
+            display: block;
+            padding: 6px 16px;
+            color: $main-green;
+            border: 1px solid transparent;
+            &:focus {
+                color: $main-green;
+                text-decoration: none;
+            }
+            &:hover {
+                color: lighten($main-green, 2%);
+            }
+            &:active {
+                color: darken($main-green, 2%);
+            }
+            font-size: 14px;
+            @include media(">599px") {
+                font-size: 16px;
+            }
+        }
+        li.active>a {
+            border-color: $main-green;
+        }
+    }
 }
-
 
 // 燈箱動畫
 .speaker-brief-modal {
-	// 定位
-	.modal-dialog {
-		margin-top: 20%;
-		margin-bottom: 30px;
-		@include media(">599px") {
-			margin-top: 10%;
-		}
-		@include media(">767px") {
-			margin-top: 14%;
-		}
-		@include media(">1199px") {
-			margin-top: 10%;
-		}
-	}
-
-	// 燈箱關閉縮放動畫
-	&.scale .modal-dialog {
-		transition:.2s ease-in;
-	    transform: scale(0);
-	}
-
-	// 燈箱開啟縮放動畫
-	&.in {
-		.modal-dialog { 
-			transform: scale(1); 
-		}
-
-		// 位移淡入動畫
-		.speaker-brief--animate {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-	
+    // 定位
+    .modal-dialog {
+        margin-top: 20%;
+        margin-bottom: 30px;
+        @include media(">599px") {
+            margin-top: 10%;
+        }
+        @include media(">767px") {
+            margin-top: 14%;
+        }
+        @include media(">1199px") {
+            margin-top: 10%;
+        }
+    }
+    // 燈箱關閉縮放動畫
+    &.scale .modal-dialog {
+        transition: .2s ease-in;
+        transform: scale(0);
+    }
+    // 燈箱開啟縮放動畫
+    &.in {
+        .modal-dialog {
+            transform: scale(1);
+        }
+        // 位移淡入動畫
+        .speaker-brief--animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
