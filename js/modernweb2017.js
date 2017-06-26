@@ -88,7 +88,7 @@ var modernweb2017 = new Vue({
                     FB.ui({
                         method: 'feed',
                         link: location.href,
-                        picture: 'http://modernweb.tw/img/fb.jpg',
+                        picture: location.origin + '/img/game_share.jpg',
                         description: 'Modern Web 2017 ─ 8/10-11 登場',
                         caption: '我在 Modern Web 2017 隱藏任務中，迎擊可愛又迷人的外星怪獸，獲得 ' + score + ' 分，一起來挑戰吧！'
                     }, function (response) {});
