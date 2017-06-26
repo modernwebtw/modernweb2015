@@ -138,7 +138,6 @@ var modernweb2017 = new Vue({
                     }
                     timer = window.setTimeout(function() {
                         $menu.toggleClass('menu--scroll', $window.scrollTop() >= $about.offset().top);
-                        // liang
                         var $buy_ticket_btn = $('#buy_ticket');
                         $buy_ticket_btn.toggleClass('active', $window.scrollTop() >= $speaker.offset().top);
                     }, 200);
