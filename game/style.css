@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+html,
+body {
+    height: 100%;
+}
+
+.game-wrap {
+    position: relative;
+    padding: 20px 0 0;
+}
+
+canvas {
+    position: relative;
+    max-width: 100%;
+    border: 2px solid black;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.content {
+    color: #ccc;
+    text-align: center;
+    padding: 0 20px;
+}
