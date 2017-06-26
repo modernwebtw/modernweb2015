@@ -88,9 +88,9 @@ var modernweb2017 = new Vue({
                     FB.ui({
                         method: 'feed',
                         link: location.href,
-                        picture: 'http://modernweb.tw/img/social-pic.jpg',
-                        description: 'ModernWeb 2017',
-                        caption: '消滅外星怪獸，得到了 ' + score + ' 分'
+                        picture: location.origin + '/img/game_share.jpg',
+                        description: 'Modern Web 2017 ─ 8/10-11 登場',
+                        caption: '我在 Modern Web 2017 隱藏任務中，迎擊可愛又迷人的外星怪獸，獲得 ' + score + ' 分，一起來挑戰吧！'
                     }, function (response) {});
                 });
 
@@ -130,7 +130,7 @@ var modernweb2017 = new Vue({
                 var $window = $(window);
                 var $about = $('#about');
                 var $menu = $('#menu');
-                var $featured = $('#featured');
+                var $speaker = $('#speaker');
                 var timer;
                 $window.scroll(function () {
                     if (timer) {
@@ -138,14 +138,13 @@ var modernweb2017 = new Vue({
                     }
                     timer = window.setTimeout(function () {
                         $menu.toggleClass('menu--scroll', $window.scrollTop() >= $about.offset().top);
-                        // liang
-                        // var $liang = $('#liang');
-                        // $liang.toggleClass('menu--scroll', $window.scrollTop() >= $featured.offset().top);
-                    }, 500);
+                        var $buy_ticket_btn = $('#buy_ticket');
+                        $buy_ticket_btn.toggleClass('active', $window.scrollTop() >= $speaker.offset().top);
+                    }, 200);
                 });
 
                 // mobile
-                $(".menu__burger").on('click', function () {
+                $(".menu__burger, .menu__mask").on('click', function () {
                     $(this).toggleClass("on");
                     $('.menu__content').toggleClass("on");
                     $(".menu").toggleClass('on');
@@ -153,7 +152,7 @@ var modernweb2017 = new Vue({
                 });
 
                 // scroll
-                $('#menu a[href^="#"]:not([href="#"])').click(function () {
+                $('#menu a[href^="#"]:not([href="#"]), #buy_ticket').click(function () {
                     var target = '#' + $(this).attr('href').split('#')[1];
                     goScroll(target);
                     return false;
@@ -161,14 +160,12 @@ var modernweb2017 = new Vue({
 
                 function goScroll(target) {
                     var target_top = $(target).offset().top;
-                    var header_height = $('#menu').height();
+                    var header_height = ($('html').width() <= 768) ? 0 : $('#menu').height();
                     var sTop = target_top - header_height;
 
                     $("html, body").stop().animate({
                         scrollTop: sTop
-                    }, 1000, function () {
-                        location.hash = target;
-                    });
+                    }, 1000);
                 }
             });
         });

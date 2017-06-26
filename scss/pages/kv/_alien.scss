@@ -1,8 +1,10 @@
 @include media("<1024px") {
-    .alien,.sparkling {
+    .alien,
+    .sparkling {
         display: none;
     }
 }
+
 .alien {
     position: absolute;
     left: 20%;
@@ -12,11 +14,11 @@
     animation: alien-go 10s linear infinite alternate;
     @keyframes alien-go {
         0% {
-    		transform: translateX(0) rotate(0.02deg);
-    	}
-    	55% {
-    		transform: translateX(0) rotate(0.02deg);
-    	}
+            transform: translateX(0) rotate(0.02deg);
+        }
+        55% {
+            transform: translateX(0) rotate(0.02deg);
+        }
         58% {
             transform: translateX(150%) rotate(0.02deg);
         }
@@ -25,33 +27,33 @@
         }
     }
     &__svg {
-    	animation: alien-move 2s linear infinite alternate;
-	    @keyframes alien-move {
-	        to {
-	            transform: rotate(0deg) translateY(3px);
-	        }
-	    }
+        animation: alien-move 2s linear infinite alternate;
+        @keyframes alien-move {
+            to {
+                transform: rotate(0deg) translateY(3px);
+            }
+        }
     }
     &__eye {
-    	animation: alien-eye-move 4s linear infinite alternate;
-	    @keyframes alien-eye-move {
-	    	0% {
-	    		transform: translateX(0) rotate(0.02deg);
-	    	}
-	    	55% {
-	    		transform: translateX(0) rotate(0.02deg);
-	    	}
-	        60% {
-	            transform: translateX(-4px) rotate(0.02deg);
-	        }
-	        100% {
-	            transform: translateX(-4px) rotate(0.02deg);
-	        }
-	    }
+        animation: alien-eye-move 4s linear infinite alternate;
+        @keyframes alien-eye-move {
+            0% {
+                transform: translateX(0) rotate(0.02deg);
+            }
+            55% {
+                transform: translateX(0) rotate(0.02deg);
+            }
+            60% {
+                transform: translateX(-4px) rotate(0.02deg);
+            }
+            100% {
+                transform: translateX(-4px) rotate(0.02deg);
+            }
+        }
     }
-    &__light circle{
-    	fill:#fff;
-    	animation: alien-light 2s linear infinite;
+    &__light circle {
+        fill: #fff;
+        animation: alien-light 2s linear infinite;
         @keyframes alien-light {
             0% {
                 opacity: .5;
@@ -66,26 +68,57 @@
                 opacity: 1;
             }
         }
-		@for $i from 2 to 7 {
-		  &:nth-child(#{$i}) {
-		    animation-delay: ($i*0.2)-0.1s;
-		  }
-		}
+        @for $i from 2 to 7 {
+            &:nth-child(#{$i}) {
+                animation-delay: ($i*0.2)-0.1s;
+            }
+        }
+    }
+    &__notice {
+        position: absolute;
+        width: 120px;
+        left: 50%;
+        top: -40px;
+        padding: 0 8px;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        background-color: rgba(247, 170, 31, .9);
+        border-radius: 20px;
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+        transition: .1s linear;
+        transform-origin: center bottom;
+        &:after {
+            position: absolute;
+            left: calc(50% - 8px);
+            top: 99%;
+            content: '';
+            border-top: 8px solid rgba(247, 170, 31, .9);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+        }
+    }
+    &:hover {
+        .alien__notice {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
     }
 }
 .sparkling {
-	position: absolute;
+    position: absolute;
     right: -50%;
     top: 0;
-	width: 300%;
-	animation: sparkling-go 10s .1s linear infinite alternate;
+    width: 300%;
+    animation: sparkling-go 10s .1s linear infinite alternate;
     @keyframes sparkling-go {
         0% {
-    		transform: translateX(0) rotate(0.02deg);
-    	}
-    	55% {
-    		transform: translateX(0) rotate(0.02deg);
-    	}
+            transform: translateX(0) rotate(0.02deg);
+        }
+        55% {
+            transform: translateX(0) rotate(0.02deg);
+        }
         58% {
             transform: translateX(10%) rotate(0.02deg);
         }
@@ -93,21 +126,20 @@
             transform: translateX(10%) rotate(0.02deg);
         }
     }
-	polygon {
-		opacity: 0;
-			animation: sparkling .8s linear infinite  alternate;
-		    @keyframes sparkling {
-		       
-		        to {
-		            opacity: .5;
-		        }
-		    }
-		    @for $i from 2 to 10 {
-			  &:nth-child(#{$i}) {
-			    animation-delay: $i*0.1s;
-			  }
-			}
-	}
+    polygon {
+        opacity: 0;
+        animation: sparkling .8s linear infinite alternate;
+        @keyframes sparkling {
+            to {
+                opacity: .5;
+            }
+        }
+        @for $i from 2 to 10 {
+            &:nth-child(#{$i}) {
+                animation-delay: $i*0.1s;
+            }
+        }
+    }
 }
 // .speed {
 // 	position: absolute;
@@ -120,11 +152,9 @@
 // 			right: -100%;
 // 		}
 // 		to {
-
 // 		}
 // 	}
 // 	line {
-		
 // 	 	stroke-dasharray: 90;
 // 	    stroke-dashoffset: -90;
 // 		animation: line-move 3s 5.3s ease-out infinite forwards;
@@ -143,10 +173,8 @@
 // 		        stroke-dashoffset: -90;
 // 		    }
 // 		    31% {
-		    	
 // 		    }
 // 		    50%{
-		    	
 // 		    	opacity: 0;
 // 		         stroke-dashoffset: 90;
 // 		    }

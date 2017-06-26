@@ -11,7 +11,7 @@
     <meta property="og:title" content="Modern Web 2017 ─ 技術在我們手上，世界就在我們手上" />
     <meta property="og:description" content="Modern Web 2017將在8/10-11兩日，邀集來自 Google、Slack、易寶支付、螞蟻金服、騰訊...等世界級的 Web 公司的開發者，分享他們的技術觀點，還有台灣優秀的開發者帶來最新、最深入的技術分享。2天4軌最豐盛而精彩的技術與交流盛會，就在Modern Web 2017"
     />
-    <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
+    <meta property="og:image" content="http://modernweb.tw/img/fb.jpg" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -30,7 +30,7 @@
             <div class="wrapper">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="" class="pull-left menu__logo hidden-xs">
+                        <a href="#header" class="pull-left menu__logo hidden-xs">
                             <img src="img/logo.svg" alt="Modern Web 2017">
                         </a>
                         <div class="menu__burger">
@@ -56,8 +56,8 @@
                                         </a>
 
                                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                            <li><a href="" target="_blank">2015</a></li>
-                                            <li><a href="" target="_blank">2016</a></li>
+                                            <li><a href="./2015/index.html" target="_blank">2015</a></li>
+                                            <li><a href="./2016/index.html" target="_blank">2016</a></li>
                                         </ul>
                                     </div>
 
@@ -66,11 +66,12 @@
                                 <li><a href="" target="_blank" class="visible-xs">回顧 2016</a></li>
                             </ul>
                         </div>
+                        <div class="menu__mask"></div>
                     </div>
                 </div>
             </div>
         </nav>
-        <header class="kv">
+        <header class="kv" id="header">
             <div class="space">
                 <div class="logo">
                     <h1><img src="img/logo.svg" alt="Modern Web 2017"></h1>
@@ -323,6 +324,7 @@
                 <div class="satellite"><img src="img/satellite.svg" alt=""></div>
                 <div class="saturn"><img src="img/saturn.svg" alt=""></div>
                 <div class="alien" id="alien">
+                    <div class="alien__notice">打我啊！笨蛋</div>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 56" class="alien__svg">
                         <path opacity="0.2" fill="#FFFFFF" d="M52.341,42.757V21.221C52.341,9.5,42.841,0,31.121,0S9.9,9.5,9.9,21.221v21.536H52.341z"
                         />
@@ -597,7 +599,7 @@
                                 </div>
                                 <div class="ticket__price">$ 60,000</div>
                                 <div class="ticket__desc">入場票 10 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw" class="btn ticket__button">立即洽詢</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw?subject=洽詢銀級贊助套票" class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">銅級贊助套票
@@ -605,7 +607,7 @@
                                 </div>
                                 <div class="ticket__price">$ 30,000</div>
                                 <div class="ticket__desc">入場票 3 張 + 現場攤位 + 贊助露出</div>
-                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw" class="btn ticket__button">立即洽詢</a></div>
+                                <div class="ticket__btn"><a href="mailto:chrishuang@mail.ithome.com.tw?subject=洽詢銅級贊助套票" class="btn ticket__button">立即洽詢</a></div>
                             </div>
                             <div class="ticket">
                                 <div class="ticket__name">現場票(雙日)
@@ -716,7 +718,9 @@
                         <ul class="list-unstyled">
                             <li>聯絡 Modern Web 服務小組</li>
                             <li>客服專線：02-25622880 #3622 開小姐（週一至週五，上午 10:30 ~ 12:00，下午 1:30 ~ 5:30）</li>
-                            <li>客服信箱：service@mail.ithome.com.tw</li>
+                            <li>客服信箱：
+                                <a href="mailto:service@mail.ithome.com.tw" target="_blank">service@mail.ithome.com.tw</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -883,7 +887,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-    </div>
+    <a href="#ticket" class="buy-ticket" id="buy_ticket"><img src="img/astronaut1.svg" alt="" class="hidden-xs">立即購票</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.min.js"></script>
