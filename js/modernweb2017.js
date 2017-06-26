@@ -56,7 +56,7 @@ var modernweb2017 = new Vue({
     beforeCreate: function () {
         $.when(
             confapi.getSessionWithSpeaker(),
-            confapi.getSpeakerWithSession(),
+            confapi.getSpeakerWithSession()
             // confapi.getSponsor()
         ).done(function (session, speaker, sponsor) {
             modernweb2017.Session = session;
