@@ -130,7 +130,7 @@ var modernweb2017 = new Vue({
                 var $window = $(window);
                 var $about = $('#about');
                 var $menu = $('#menu');
-                var $featured = $('#featured');
+                var $speaker = $('#speaker');
                 var timer;
                 $window.scroll(function() {
                     if (timer) {
@@ -140,12 +140,12 @@ var modernweb2017 = new Vue({
                         $menu.toggleClass('menu--scroll', $window.scrollTop() >= $about.offset().top);
                         // liang
                         var $buy_ticket_btn = $('#buy_ticket');
-                        $buy_ticket_btn.toggleClass('active', $window.scrollTop() >= $featured.offset().top);
-                    }, 500);
+                        $buy_ticket_btn.toggleClass('active', $window.scrollTop() >= $speaker.offset().top);
+                    }, 200);
                 });
 
                 // mobile
-                $(".menu__burger").on('click', function() {
+                $(".menu__burger, .menu__mask").on('click', function() {
                     $(this).toggleClass("on");
                     $('.menu__content').toggleClass("on");
                     $(".menu").toggleClass('on');
@@ -161,14 +161,12 @@ var modernweb2017 = new Vue({
 
                 function goScroll(target) {
                     var target_top = $(target).offset().top;
-                    var header_height = $('#menu').height();
+                    var header_height = ($('html').width() <= 768) ? 0 : $('#menu').height();
                     var sTop = target_top - header_height;
 
-                    $("html, body").stop().animate({
+                    $("html, body").stop().animate({ 
                         scrollTop: sTop
-                    }, 1000, function() {
-                        location.hash = target;
-                    });
+                    }, 1000);
                 }
             });
         });

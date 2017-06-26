@@ -11,9 +11,21 @@
         background-color: transparent;
     }
     &.on {
-        height: 100%;
-        bottom: 0;
-        background-color: rgba(#000, .5);
+        // height: 100%;
+        // bottom: 0;
+        
+        .menu__mask {
+        	position: fixed;
+        	left: 0;
+        	top: 0;
+        	bottom: 0;
+        	right: 0;
+        	width: 100%;
+        	height: 100%;
+        	background-color: rgba(#000, .5);
+        	z-index: 1;
+
+        }
     }
     @include media(">767px") {
         &--scroll {
@@ -65,6 +77,7 @@
             box-shadow: -20px 0 40px -20px rgba($space-color, .9);
             overflow-y: scroll;
             opacity: 0;
+            z-index: 2;
         }
         &.on {
             transform: translateX(0);
