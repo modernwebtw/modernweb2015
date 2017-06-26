@@ -1,0 +1,125 @@
+.keynote {
+	@extend %section;
+	.title {
+		@include media(">768px","<=991px") {
+			margin-bottom: 6%;
+	    }
+	}
+}
+
+.keynote-speaker {
+	
+	margin-bottom: 10%;
+	@include media(">510px") {
+		padding-left: 3%;
+
+		margin-bottom: 6%;
+    }
+	@include media(">991px") {
+		margin-bottom: 6%;
+    }
+	&__img {
+		position: relative;
+		float: left;
+		width: 40%;
+		max-width: 150px;
+		z-index: 1;
+		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		cursor: pointer;
+		@include media(">768px") {
+	        max-width: 180px;
+	    }
+	    @include media(">991px") {
+	        max-width: 200px;
+	    }
+	    @include media(">1199px") {
+	        max-width: 250px;
+	    }
+	    @include media(">1599px") {
+	        max-width: 300px;
+	    }
+	}
+	&__content {
+		float: left;
+		width: 78%;
+		margin-top: 6%;
+	    margin-left: -20%;
+	    padding: 4% 6%;
+	    padding-left: 24%;	
+		background-color: #fff;
+		box-shadow: 0 20px 40px -20px rgba(0,0,0,.7);
+		cursor: pointer;
+		@include media(">510px") {
+			margin-left: -14%;
+			padding-left: 16%;
+			width: 60%;	
+	    }
+		@include media(">991px") {
+			margin-top: 10%;
+	        width: 75%;
+	    }
+	    @include media(">1199px") {
+			margin-top: 12%;
+	        width: 60%;
+	    }
+	    @include media(">1599px") {
+			margin-top: 15%;
+	        width: 60%;
+	    }
+	}
+	&__name {
+		color: $main-green;
+	}
+	// block reveal animation
+	// &__img,&__content {
+	// 	transform: scaleX(0);
+	// 	transform-origin: 0 0;
+	// 	transition: transform .4s cubic-bezier(.55, .085, .68, .53);
+	// 	&:after {
+	// 		content: '';
+	// 		position: absolute;
+	// 		left: 0;
+	// 		top: 0;
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		background-color: $main-green;
+	// 		transition: transform .4s cubic-bezier(.55, .085, .68, .53);
+	// 		transform-origin: 100% 0;
+	// 	}
+	// }
+	// &.active {
+	// 	.keynote-speaker__content,.keynote-speaker__img {
+	// 		transform: scaleX(1);
+	// 		transition: transform .4s cubic-bezier(.25, .46, .45, .94) .46s;
+	// 		&:after {
+	// 		  transition: transform .4s cubic-bezier(.25, .46, .45, .94) .86s;
+	// 		  transform: scaleX(0);
+	// 		}
+	// 	}
+	// }
+}
+
+
+.keynote-speaker--right {
+	padding-left: 0;
+	@include media(">510px") {
+		padding-right: 3%;
+    }
+	.keynote-speaker__img {
+		float: right;
+	}
+	.keynote-speaker__content {
+		float: right;
+		margin-left: 0;
+		margin-right: -20%;
+		padding-left: 6%;
+		padding-right: 20%;
+		@include media(">510px") {
+			margin-right: -14%;
+			padding-right: 18%;
+	    }
+		@include media(">768px") {
+			
+	    }
+	}
+}

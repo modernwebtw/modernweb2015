@@ -1,0 +1,54 @@
+.about {
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	background-color: $main-green;
+	@include media(">991px") {
+        margin-top: 100px;
+        margin-bottom: 300px;
+    }
+	&:after {
+		position: absolute;
+		content: '';
+		left: 50%;
+		top: 100%;
+		width: 120%;
+		height: 100px;
+		border-bottom-right-radius: 50% 100%;
+		border-bottom-left-radius: 50% 100%;
+		background-color: $main-green;
+		transform:translateX(-50%);
+		@include media(">991px") {
+	        height: 300px;
+	    }
+	}
+	&__title {
+		
+		color: #fff;
+		@include media(">991px") {
+	        padding-top: 40px;
+	    }
+	}
+	&__feature {
+
+		&-wrapper {
+			
+			 padding-top:20px;
+			@include media(">991px") {
+		        padding-top: 50px;
+		        padding-left: 5%;
+				padding-right: 5%;
+		    }
+		}
+		h2 {
+			color: rgba(255,255,255,1);
+			letter-spacing: 1px;
+		}
+		&+& {
+			margin-top: 40px;
+		}
+	}
+	&--overflow {
+		overflow: hidden;
+	}
+}

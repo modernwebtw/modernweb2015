@@ -1,0 +1,45 @@
+.logo {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    width: 90%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    animation: logoShow .5s 5s linear forwards;
+    z-index: 1;
+    @keyframes logoShow {
+        100% {
+            opacity: 1;
+        }
+    }
+    h1 {
+        margin: 0;
+    }
+    img {
+        width: 96%;
+        max-width: 300px;
+        @include media(">414px") {
+            width: 70%;
+        }
+        @include media(">991px") {
+            max-width: 500px;
+            width: 100%;
+        }
+        
+    }
+    h2 {
+        margin-top: 10px;
+        margin-bottom: 6px;
+        font-size: 20px;
+        @include media(">768px") {
+            font-size: 30px;
+        }
+    }
+    p {
+        font-size: 18px;
+        @include media(">768px") {
+            font-size: 24px;
+        }
+    }
+}
