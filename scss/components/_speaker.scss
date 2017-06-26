@@ -199,12 +199,16 @@
     // 燈箱關閉縮放動畫
     &.scale .modal-dialog {
         transition: .2s ease-in;
-        transform: scale(0);
+        // transform: scale(0);
+        transform:translate(0,0);
+        opacity: 0;
     }
     // 燈箱開啟縮放動畫
     &.in {
         .modal-dialog {
-            transform: scale(1);
+            // transform: scale(1);
+        transform:translate(0,0);
+            opacity: 1;
         }
         // 位移淡入動畫
         .speaker-brief--animate {

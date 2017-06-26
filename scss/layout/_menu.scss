@@ -29,7 +29,7 @@
         margin-top: 8px;
         width: 20%;
         opacity: 0;
-        transition: .2s .5s linear;
+        transition: .2s linear;
         transform: translateY(-150%);
         @include media(">1199px") {
             width: 12%;
@@ -64,9 +64,11 @@
             transform: translateX(100%);
             box-shadow: -20px 0 40px -20px rgba($space-color, .9);
             overflow-y: scroll;
+            opacity: 0;
         }
         &.on {
             transform: translateX(0);
+            opacity: 1;
         }
     }
     &__list {
@@ -135,10 +137,12 @@
 
 .dropdown-menu {
     right: 0;
+    min-width: 100px;
     text-align: center;
 }
 
 .dropdown-menu>li>a {
-    display: inline-block;
-    margin: 12px 0;
+    display: block;
+    margin: 12px 8px;
+    padding: 3px 0;
 }
